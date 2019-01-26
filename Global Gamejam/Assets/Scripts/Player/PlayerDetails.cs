@@ -8,6 +8,6 @@ public class PlayerDetails : MonoBehaviour
 
     private void Start()
     {
-        GameManagerScript.instance.AddPlayer(this);
+        GameManagerScript.instance.AddPlayer(this.GetComponent<PlayerController>());
     }
 }
