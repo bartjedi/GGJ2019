@@ -29,7 +29,7 @@ public class PlayerInput : MonoBehaviour
 
     IEnumerator ChangedControls(int changedControlsTimer)
     {
-        yield return new WaitForSeconds(changedControlsTimer);
+        yield return new WaitForSeconds(10);
         changedControls = false;
     }
 
@@ -45,6 +45,7 @@ public class PlayerInput : MonoBehaviour
                 }
                 else
                 {
+                    Debug.Log("false");
                     return XCI.GetButtonDown(XboxButton.B, xboxController) && allowJump && allowInput;
                 }
             }

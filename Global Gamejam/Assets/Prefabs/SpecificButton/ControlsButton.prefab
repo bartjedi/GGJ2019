@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 5155671524741899222}
   - component: {fileID: 2356998413981788995}
   m_Layer: 9
-  m_Name: OptionsButton
+  m_Name: ControlsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -214,12 +214,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topOfScreen: 0
-  risingSpeed: 5
   materials: []
-  English: Options
-  Spanish: Opciones
-  German: Optionen
-  Chinese: "\u9009\u9879"
+  English: Controls
+  Spanish: Controles
+  German: Kontrollen
+  Chinese: "\u63A7\u5236 "
 --- !u!65 &2356998413981788995
 BoxCollider:
   m_ObjectHideFlags: 0

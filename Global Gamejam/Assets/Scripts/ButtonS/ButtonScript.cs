@@ -16,7 +16,6 @@ public class ButtonScript : MonoBehaviour
     protected void Start()
     {
         topOfScreen = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 15.75f)).y;
-        Debug.Log(topOfScreen);
         materials = GameManagerScript.instance.materials;
         textElement = this.GetComponentInChildren<TextMesh>();
         SetColor();
