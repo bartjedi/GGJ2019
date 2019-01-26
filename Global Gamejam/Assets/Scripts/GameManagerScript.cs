@@ -9,6 +9,7 @@ public class GameManagerScript : MonoBehaviour
     private SpriteRenderer background;
     [SerializeField]
     private Sprite[] backgrounds;
+    AudioSource audioSource;
 
     public enum States { Menu, Playing, Paused, Finished };
 	public enum Languages { English, Spanish, German, Chinese };
@@ -33,10 +34,9 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
-
     // Start is called before the first frame update
     void Start()
-    {
+    { 
 		gameState = States.Playing;
 		language = Languages.English;
         maxLanguages = System.Enum.GetValues(typeof(Languages)).Length;
