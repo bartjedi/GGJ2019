@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -813,6 +813,7 @@ GameObject:
   - component: {fileID: 622318031}
   - component: {fileID: 622318033}
   - component: {fileID: 622318032}
+  - component: {fileID: 622318034}
   m_Layer: 5
   m_Name: HUD_RT
   m_TagString: Untagged
@@ -878,6 +879,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622318030}
   m_CullTransparentMesh: 0
+--- !u!114 &622318034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622318030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed65f7584f9fe2b458d7c217a1d1598c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNr: 0
+  blueMan: {fileID: 21300000, guid: 07bcbfb6300023548957aa0cbda0b9c3, type: 3}
+  yellowMan: {fileID: 21300000, guid: 586d125c73c60e04ea21163eb7aa2526, type: 3}
+  greenMan: {fileID: 21300000, guid: 8d57cba06d471594d856edd4b061e7d3, type: 3}
+  redMan: {fileID: 21300000, guid: f0da78ec6ff84ca4b96b008620344ab2, type: 3}
+  purpleMan: {fileID: 21300000, guid: 039ce7939a9e5e04080281c9a9ce4247, type: 3}
 --- !u!1 &685901727
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +1010,7 @@ GameObject:
   - component: {fileID: 746422873}
   - component: {fileID: 746422875}
   - component: {fileID: 746422874}
+  - component: {fileID: 746422876}
   m_Layer: 5
   m_Name: HUD_RB
   m_TagString: Untagged
@@ -1056,6 +1076,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746422872}
   m_CullTransparentMesh: 0
+--- !u!114 &746422876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746422872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed65f7584f9fe2b458d7c217a1d1598c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNr: 2
+  blueMan: {fileID: 21300000, guid: 07bcbfb6300023548957aa0cbda0b9c3, type: 3}
+  yellowMan: {fileID: 21300000, guid: 586d125c73c60e04ea21163eb7aa2526, type: 3}
+  greenMan: {fileID: 21300000, guid: 8d57cba06d471594d856edd4b061e7d3, type: 3}
+  redMan: {fileID: 21300000, guid: f0da78ec6ff84ca4b96b008620344ab2, type: 3}
+  purpleMan: {fileID: 21300000, guid: 039ce7939a9e5e04080281c9a9ce4247, type: 3}
 --- !u!1 &973458168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,6 +1105,7 @@ GameObject:
   - component: {fileID: 973458169}
   - component: {fileID: 973458171}
   - component: {fileID: 973458170}
+  - component: {fileID: 973458172}
   m_Layer: 5
   m_Name: HUD_LB
   m_TagString: Untagged
@@ -1132,6 +1171,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973458168}
   m_CullTransparentMesh: 0
+--- !u!114 &973458172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973458168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed65f7584f9fe2b458d7c217a1d1598c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNr: 3
+  blueMan: {fileID: 21300000, guid: 07bcbfb6300023548957aa0cbda0b9c3, type: 3}
+  yellowMan: {fileID: 21300000, guid: 586d125c73c60e04ea21163eb7aa2526, type: 3}
+  greenMan: {fileID: 21300000, guid: 8d57cba06d471594d856edd4b061e7d3, type: 3}
+  redMan: {fileID: 21300000, guid: f0da78ec6ff84ca4b96b008620344ab2, type: 3}
+  purpleMan: {fileID: 21300000, guid: 039ce7939a9e5e04080281c9a9ce4247, type: 3}
 --- !u!1 &1064736011
 GameObject:
   m_ObjectHideFlags: 0
@@ -1606,6 +1663,7 @@ GameObject:
   - component: {fileID: 2059542326}
   - component: {fileID: 2059542328}
   - component: {fileID: 2059542327}
+  - component: {fileID: 2059542329}
   m_Layer: 5
   m_Name: HUD_LT
   m_TagString: Untagged
@@ -1671,3 +1729,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059542325}
   m_CullTransparentMesh: 0
+--- !u!114 &2059542329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059542325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed65f7584f9fe2b458d7c217a1d1598c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNr: 1
+  blueMan: {fileID: 21300000, guid: 07bcbfb6300023548957aa0cbda0b9c3, type: 3}
+  yellowMan: {fileID: 21300000, guid: 586d125c73c60e04ea21163eb7aa2526, type: 3}
+  greenMan: {fileID: 21300000, guid: 8d57cba06d471594d856edd4b061e7d3, type: 3}
+  redMan: {fileID: 21300000, guid: f0da78ec6ff84ca4b96b008620344ab2, type: 3}
+  purpleMan: {fileID: 21300000, guid: 039ce7939a9e5e04080281c9a9ce4247, type: 3}

@@ -23,16 +23,21 @@ public class PlayerStatsScript : MonoBehaviour
 	private Color purple_bg = new Color(0xac, 0x8a, 0xd6);
 	private Color purple_tex = new Color(0x5d, 0x34, 0x83);
 
+	[SerializeField]
 	private Sprite blueMan;
+	[SerializeField]
 	private Sprite yellowMan;
+	[SerializeField]
 	private Sprite greenMan;
+	[SerializeField]
 	private Sprite redMan;
+	[SerializeField]
 	private Sprite purpleMan;
 
 	// Start is called before the first frame update
 	void Start()
     {
-        if(GameManagerScript.instance.playersActive > playerNr)
+        if(GameManagerScript.instance.players.Count > playerNr)
 		{
 			this.gameObject.SetActive(true);
 			Setup();

@@ -11,7 +11,7 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     private Sprite[] backgrounds;
     private AudioSource audioSource;
-    private List<PlayerDetails> players;
+    public List<PlayerDetails> players;
     private List<Vector3> playerLocations;
 
     private int changeControlTimer;
