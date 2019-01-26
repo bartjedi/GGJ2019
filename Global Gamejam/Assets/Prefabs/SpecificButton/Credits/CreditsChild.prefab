@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1980611083842211725}
   - component: {fileID: 197511090254640239}
   - component: {fileID: 4218211899734448164}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 9150708745536255996}
   - component: {fileID: 9208234244919144651}
   - component: {fileID: 3427897314801609065}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CreditsChild
   m_TagString: Untagged
   m_Icon: {fileID: 0}

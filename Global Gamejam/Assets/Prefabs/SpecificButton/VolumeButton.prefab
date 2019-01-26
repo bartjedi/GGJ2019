@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7490657600964018940}
   - component: {fileID: 1227962265376947611}
   - component: {fileID: 3649747149569578816}
+  - component: {fileID: 363909861254896740}
   m_Layer: 9
   m_Name: VolumeButton
   m_TagString: Untagged
@@ -46,7 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topOfScreen: 0
-  risingSpeed: 5
   materials: []
   English: Volume
   Spanish: Volumen
@@ -65,6 +65,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.73, y: 1.1114383, z: 1}
   m_Center: {x: 0.006624818, y: 0.055719137, z: 0}
+--- !u!114 &363909861254896740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678104245429363741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198a9f44141a5e24aab27faf27b81c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToLive: 10
 --- !u!1001 &8093372744841650597
 PrefabInstance:
   m_ObjectHideFlags: 0

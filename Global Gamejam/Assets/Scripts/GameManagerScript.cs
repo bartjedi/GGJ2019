@@ -11,7 +11,7 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     private Sprite[] backgrounds;
     private AudioSource audioSource;
-    private List<PlayerDetails> players;
+    public List<PlayerDetails> players;
     private List<Vector3> playerLocations;
 
     private int changeControlTimer;
@@ -76,7 +76,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void ChangeBackground()
     {
-        int randomBackground = Random.Range(0, maxBackgrounds);
+        int randomBackground = Random.Range(0, maxBackgrounds-1);
         if (randomBackground == (int)language)
         {
             randomBackground++;

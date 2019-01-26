@@ -5,5 +5,4 @@ using UnityEngine;
 public class PlayerDetails : MonoBehaviour
 {
     public int playerHealth;
-	public Material character;
 }

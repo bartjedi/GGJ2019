@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpStartTime = float.MinValue;
 
     private bool canDoubleJump = true, jumping = false;
+    private float outsideRight, outsideLeft;
 
     public bool grounded
     {
@@ -37,6 +38,11 @@ public class PlayerMovement : MonoBehaviour
         myBody = GetComponent<Rigidbody>();
         //calculate distance to glound based on collider
         distToGround = GetComponent<Collider>().bounds.extents.y;
+
+        outsideLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, -Camera.main.transform.position.z)).x;
+        Debug.Log(outsideLeft);
+        outsideRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, -Camera.main.transform.position.z)).x;
+        Debug.Log(outsideRight);
     }
 
     private void FixedUpdate()
@@ -57,8 +63,7 @@ public class PlayerMovement : MonoBehaviour
             }
             myBody.velocity = velocity;
         }
-        if (jumping && grounded && jumpStartTime + 0.2f < Time.time) {
-            jumping = false;
+        if (grounded && jumpStartTime + 0.1f < Time.time) {
             controller.animations.Land();
         }
     }
@@ -78,6 +83,14 @@ public class PlayerMovement : MonoBehaviour
             myBody.velocity = velocity;
             transform.position = new Vector3(transform.position.x, 20f, transform.position.z);
         }
+
+        if (transform.position.x< outsideLeft - 2f) {
+            transform.position = new Vector3(outsideRight + 1.5f, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x > outsideRight + 2f)
+        {
+            transform.position = new Vector3(outsideLeft - 1.5f, transform.position.y, transform.position.z);
+        }
     }
 
     private void Jump()
@@ -89,7 +102,6 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = jumpSpeed;
             myBody.velocity = velocity;
             controller.animations.Jump();
-            jumping = true;
             jumpStartTime = Time.time;
         }
         else if (canDoubleJump)

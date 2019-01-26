@@ -9,6 +9,7 @@ public class LanguageButtonScript : ButtonScript
     /// </summary>
 	override public void Trigger()
 	{
+        base.Break();
         GameManagerScript.instance.ChangeLanguage();
 	}
 }

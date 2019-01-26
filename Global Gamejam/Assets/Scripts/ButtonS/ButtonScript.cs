@@ -11,6 +11,8 @@ public class ButtonScript : MonoBehaviour
     private Material[] materials;
     private TextMesh textElement;
     Rigidbody rb;
+    private float timeToBreak = 1.5f;
+    private bool breaking = false;
 
     public string English, Spanish, German, Chinese;
     protected void Start()
@@ -21,7 +23,7 @@ public class ButtonScript : MonoBehaviour
         SetColor();
         SetText();
         rb = gameObject.AddComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezeRotation |  RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+        rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
         rb.isKinematic = true;
     }
 
@@ -50,7 +52,7 @@ public class ButtonScript : MonoBehaviour
     /// </summary>
     public virtual void Trigger()
     {
-
+        Break();
     }
 	
     /// <summary>
@@ -61,6 +63,27 @@ public class ButtonScript : MonoBehaviour
 
     }
 
+    public virtual void Break()
+    {
+        if (breaking) return;
+        StartCoroutine(BreakRoutine());
+    }
+
+    private IEnumerator BreakRoutine() {
+        breaking = true;
+        float start = Time.time;
+        float startRot = transform.eulerAngles.z;
+        float shake = 0.0f;
+        float increase = 0.0f;
+        Camera.main.GetComponent<CameraShake>().Shake();
+        while (start + timeToBreak > Time.time) {
+            shake += Time.deltaTime + increase;
+            increase += Time.deltaTime * 2f;
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, startRot + Mathf.Sin(shake));
+            yield return new WaitForEndOfFrame();
+        }
+        Destroy(gameObject);
+    }
 
     public void SetColor()
     {
