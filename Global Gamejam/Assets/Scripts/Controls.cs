@@ -15,7 +15,7 @@ public class Controls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = this.GetComponent<Rigidbody>();
+        rb = this.GetComponent<Rigidbody>(); 
     }
 
     // Update is called once per frame

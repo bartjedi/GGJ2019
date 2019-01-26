@@ -147,8 +147,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSpeed: 3
   jumpSpeed: 0
-  inputAxis: HorizontalTwo
-  joystickNumber: 0
+  horizontalInputAxis: HorizontalTwo
+  verticalInputAxis: VerticalTwo
+  joystickNumber: 2
 --- !u!136 &553581310
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -443,7 +444,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSpeed: 3
   jumpSpeed: 0
-  inputAxis: Horizontal
+  horizontalInputAxis: HorizontalOne
+  verticalInputAxis: VerticalOne
   joystickNumber: 1
 --- !u!1 &1243600857
 GameObject:
@@ -657,8 +659,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSpeed: 3
   jumpSpeed: 0
-  inputAxis: HorizontalFour
-  joystickNumber: 0
+  horizontalInputAxis: HorizontalFour
+  verticalInputAxis: VerticalFour
+  joystickNumber: 4
 --- !u!135 &1576211454
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -743,8 +746,8 @@ GameObject:
   - component: {fileID: 1774426392}
   - component: {fileID: 1774426391}
   - component: {fileID: 1774426390}
-  - component: {fileID: 1774426389}
   - component: {fileID: 1774426388}
+  - component: {fileID: 1774426389}
   m_Layer: 0
   m_Name: PlayerThree
   m_TagString: Untagged
@@ -766,8 +769,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSpeed: 3
   jumpSpeed: 0
-  inputAxis: HorizontalThree
-  joystickNumber: 0
+  horizontalInputAxis: HorizontalThree
+  verticalInputAxis: VerticalThree
+  joystickNumber: 3
 --- !u!54 &1774426389
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -857,3 +861,108 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8691926427121278642
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8553948833609412131, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: m_Name
+      value: Credits
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553948833609412141, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553948833609412141, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553948833609412141, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553948833609412141, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553948833609412141, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553948833609412141, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553948833609412141, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553948833609412141, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553948833609412141, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553948833609412141, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553948833609412141, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196768274081847264, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: names.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196768274081847264, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: creditsButton
+      value: 
+      objectReference: {fileID: 9150708745536255996, guid: e30abf3a6ba536347a2f09be917b2b88,
+        type: 3}
+    - target: {fileID: 6196768274081847264, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: names.Array.data[0]
+      value: Wendy Bolier
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196768274081847264, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: names.Array.data[1]
+      value: Marjolein Joosse
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196768274081847264, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: names.Array.data[2]
+      value: Bart Dikmans
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196768274081847264, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: names.Array.data[3]
+      value: Wasili Prattis
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196768274081847264, guid: c08d2201564f6e4428d8c860a897e2f9,
+        type: 3}
+      propertyPath: names.Array.data[4]
+      value: Tom van Dijk
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c08d2201564f6e4428d8c860a897e2f9, type: 3}
