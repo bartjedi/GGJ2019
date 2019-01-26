@@ -8,40 +8,30 @@ public class ButtonScript : MonoBehaviour
 	private float bottomOfScreen = -10.0f;
 	[SerializeField]
 	private float fallingSpeed = 0.02f;
-
-	public GameObject gameManager;
-	public GameManagerScript gms;
-
 	[SerializeField]
-	private Material uv_blue;
-
+	private Material[] materials;
 
 	// Start is called before the first frame update
-	void Start()
+	protected void Start()
     {
-		gameManager = GameObject.Find("GameManager");
-		gms = gameManager.GetComponent<GameManagerScript>();
-		setColor();
-	}
+        materials = GameManagerScript.instance.materials;
+        SetColor();
+    }
 
     // Update is called once per frame
     public virtual void Update()
     {
-	
 		// Button is removed when not visible anymore
 		if(this.transform.position.y < bottomOfScreen)
 		{
 			Destroy(this.gameObject);
 		}
-		
     }
 
-	private void setColor()
+	public void SetColor()
 	{
-
-		// HOE DAN
-		//this.transform.Find("ButtonObject").gameObject.GetComponent<Material>().SetTexture("blue", uv_blue);
-
-		this.transform.GetComponent<Renderer>().material = uv_blue;
+        int random = Random.Range(0, 4);
+        Debug.Log(random);
+        this.GetComponentInChildren<MeshFilter>().gameObject.GetComponent<Renderer>().material = materials[random];
 	}
 }

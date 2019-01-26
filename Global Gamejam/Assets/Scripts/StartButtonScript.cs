@@ -10,6 +10,7 @@ public class StartButtonScript : ButtonScript
 	// Start is called before the first frame update
 	void Start()
     {
+        base.Start();
 		//this.transform.Find("ButtonText").gameObject.GetComponent<TextMesh>().text = buttonText[gms.language];
 	}
 
@@ -22,11 +23,11 @@ public class StartButtonScript : ButtonScript
 	void Function()
 	{
 		// Start game
-		if(gms.gameState == (int)GameManagerScript.States.PAUSED)
+		if(GameManagerScript.instance.gameState == (int)GameManagerScript.States.PAUSED)
 		{
 			ResumeGame();
 		}
-		else if(gms.gameState == (int)GameManagerScript.States.MENU)
+		else if(GameManagerScript.instance.gameState == (int)GameManagerScript.States.MENU)
 		{
 			StartGame();
 		}
@@ -34,11 +35,11 @@ public class StartButtonScript : ButtonScript
 
 	void ResumeGame()
 	{
-		gms.gameState = (int)GameManagerScript.States.PLAYING;
+        GameManagerScript.instance.gameState = (int)GameManagerScript.States.PLAYING;
 	}
 
 	void StartGame()
 	{
-		gms.gameState = (int)GameManagerScript.States.PLAYING;
+        GameManagerScript.instance.gameState = (int)GameManagerScript.States.PLAYING;
 	}
 }

@@ -8,9 +8,28 @@ public class GameManagerScript : MonoBehaviour
 	public enum Languages { English, Spanish, German, Chinese };
 	public int gameState;
 	public int language;
+    public Material[] materials;
 
-	// Start is called before the first frame update
-	void Start()
+    public static GameManagerScript instance = null;             
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            if (instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
+
+    // Start is called before the first frame update
+    void Start()
     {
 		gameState = (int)States.MENU;
 		language = (int)Languages.English;
