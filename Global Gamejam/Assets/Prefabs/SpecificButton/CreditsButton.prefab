@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topOfScreen: 0
-  risingSpeed: 0.05
+  risingSpeed: 5
   materials: []
   English: Credits
   Spanish: Creditos

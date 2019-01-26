@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ea57aebfe2694646a5d0c246e2b7fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bottomOfScreen: -10
-  fallingSpeed: 0.02
+  topOfScreen: 0
+  risingSpeed: 5
   materials: []
   English: Scene
   Spanish: Escena
@@ -91,11 +91,6 @@ PrefabInstance:
       propertyPath: m_Text
       value: Scene
       objectReference: {fileID: 0}
-    - target: {fileID: 6562712449307683322, guid: f13d891ae5bae5f4093c0510ee87f0be,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.006
-      objectReference: {fileID: 0}
     - target: {fileID: 8656421695318340947, guid: f13d891ae5bae5f4093c0510ee87f0be,
         type: 3}
       propertyPath: English
@@ -115,6 +110,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Spanish
       value: Escena
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562712449307683322, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.006
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f13d891ae5bae5f4093c0510ee87f0be, type: 3}

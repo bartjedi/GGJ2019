@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75b10d63860102347b830be026a92a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bottomOfScreen: -10
-  fallingSpeed: 0.02
+  topOfScreen: 0
+  risingSpeed: 5
   materials: []
   English: 
   Spanish: 

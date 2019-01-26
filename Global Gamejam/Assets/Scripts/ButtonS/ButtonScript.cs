@@ -6,11 +6,11 @@ public class ButtonScript : MonoBehaviour
 {
     [SerializeField]
     private float topOfScreen;
-    [SerializeField]
-    private float risingSpeed = 0.05f;
+    private float risingSpeed = 2.0f;
     [SerializeField]
     private Material[] materials;
     private TextMesh textElement;
+    Rigidbody rb;
 
     public string English, Spanish, German, Chinese;
     protected void Start()
@@ -21,6 +21,9 @@ public class ButtonScript : MonoBehaviour
         textElement = this.GetComponentInChildren<TextMesh>();
         SetColor();
         SetText();
+        rb = gameObject.AddComponent<Rigidbody>();
+        rb.constraints = RigidbodyConstraints.FreezeRotation |  RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+        rb.isKinematic = true;
     }
 
     public virtual void Update()
@@ -37,7 +40,9 @@ public class ButtonScript : MonoBehaviour
     {
         if (GameManagerScript.instance.gameState == GameManagerScript.States.Playing)
         {
-            this.transform.position = this.transform.position + new Vector3(0, risingSpeed, 0);
+            rb.isKinematic = false;
+            //this.transform.position = this.transform.position + new Vector3(0, risingSpeed, 0);
+            rb.velocity = Vector3.up * risingSpeed;
         }
     }
 

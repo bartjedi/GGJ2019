@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba956f4109c35e542ae4cec94f7be48a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bottomOfScreen: -10
-  fallingSpeed: 0.02
+  topOfScreen: 0
+  risingSpeed: 5
   materials:
   - {fileID: 2100000, guid: 43f35ecbde3f5b844a197f09ba69ce6c, type: 2}
   - {fileID: 2100000, guid: 1976182bc7c217e498c09f34f75833a9, type: 2}

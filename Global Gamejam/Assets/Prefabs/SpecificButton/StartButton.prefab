@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topOfScreen: 10
-  risingSpeed: 0.05
+  risingSpeed: 5
   materials: []
   English: Start
   Spanish: comienzo

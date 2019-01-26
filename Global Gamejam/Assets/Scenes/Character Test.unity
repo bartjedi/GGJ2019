@@ -560,6 +560,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.9809129
       objectReference: {fileID: 0}
+    - target: {fileID: 4432307324304080088, guid: 414854aaf3b10d648a988f4b88af44d8,
+        type: 3}
+      propertyPath: risingSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 414854aaf3b10d648a988f4b88af44d8, type: 3}
 --- !u!4 &5091529425967847957
@@ -582,6 +587,22 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2634492570828952355}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &5471838431595638406
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5471838431595638405}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 0
 --- !u!1001 &5651867211696796318
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -21,6 +21,8 @@ public class ButtonSpawnerScript : MonoBehaviour
     [SerializeField]
     private GameObject[] buttons;
 
+    float lastSpawn = float.MinValue;
+
     private void Start()
     {
         bottomOfScreen = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 15.75f)).y;
@@ -32,9 +34,13 @@ public class ButtonSpawnerScript : MonoBehaviour
         // When the highest button is below a certain point 
         if (GameManagerScript.instance.gameState == GameManagerScript.States.Playing)
         {
-            if (lowest.transform.position.y > newButtonNeededPosition)
-            {
+            //if (lowest.transform.position.y > newButtonNeededPosition)
+            //{
+            //    CreateNewButton();
+            //}
+            if (lastSpawn + 3f < Time.time) {
                 CreateNewButton();
+                lastSpawn = Time.time;
             }
         }
     }
@@ -48,7 +54,7 @@ public class ButtonSpawnerScript : MonoBehaviour
 	private Vector3 GetRandomButRealisticPosition()
 	{
 		var newX = Random.Range(leftSideScreen, rightSideScreen);
-		var newY = Random.Range(lowest.transform.position.y, lowest.transform.position.y + jumpHeight);
+		//var newY = Random.Range(lowest.transform.position.y, lowest.transform.position.y + jumpHeight);
 		return new Vector3(newX, bottomOfScreen, 0.0f);
 	}
 
@@ -56,6 +62,6 @@ public class ButtonSpawnerScript : MonoBehaviour
     {
         GameObject newButton = GetRandomButton();
         Vector3 newPosition = GetRandomButRealisticPosition();
-        lowest = Instantiate(newButton, newPosition, Quaternion.identity);
+        Instantiate(newButton, newPosition, Quaternion.identity);
     }
 }

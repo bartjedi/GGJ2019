@@ -72,6 +72,12 @@ public class PlayerMovement : MonoBehaviour
         }
         //read horizontal axis for horizontal movement
         velocity.x = controller.input.horizontal * moveSpeed;
+
+        if (transform.position.y < -20f) {
+            velocity.y = 0;
+            myBody.velocity = velocity;
+            transform.position = new Vector3(transform.position.x, 20f, transform.position.z);
+        }
     }
 
     private void Jump()
