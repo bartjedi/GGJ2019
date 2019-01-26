@@ -28,12 +28,12 @@ PrefabInstance:
     - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
         type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
         type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
         type: 3}

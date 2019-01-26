@@ -18,11 +18,13 @@ public class PlayerController : MonoBehaviour
         details = GetComponent<PlayerDetails>();
         animations = GetComponent<PlayerAnimations>();
 
-		movement.enabled = false;
-		input.enabled = false;
-		combat.enabled = false;
-		details.enabled = false;
-		animations.enabled = false;
+        if (input.isNotMac) {
+            movement.enabled = false;
+            input.enabled = false;
+            combat.enabled = false;
+            details.enabled = false;
+            animations.enabled = false;
+        }
 	}
 
 	public void Entry()

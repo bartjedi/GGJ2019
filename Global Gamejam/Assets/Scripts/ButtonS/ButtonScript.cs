@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ButtonScript : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class ButtonScript : MonoBehaviour
     private float risingSpeed = 2.0f;
     [SerializeField]
     private Material[] materials;
-    private TextMesh textElement;
+    private TextMeshProUGUI textElement;
     Rigidbody rb;
     private float timeToBreak = 1.5f;
     private bool breaking = false;
@@ -19,7 +20,7 @@ public class ButtonScript : MonoBehaviour
     {
         topOfScreen = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 15.75f)).y;
         materials = GameManagerScript.instance.materials;
-        textElement = this.GetComponentInChildren<TextMesh>();
+        textElement = this.GetComponentInChildren<TextMeshProUGUI>();
         SetColor();
         SetText();
         rb = gameObject.AddComponent<Rigidbody>();
