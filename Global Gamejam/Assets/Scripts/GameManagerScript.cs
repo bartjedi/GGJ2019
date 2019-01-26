@@ -95,7 +95,7 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
-    private void AddPlayer(PlayerController player)
+    public void AddPlayer(PlayerController player)
     {
         players.Add(player.GetComponent<PlayerDetails>());
     }

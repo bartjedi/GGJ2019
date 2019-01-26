@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topOfScreen: 0
-  risingSpeed: 5
   materials: []
   English: Load
   Spanish: Carga
@@ -26,6 +25,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_textInfo.textComponent
+      value: 
+      objectReference: {fileID: 6366625035801725319}
+    - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_text
+      value: Load
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: English
       value: Load
@@ -107,11 +131,6 @@ PrefabInstance:
       propertyPath: m_Text
       value: Load
       objectReference: {fileID: 0}
-    - target: {fileID: 6562712449307683322, guid: f13d891ae5bae5f4093c0510ee87f0be,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.878
-      objectReference: {fileID: 0}
     - target: {fileID: 1345664657452045599, guid: f13d891ae5bae5f4093c0510ee87f0be,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -125,3 +144,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2720836255647170984}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6366625035801725319 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
+    type: 3}
+  m_PrefabInstance: {fileID: 2720836255647170984}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
