@@ -19,22 +19,24 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField]
     GroundPoundAttack groundPound;
 
-    private PlayerController shoveTarget
+    private PlayerController[] shoveTargets
     {
         get
         {
-            PlayerController c = null;
+            List<PlayerController> controllers = new List<PlayerController>();
 
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.right, out hit, shoveRayStart + attackReach))
+            RaycastHit[] hits;
+            hits = Physics.RaycastAll(transform.position - Vector3.right * shoveRayStart, transform.right, attackReach);
+            for (int i = 0; i < hits.Length; i++)
             {
-                c = hit.transform.GetComponent<PlayerController>();
-                if (c == this.controller)
+                PlayerController c;
+                c = hits[i].transform.GetComponent<PlayerController>();
+                if (c != this.controller && c != null)
                 {
-                    c = null;
+                    controllers.Add(c);
                 }
             }
-            return c;
+            return controllers.ToArray();
         }
     }
 
@@ -62,7 +64,7 @@ public class PlayerCombat : MonoBehaviour
         delayedPounder = PoundDisabler();
         controller = GetComponent<PlayerController>();
         playerMovement = GetComponent<PlayerMovement>();
-        shoveRayStart = -GetComponent<Collider>().bounds.extents.x;
+        shoveRayStart = GetComponent<Collider>().bounds.extents.x * 2f;
         poundRayStart = GetComponent<Collider>().bounds.extents.y;
     }
 
@@ -141,16 +143,20 @@ public class PlayerCombat : MonoBehaviour
 
     private void Shove()
     {
-        PlayerController target = shoveTarget;
+        PlayerController[] targets = shoveTargets;
         controller.animations.Shove();
         shoveTime = Time.time;
-        if (target != null)
+        foreach (PlayerController target in targets)
         {
-            target.combat.GetShoved(transform.right, shoveForce);
+            if (target != null)
+            {
+                target.combat.GetShoved(transform.right, shoveForce);
+            }
         }
     }
 
-    private IEnumerator PoundDisabler() {
+    private IEnumerator PoundDisabler()
+    {
         yield return new WaitForSecondsRealtime(0.1f);
         groundPound.gameObject.SetActive(false);
     }

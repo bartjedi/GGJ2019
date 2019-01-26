@@ -6,6 +6,7 @@ public class ExitButtonScript : ButtonScript
 {
     public override void Trigger()
     {
+        base.Break();
         //PlayerDetails.Kill();
     }
 }

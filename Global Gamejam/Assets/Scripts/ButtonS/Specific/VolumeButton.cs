@@ -5,6 +5,7 @@
     /// </summary>
 	override public void Trigger()
     {
+        base.Break();
         AudioManager.instance.CrazyAudio();
     }
 }

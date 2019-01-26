@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd0cac4a75d36e64889f8ffe7689da03
+guid: d14c693bffe2ea34fa077df5508caa34
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -28,7 +28,7 @@ ModelImporter:
     100044: mixamorig:Spine
     100046: mixamorig:Spine1
     100048: mixamorig:Spine2
-    100050: pSphere6
+    100050: pCube55
     100052: //RootNode
     400000: mixamorig:Head
     400002: mixamorig:HeadTop_End
@@ -55,19 +55,21 @@ ModelImporter:
     400044: mixamorig:Spine
     400046: mixamorig:Spine1
     400048: mixamorig:Spine2
-    400050: pSphere6
+    400050: pCube55
     400052: //RootNode
-    2100000: Shoes
-    2100002: lambert5
-    2100004: haar
-    2100006: lambert2
-    2100008: lambert1
-    2100010: shirt
-    2100012: lambert7
-    4300000: pSphere6
+    2100000: lambert17
+    2100002: Shoes
+    2100004: lambert7
+    2100006: lambert18
+    2100008: lambert20
+    2100010: lambert19
+    2100012: lambert2
+    2100014: grijs
+    2100016: lambert9
+    4300000: pCube55
     7400000: mixamo.com
     9500000: //RootNode
-    13700000: pSphere6
+    13700000: pCube55
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -120,7 +122,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.099999994
+    previousCalculatedGlobalScale: 0.01
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60

@@ -6,6 +6,7 @@ public class SaveButton : ButtonScript
 {
     override public void Trigger()
     {
+        base.Break();
         GameManagerScript.instance.SavePositions();
     }
 }

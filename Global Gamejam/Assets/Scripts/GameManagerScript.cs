@@ -76,7 +76,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void ChangeBackground()
     {
-        int randomBackground = Random.Range(0, maxBackgrounds);
+        int randomBackground = Random.Range(0, maxBackgrounds-1);
         if (randomBackground == (int)language)
         {
             randomBackground++;
