@@ -57,6 +57,7 @@ public class PlayerInput : MonoBehaviour
         get
         {
             if (isNotMac)
+            {
                 if (!changedControls)
                 {
                     return XCI.GetButtonDown(XboxButton.B, xboxController) && allowAttack && allowInput;
@@ -65,6 +66,7 @@ public class PlayerInput : MonoBehaviour
                 {
                     return XCI.GetButtonDown(XboxButton.A, xboxController) && allowAttack && allowInput;
                 }
+            }
             return Input.GetKeyDown(KeyCode.Q) && allowAttack && allowInput;
         }
     }

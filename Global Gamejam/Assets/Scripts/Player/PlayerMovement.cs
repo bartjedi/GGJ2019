@@ -57,8 +57,7 @@ public class PlayerMovement : MonoBehaviour
             }
             myBody.velocity = velocity;
         }
-        if (jumping && grounded && jumpStartTime + 0.2f < Time.time) {
-            jumping = false;
+        if (grounded && jumpStartTime + 0.1f < Time.time) {
             controller.animations.Land();
         }
     }
@@ -89,7 +88,6 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = jumpSpeed;
             myBody.velocity = velocity;
             controller.animations.Jump();
-            jumping = true;
             jumpStartTime = Time.time;
         }
         else if (canDoubleJump)
