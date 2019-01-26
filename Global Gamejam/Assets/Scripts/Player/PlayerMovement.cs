@@ -18,12 +18,12 @@ public class PlayerMovement : MonoBehaviour
     private float distToGround;
 
     private bool canDoubleJump = true;
-    private bool grounded
+    public bool grounded
     {
         get
         {
             int layerMask = 1 << 9;
-            return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f, layerMask);
+            return Physics.Raycast(transform.position, Vector3.down, distToGround + 0.1f, layerMask);
         }
     }
 
@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         {
             //set second, mid-air jump with a minimum added velocity
             velocity = myBody.velocity;
-            velocity.y = Mathf.Max(jumpSpeed, velocity.y + jumpSpeed);
+            velocity.y = jumpSpeed;
             myBody.velocity = velocity;
             canDoubleJump = false;
         }
@@ -87,5 +87,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void ApplyForce(Vector3 force) {
         myBody.AddForce(force);
+    }
+
+    public void ResetVelocity() {
+        velocity = Vector3.zero;
+        myBody.velocity = velocity;
     }
 }

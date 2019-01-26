@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe9551250de5049178cd84ebf03c1eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNotMac: 0
   xboxController: 0
 --- !u!114 &2962025849730043334
 MonoBehaviour:
@@ -167,9 +168,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shoveForce: 250
-  recoveryTime: 1.5
+  shovedRecoveryTime: 1
   attackReach: 0.5
-  attackCooldown: 0.5
+  shoveCooldown: 0.5
+  groundPoundForce: 600
 --- !u!1 &7571128670086628203
 GameObject:
   m_ObjectHideFlags: 0

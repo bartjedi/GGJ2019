@@ -278,7 +278,7 @@ PrefabInstance:
     - target: {fileID: 2962025849730043334, guid: a911a10af1c5a4e328947f7e52b987ef,
         type: 3}
       propertyPath: shoveForce
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5651867211187341441, guid: a911a10af1c5a4e328947f7e52b987ef,
         type: 3}
