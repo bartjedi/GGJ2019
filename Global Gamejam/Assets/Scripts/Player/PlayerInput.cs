@@ -75,7 +75,7 @@ public class PlayerInput : MonoBehaviour
         get
         {
             if (isNotMac)
-                return XCI.GetAxis(XboxAxis.LeftStickY, xboxController) < -0.4f && allowAttack && allowInput;
+                return XCI.GetButtonDown(XboxButton.X, xboxController) && allowAttack && allowInput;
             return Input.GetAxisRaw("Vertical") < 0.0f && allowAttack && allowInput;
         }
     }
