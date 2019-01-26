@@ -96,7 +96,7 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
-    private void AddPlayer(PlayerDetails player)
+    private void AddPlayer(PlayerController player)
     {
         players.Add(player.GetComponent<PlayerDetails>());
     }
@@ -123,9 +123,25 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
-    public void Spawn(PlayerDetails playerCharacter, int playerNumber, Vector3 position, XboxController xboxController)
+    public void Spawn(PlayerController playerCharacter, int playerNumber, Vector3 position, XboxController xboxController)
     {
-        PlayerDetails player = Instantiate(playerCharacter, position, new Quaternion(0, 0, 0, 0));
+		PlayerController player = Instantiate(playerCharacter, position, new Quaternion(0, 0, 0, 0));
+		switch (playerNumber)
+		{
+			case 0:
+				player.input.xboxController = XboxController.First;
+				break;
+			case 1:
+				player.input.xboxController = XboxController.Second;
+				break;
+			case 2:
+				player.input.xboxController = XboxController.Third;
+				break;
+			case 3:
+				player.input.xboxController = XboxController.Fourth;
+				break;
+		}
+		player.Entry();
         AddPlayer(player);
         player.GetComponent<PlayerInput>().xboxController = xboxController;
         //TODO: add jumping out animation

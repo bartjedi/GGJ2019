@@ -45,7 +45,6 @@ public class PlayerInput : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("false");
                     return XCI.GetButtonDown(XboxButton.B, xboxController) && allowJump && allowInput;
                 }
             }

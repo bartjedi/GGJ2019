@@ -9,7 +9,7 @@ public class CharacterSelection : MonoBehaviour
     private XboxController xboxController;
     [SerializeField]
     private int maxPlayers;
-    public GameObject[] characters;
+    public PlayerController[] characters;
     [SerializeField]
     private PlayerDetails[] selectedCharacters;
     private int[] playersSelected;
@@ -38,6 +38,7 @@ public class CharacterSelection : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+		StartButtonScript.onStart.Add(KillMe);
     }
 
     // Start is called before the first frame update
@@ -92,11 +93,16 @@ public class CharacterSelection : MonoBehaviour
     public void Confirm(int playerNumber, int charNumber, Vector3 position, XboxController xboxController)
     {
         characterSelectionControllers[playerNumber].gameObject.SetActive(false);
-        GameManagerScript.instance.Spawn(selectedCharacters[charNumber], playerNumber, position, xboxController);
+        GameManagerScript.instance.Spawn(characters[charNumber], playerNumber, position, xboxController);
     }
 
     public void Leave(int playerNumber)
     {
         playerActive[playerNumber] = false;
     }
+
+	private void KillMe()
+	{
+		Destroy(gameObject);
+	}
 }

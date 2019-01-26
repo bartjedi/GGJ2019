@@ -40,12 +40,20 @@ public class PlayerMovement : MonoBehaviour
         distToGround = GetComponent<Collider>().bounds.extents.y;
 
         outsideLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, -Camera.main.transform.position.z)).x;
-        Debug.Log(outsideLeft);
         outsideRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, -Camera.main.transform.position.z)).x;
-        Debug.Log(outsideRight);
     }
 
-    private void FixedUpdate()
+	private void OnEnable()
+	{
+		myBody.isKinematic = false;
+	}
+
+	private void OnDisable()
+	{
+		myBody.isKinematic = true;
+	}
+
+	private void FixedUpdate()
     {
         if (!canDoubleJump)
         {
