@@ -7,12 +7,13 @@ public class GameManagerScript : MonoBehaviour
 {
     private int maxLanguages, maxBackgrounds;
     [SerializeField]
-    private SpriteRenderer background;
+    private GameObject background;
     [SerializeField]
-    private Sprite[] backgrounds;
+    private Material[] backgrounds;
     private AudioSource audioSource;
     public List<PlayerDetails> players;
     private List<Vector3> playerLocations;
+    private int previousBackground;
 
     private int changeControlTimer;
 
@@ -76,7 +77,7 @@ public class GameManagerScript : MonoBehaviour
     public void ChangeBackground()
     {
         int randomBackground = Random.Range(0, maxBackgrounds-1);
-        if (randomBackground == (int)language)
+        if (randomBackground == previousBackground)
         {
             randomBackground++;
             if (randomBackground > maxLanguages)
@@ -84,7 +85,8 @@ public class GameManagerScript : MonoBehaviour
                 randomBackground = 0;
             }
         }
-        background.sprite = backgrounds[randomBackground];
+        background.GetComponent<MeshRenderer>().material = backgrounds[randomBackground];
+        previousBackground = randomBackground;
     }
 
     public void ChangeControls()
