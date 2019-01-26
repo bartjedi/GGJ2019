@@ -75,6 +75,7 @@ public class ButtonScript : MonoBehaviour
         float startRot = transform.eulerAngles.z;
         float shake = 0.0f;
         float increase = 0.0f;
+        Camera.main.GetComponent<CameraShake>().Shake();
         while (start + timeToBreak > Time.time) {
             shake += Time.deltaTime + increase;
             increase += Time.deltaTime * 2f;
