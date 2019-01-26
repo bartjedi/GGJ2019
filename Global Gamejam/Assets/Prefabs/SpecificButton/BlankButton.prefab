@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topOfScreen: 0
-  risingSpeed: 5
   materials: []
   English: 
   Spanish: 
@@ -27,6 +26,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_textInfo.textComponent
+      value: 
+      objectReference: {fileID: 7757538190809832554}
     - target: {fileID: 7348573595622734390, guid: f13d891ae5bae5f4093c0510ee87f0be,
         type: 3}
       propertyPath: m_Name
@@ -92,6 +96,21 @@ PrefabInstance:
       propertyPath: m_Text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6190201470498526294, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -1.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190201470498526294, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 7.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190201470498526294, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f13d891ae5bae5f4093c0510ee87f0be, type: 3}
 --- !u!1 &8343972424712187507 stripped
@@ -100,3 +119,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1599022468024472645}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7757538190809832554 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
+    type: 3}
+  m_PrefabInstance: {fileID: 1599022468024472645}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

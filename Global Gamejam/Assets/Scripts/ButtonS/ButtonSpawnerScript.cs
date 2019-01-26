@@ -60,6 +60,7 @@ public class ButtonSpawnerScript : MonoBehaviour
 
     private void CreateNewButton()
     {
+        Debug.Log("spawn");
         GameObject newButton = GetRandomButton();
         Vector3 newPosition = GetRandomButRealisticPosition();
         Instantiate(newButton, newPosition, Quaternion.identity);
