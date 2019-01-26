@@ -5,7 +5,7 @@ using XboxCtrlrInput;
 
 public class PlayerInput : MonoBehaviour
 {
-
+    public bool isMac = false;
     public XboxController xboxController;
     public bool allowInput { get; set; }
     public bool allowMovement { get; set; }
@@ -24,7 +24,9 @@ public class PlayerInput : MonoBehaviour
     {
         get
         {
-            return XCI.GetButtonDown(XboxButton.A) && allowJump && allowInput;
+            if (isMac)
+                return XCI.GetButtonDown(XboxButton.A) && allowJump && allowInput;
+            return Input.GetKeyDown(KeyCode.Space) && allowJump && allowInput;
         }
     }
 
@@ -32,19 +34,29 @@ public class PlayerInput : MonoBehaviour
     {
         get
         {
-            return XCI.GetButtonDown(XboxButton.B) && allowAttack && allowInput;
+            if (isMac)
+                return XCI.GetButtonDown(XboxButton.B) && allowAttack && allowInput;
+            return Input.GetKeyDown(KeyCode.Q) && allowAttack && allowInput;
         }
     }
 
-    public float horizontal {
-        get {
-            return XCI.GetAxis(XboxAxis.LeftStickX, xboxController);
+    public float horizontal
+    {
+        get
+        {
+            if (isMac)
+                return XCI.GetAxis(XboxAxis.LeftStickX, xboxController);
+            return Input.GetAxisRaw("Horizontal");
         }
     }
 
-	public float vertical {
-		get {
-            return XCI.GetAxis(XboxAxis.LeftStickY, xboxController);
-		}
-	}
+    public float vertical
+    {
+        get
+        {
+            if (isMac)
+                return XCI.GetAxis(XboxAxis.LeftStickY, xboxController);
+            return Input.GetAxisRaw("Vertical");
+        }
+    }
 }

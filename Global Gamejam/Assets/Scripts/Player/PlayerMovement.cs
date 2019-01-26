@@ -22,7 +22,8 @@ public class PlayerMovement : MonoBehaviour
     {
         get
         {
-            return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+            int layerMask = 1 << 9;
+            return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f, layerMask);
         }
     }
 
@@ -44,6 +45,12 @@ public class PlayerMovement : MonoBehaviour
 
         //apply velocity updates in the FixedUpdate method for better physics
         if (controller.input.allowMovement && controller.input.allowInput) {
+            if (velocity.x > 0.0f) {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+            else if (velocity.x < 0.0f) {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
             myBody.velocity = velocity;
         }
     }

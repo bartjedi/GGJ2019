@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3453966983199813770}
   - component: {fileID: 2323429560774937099}
   - component: {fileID: 2962025849730043334}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shoveForce: 250
   recoveryTime: 1.5
-  attackReach: 1.5
+  attackReach: 0.5
+  attackCooldown: 0.5
 --- !u!1 &7571128670086628203
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +181,7 @@ GameObject:
   - component: {fileID: 2270980635576189905}
   - component: {fileID: 7120046514277149437}
   - component: {fileID: 9017100003085363475}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
