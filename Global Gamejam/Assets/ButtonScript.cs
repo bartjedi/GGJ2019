@@ -9,13 +9,15 @@ public class ButtonScript : MonoBehaviour
 	[SerializeField]
 	private float fallingSpeed = 0.02f;
 
-	
+	public GameObject gameManager;
+	public GameManagerScript gms;
 
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
-        
-    }
+		gameManager = GameObject.Find("GameManager");
+		gms = gameManager.GetComponent<GameManagerScript>();
+	}
 
     // Update is called once per frame
     public virtual void Update()
