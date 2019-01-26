@@ -38,7 +38,7 @@ public class ButtonScript : MonoBehaviour
     {
 
     }
-
+	
     /// <summary>
     /// occurs on any random jump
     /// </summary>

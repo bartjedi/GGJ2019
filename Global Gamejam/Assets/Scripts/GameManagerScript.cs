@@ -13,7 +13,7 @@ public class GameManagerScript : MonoBehaviour
     private List<PlayerDetails> players;
     private List<Transform> playerLocations;
 
-    public enum States { Menu, Playing, Paused, Finished };
+    public enum States { Menu, CharacterSelection, Playing, Paused, Finished };
 	public enum Languages { English, Spanish, German, Chinese };
 	public States gameState;
 	public Languages language;
@@ -41,7 +41,7 @@ public class GameManagerScript : MonoBehaviour
     {
         players = new List<PlayerDetails>();
         playerLocations = new List<Transform>();
-		gameState = States.Playing;
+		gameState = States.Menu;
 		language = Languages.English;
         maxLanguages = System.Enum.GetValues(typeof(Languages)).Length;
         maxBackgrounds = backgrounds.Length;
