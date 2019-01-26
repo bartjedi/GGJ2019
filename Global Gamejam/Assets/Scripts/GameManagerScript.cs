@@ -13,6 +13,8 @@ public class GameManagerScript : MonoBehaviour
     private List<PlayerDetails> players;
     private List<Transform> playerLocations;
 
+    private int changeControlTimer;
+
     public enum States { Menu, Playing, Paused, Finished };
 	public enum Languages { English, Spanish, German, Chinese };
 	public States gameState;
@@ -80,6 +82,14 @@ public class GameManagerScript : MonoBehaviour
             }
         }
         background.sprite = backgrounds[randomBackground];
+    }
+
+    public void ChangeControls()
+    {
+        foreach(PlayerDetails player in players)
+        {
+            player.GetComponent<PlayerInput>().ChangeControls(changeControlTimer);
+        }
     }
 
     public void AddPlayer(PlayerDetails player)

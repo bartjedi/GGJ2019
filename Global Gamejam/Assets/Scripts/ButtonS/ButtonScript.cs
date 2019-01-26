@@ -5,17 +5,18 @@ using UnityEngine;
 public class ButtonScript : MonoBehaviour
 {
 	[SerializeField]
-	private float bottomOfScreen = -10.0f;
+	private float topOfScreen;
 	[SerializeField]
-	private float fallingSpeed = 0.02f;
+	private float risingSpeed = 0.05f;
 	[SerializeField]
 	private Material[] materials;
     private TextMesh textElement;
 
     public string English, Spanish, German, Chinese;
-    
-	protected void Start()
+    protected void Start()
     {
+        topOfScreen = Camera.main.ViewportToWorldPoint(new Vector3(0,1,15.75f)).y;
+        Debug.Log(topOfScreen);
         materials = GameManagerScript.instance.materials;
         textElement = this.GetComponentInChildren<TextMesh>();
         SetColor();
@@ -25,10 +26,16 @@ public class ButtonScript : MonoBehaviour
     public virtual void Update()
     {
 		// Button is removed when not visible anymore
-		if(this.transform.position.y < bottomOfScreen)
+		if(this.transform.position.y > topOfScreen)
 		{
-			Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+
 		}
+    }
+
+    public virtual void FixedUpdate()
+    {
+        this.transform.position = this.transform.position + new Vector3(0,risingSpeed,0);
     }
 
     /// <summary>

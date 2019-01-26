@@ -5,9 +5,11 @@ using UnityEngine;
 public class ButtonSpawnerScript : MonoBehaviour
 {
 	[SerializeField]
-	private float newButtonNeededPosition = -5.0f;
+	private float newButtonNeededPosition = -4;
 	[SerializeField]
-	private GameObject highestButton;
+	private GameObject lowest;
+    [SerializeField]
+    private float bottomOfScreen;
 
 	[SerializeField]
 	private float jumpHeight = 5.0f;
@@ -19,13 +21,18 @@ public class ButtonSpawnerScript : MonoBehaviour
     [SerializeField]
     private GameObject[] buttons;
 
+    private void Start()
+    {
+        bottomOfScreen = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 15.75f)).y;
+    }
+
     // Update is called once per frame
     private void Update()
     {
         // When the highest button is below a certain point 
         if (GameManagerScript.instance.gameState == GameManagerScript.States.Playing)
         {
-            if (highestButton.transform.position.y < newButtonNeededPosition)
+            if (lowest.transform.position.y > newButtonNeededPosition)
             {
                 CreateNewButton();
             }
@@ -41,14 +48,14 @@ public class ButtonSpawnerScript : MonoBehaviour
 	private Vector3 GetRandomButRealisticPosition()
 	{
 		var newX = Random.Range(leftSideScreen, rightSideScreen);
-		var newY = Random.Range(highestButton.transform.position.y, highestButton.transform.position.y + jumpHeight);
-		return new Vector3(newX, newY, 0.0f);
+		var newY = Random.Range(lowest.transform.position.y, lowest.transform.position.y + jumpHeight);
+		return new Vector3(newX, bottomOfScreen, 0.0f);
 	}
 
     private void CreateNewButton()
     {
         GameObject newButton = GetRandomButton();
         Vector3 newPosition = GetRandomButRealisticPosition();
-        highestButton = Instantiate(newButton, newPosition, Quaternion.identity);
+        lowest = Instantiate(newButton, newPosition, Quaternion.identity);
     }
 }
