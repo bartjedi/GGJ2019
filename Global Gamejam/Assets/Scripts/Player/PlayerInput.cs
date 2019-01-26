@@ -11,6 +11,7 @@ public class PlayerInput : MonoBehaviour
     public bool allowMovement { get; set; }
     public bool allowJump { get; set; }
     public bool allowAttack { get; set; }
+    private bool changedControls = false;
 
     private void Awake()
     {
@@ -20,12 +21,33 @@ public class PlayerInput : MonoBehaviour
         allowMovement = true;
     }
 
+    public void ChangeControls(int changedControlTimer)
+    {
+        changedControls = true;
+        StartCoroutine(ChangedControls(changedControlTimer));
+    }
+
+    IEnumerator ChangedControls(int changedControlsTimer)
+    {
+        yield return new WaitForSeconds(changedControlsTimer);
+        changedControls = false;
+    }
+
     public bool jump
     {
         get
         {
             if (isNotMac)
-                return XCI.GetButtonDown(XboxButton.A, xboxController) && allowJump && allowInput;
+            {
+                if (!changedControls)
+                {
+                    return XCI.GetButtonDown(XboxButton.A, xboxController) && allowJump && allowInput;
+                }
+                else
+                {
+                    return XCI.GetButtonDown(XboxButton.B, xboxController) && allowJump && allowInput;
+                }
+            }
             return Input.GetKeyDown(KeyCode.Space) && allowJump && allowInput;
         }
     }
@@ -35,7 +57,14 @@ public class PlayerInput : MonoBehaviour
         get
         {
             if (isNotMac)
-                return XCI.GetButtonDown(XboxButton.B, xboxController) && allowAttack && allowInput;
+                if (!changedControls)
+                {
+                    return XCI.GetButtonDown(XboxButton.B, xboxController) && allowAttack && allowInput;
+                }
+                else
+                {
+                    return XCI.GetButtonDown(XboxButton.A, xboxController) && allowAttack && allowInput;
+                }
             return Input.GetKeyDown(KeyCode.Q) && allowAttack && allowInput;
         }
     }
