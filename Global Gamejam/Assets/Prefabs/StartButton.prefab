@@ -47,6 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottomOfScreen: -10
   fallingSpeed: 0.02
+  gameManager: {fileID: 0}
+  gms: {fileID: 0}
 --- !u!54 &626623625600082242
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -130,6 +132,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8223314901285936958, guid: 2d3c06efe4064b240991b7696f51850e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.32642
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223314901285936958, guid: 2d3c06efe4064b240991b7696f51850e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0062759
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223314901285936958, guid: 2d3c06efe4064b240991b7696f51850e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 346.47684
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223314901285936958, guid: 2d3c06efe4064b240991b7696f51850e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 110.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223314901285936958, guid: 2d3c06efe4064b240991b7696f51850e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 110.15
+      objectReference: {fileID: 0}
     - target: {fileID: 4296618240784573403, guid: 2d3c06efe4064b240991b7696f51850e,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -137,6 +164,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3041707845481011219, guid: 2d3c06efe4064b240991b7696f51850e, type: 3}
+    - {fileID: 8530274211115073300, guid: 2d3c06efe4064b240991b7696f51850e, type: 3}
+    - {fileID: 5245668286917506234, guid: 2d3c06efe4064b240991b7696f51850e, type: 3}
+    - {fileID: 603956987704342028, guid: 2d3c06efe4064b240991b7696f51850e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2d3c06efe4064b240991b7696f51850e, type: 3}
 --- !u!4 &3322772553484713424 stripped
 Transform:

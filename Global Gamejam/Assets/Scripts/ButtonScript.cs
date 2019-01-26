@@ -12,11 +12,16 @@ public class ButtonScript : MonoBehaviour
 	public GameObject gameManager;
 	public GameManagerScript gms;
 
+	[SerializeField]
+	private Material uv_blue;
+
+
 	// Start is called before the first frame update
 	void Start()
     {
 		gameManager = GameObject.Find("GameManager");
 		gms = gameManager.GetComponent<GameManagerScript>();
+		setColor();
 	}
 
     // Update is called once per frame
@@ -30,4 +35,13 @@ public class ButtonScript : MonoBehaviour
 		}
 		
     }
+
+	private void setColor()
+	{
+
+		// HOE DAN
+		//this.transform.Find("ButtonObject").gameObject.GetComponent<Material>().SetTexture("blue", uv_blue);
+
+		this.transform.GetComponent<Renderer>().material = uv_blue;
+	}
 }
