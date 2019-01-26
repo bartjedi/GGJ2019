@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75b10d63860102347b830be026a92a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  topOfScreen: 0
+  risingSpeed: 5
+  materials: []
+  English: 
+  Spanish: 
+  German: 
+  Chinese: 
+  amountOfJumpsAllowed: 3
 --- !u!1001 &1599022468024472645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84,8 +92,7 @@ PrefabInstance:
       propertyPath: m_Text
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8656421695318340947, guid: f13d891ae5bae5f4093c0510ee87f0be, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f13d891ae5bae5f4093c0510ee87f0be, type: 3}
 --- !u!1 &8343972424712187507 stripped
 GameObject:

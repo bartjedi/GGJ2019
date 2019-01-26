@@ -15,9 +15,13 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 velocity = new Vector3();
 
-    private float distToGround, jumpStartTime = float.MinValue;
+    private float distToGround;
+
+    [System.NonSerialized]
+    public float jumpStartTime = float.MinValue;
 
     private bool canDoubleJump = true, jumping = false;
+
     public bool grounded
     {
         get
@@ -68,6 +72,12 @@ public class PlayerMovement : MonoBehaviour
         }
         //read horizontal axis for horizontal movement
         velocity.x = controller.input.horizontal * moveSpeed;
+
+        if (transform.position.y < -20f) {
+            velocity.y = 0;
+            myBody.velocity = velocity;
+            transform.position = new Vector3(transform.position.x, 20f, transform.position.z);
+        }
     }
 
     private void Jump()

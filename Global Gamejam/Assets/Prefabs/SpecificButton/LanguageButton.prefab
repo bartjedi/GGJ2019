@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba956f4109c35e542ae4cec94f7be48a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bottomOfScreen: -10
-  fallingSpeed: 0.02
+  topOfScreen: 0
+  risingSpeed: 5
   materials:
   - {fileID: 2100000, guid: 43f35ecbde3f5b844a197f09ba69ce6c, type: 2}
   - {fileID: 2100000, guid: 1976182bc7c217e498c09f34f75833a9, type: 2}
@@ -95,11 +95,6 @@ PrefabInstance:
       propertyPath: m_Text
       value: Language
       objectReference: {fileID: 0}
-    - target: {fileID: 1345664657452045599, guid: f13d891ae5bae5f4093c0510ee87f0be,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.0761623
-      objectReference: {fileID: 0}
     - target: {fileID: 6562712449307683322, guid: f13d891ae5bae5f4093c0510ee87f0be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -109,6 +104,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.622
+      objectReference: {fileID: 0}
+    - target: {fileID: 1345664657452045599, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.0761623
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8656421695318340947, guid: f13d891ae5bae5f4093c0510ee87f0be, type: 3}

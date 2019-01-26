@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 2903783285126757997}
   - component: {fileID: 9150708745536255996}
   - component: {fileID: 9208234244919144651}
+  - component: {fileID: 3427897314801609065}
   m_Layer: 0
   m_Name: CreditsChild
   m_TagString: Untagged
@@ -214,3 +215,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3427897314801609065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9208234244919144650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198a9f44141a5e24aab27faf27b81c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToLive: 10

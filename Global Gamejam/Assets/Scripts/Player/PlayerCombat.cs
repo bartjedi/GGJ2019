@@ -6,12 +6,18 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     private PlayerController controller;
+    private PlayerMovement playerMovement;
     [SerializeField]
-    private float shoveForce = 1.0f, shovedRecoveryTime = 1.0f, attackReach = 1.5f, shoveCooldown = 0.5f, groundPoundForce = 300f, poundReach = 0.1f;
+    private float shoveForce = 1.0f, shovedRecoveryTime = 1.0f, attackReach = 1.5f, shoveCooldown = 0.5f, groundPoundForce = 300f, poundReach = 0.1f, groundPoundCooldown = 0.4f;
     private float shoveRayStart, poundRayStart;
 
     private float shovedTime = float.NegativeInfinity, shoveTime = float.NegativeInfinity;
     private bool isPounding = false, targetPounded = false;
+
+    private IEnumerator delayedPounder;
+
+    [SerializeField]
+    GroundPoundAttack groundPound;
 
     private PlayerController shoveTarget
     {
@@ -53,9 +59,11 @@ public class PlayerCombat : MonoBehaviour
 
     private void Awake()
     {
+        delayedPounder = PoundDisabler();
         controller = GetComponent<PlayerController>();
-        shoveRayStart = GetComponent<Collider>().bounds.extents.x;
-        shoveRayStart = GetComponent<Collider>().bounds.extents.y;
+        playerMovement = GetComponent<PlayerMovement>();
+        shoveRayStart = -GetComponent<Collider>().bounds.extents.x;
+        poundRayStart = GetComponent<Collider>().bounds.extents.y;
     }
 
     private void Update()
@@ -66,16 +74,9 @@ public class PlayerCombat : MonoBehaviour
         }
         if (!isPounding)
         {
-            if (controller.input.groundPound && !controller.movement.grounded)
+            if (controller.input.groundPound && !controller.movement.grounded && (Time.time - playerMovement.jumpStartTime) > groundPoundCooldown)
             {
                 GroundPound();
-            }
-        }
-        else
-        {
-            if (!targetPounded)
-            {
-                CheckPoundHit();
             }
         }
         controller.input.allowMovement = shovedTime + shovedRecoveryTime < Time.time;
@@ -83,11 +84,30 @@ public class PlayerCombat : MonoBehaviour
         if (isPounding)
         {
             isPounding = !controller.movement.grounded;
+            if (isPounding == false)
+            {
+                StopCoroutine(delayedPounder);
+                delayedPounder = PoundDisabler();
+                StartCoroutine(delayedPounder);
+            }
         }
         if (targetPounded)
         {
             targetPounded = !controller.movement.grounded;
         }
+    }
+
+    public void PoundEnemy(PlayerController enemy)
+    {
+        if (enemy != controller)
+        {
+            enemy.combat.GetPounded();
+        }
+    }
+
+    public void PoundButton(ButtonScript button)
+    {
+        button.Trigger();
     }
 
     private void CheckPoundHit()
@@ -107,6 +127,7 @@ public class PlayerCombat : MonoBehaviour
 
     private void GroundPound()
     {
+        groundPound.gameObject.SetActive(true);
         isPounding = true;
         controller.movement.ResetVelocity();
         controller.movement.ApplyForce(Vector3.down * groundPoundForce);
@@ -121,10 +142,16 @@ public class PlayerCombat : MonoBehaviour
     private void Shove()
     {
         PlayerController target = shoveTarget;
+        controller.animations.Shove();
+        shoveTime = Time.time;
         if (target != null)
         {
             target.combat.GetShoved(transform.right, shoveForce);
-            shoveTime = Time.time;
         }
+    }
+
+    private IEnumerator PoundDisabler() {
+        yield return new WaitForSecondsRealtime(0.1f);
+        groundPound.gameObject.SetActive(false);
     }
 }

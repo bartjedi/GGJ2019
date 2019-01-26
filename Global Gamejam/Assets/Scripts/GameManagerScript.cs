@@ -14,6 +14,9 @@ public class GameManagerScript : MonoBehaviour
     private List<Transform> playerLocations;
 
     public enum States { Menu, CharacterSelection, Playing, Paused, Finished };
+
+    private int changeControlTimer;
+
 	public enum Languages { English, Spanish, German, Chinese };
 	public States gameState;
 	public Languages language;
@@ -41,7 +44,9 @@ public class GameManagerScript : MonoBehaviour
     {
         players = new List<PlayerDetails>();
         playerLocations = new List<Transform>();
+
 		gameState = States.Menu;
+
 		language = Languages.English;
         maxLanguages = System.Enum.GetValues(typeof(Languages)).Length;
         maxBackgrounds = backgrounds.Length;
@@ -80,6 +85,14 @@ public class GameManagerScript : MonoBehaviour
             }
         }
         background.sprite = backgrounds[randomBackground];
+    }
+
+    public void ChangeControls()
+    {
+        foreach(PlayerDetails player in players)
+        {
+            player.GetComponent<PlayerInput>().ChangeControls(changeControlTimer);
+        }
     }
 
     public void AddPlayer(PlayerDetails player)
