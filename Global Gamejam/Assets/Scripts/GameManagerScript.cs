@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XboxCtrlrInput;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -82,7 +83,7 @@ public class GameManagerScript : MonoBehaviour
         background.sprite = backgrounds[randomBackground];
     }
 
-    public void AddPlayer(PlayerDetails player)
+    private void AddPlayer(PlayerDetails player)
     {
         players.Add(player.GetComponent<PlayerDetails>());
     }
@@ -104,5 +105,13 @@ public class GameManagerScript : MonoBehaviour
             player.transform.rotation = playerLocations[i].rotation;
             i++;
         }
+    }
+
+    public void Spawn(PlayerDetails playerCharacter, int playerNumber, Vector3 position, XboxController xboxController)
+    {
+        PlayerDetails player = Instantiate(playerCharacter, position, new Quaternion(0, 0, 0, 0));
+        AddPlayer(player);
+        player.GetComponent<PlayerInput>().xboxController = xboxController;
+        //TODO: add jumping out animation
     }
 }
