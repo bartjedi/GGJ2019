@@ -126,21 +126,6 @@ public class GameManagerScript : MonoBehaviour
     public void Spawn(PlayerController playerCharacter, int playerNumber, Vector3 position, XboxController xboxController)
     {
 		PlayerController player = Instantiate(playerCharacter, position, new Quaternion(0, 0, 0, 0));
-		switch (playerNumber)
-		{
-			case 0:
-				player.input.xboxController = XboxController.First;
-				break;
-			case 1:
-				player.input.xboxController = XboxController.Second;
-				break;
-			case 2:
-				player.input.xboxController = XboxController.Third;
-				break;
-			case 3:
-				player.input.xboxController = XboxController.Fourth;
-				break;
-		}
 		player.Entry();
         AddPlayer(player);
         player.GetComponent<PlayerInput>().xboxController = xboxController;
