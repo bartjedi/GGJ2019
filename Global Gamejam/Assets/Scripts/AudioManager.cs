@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    private float reverb, pitch, volume;
+    private float reverb, pitch;
     [SerializeField]
-    private float baseReverb, basePitch, baseVolume;
+    private float baseReverb, basePitch;
     [SerializeField]
     private AudioSource[] audioSources;
     [SerializeField]
@@ -32,20 +32,17 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        pitch = basePitch;
-        reverb = baseReverb;
-        volume = baseVolume;
+        basePitch = audioSources[0].pitch;
+        baseReverb = audioSources[0].reverbZoneMix;
     }
 
     public void CrazyAudio()
     {
-        pitch = Random.Range (0, 1.1f);
-        volume = Random.Range (0, 1f);
+        pitch = Random.Range (-3f, 3f);
         reverb = Random.Range (0, 1f);
         foreach(AudioSource audioSource in audioSources)
         {
             audioSource.pitch = pitch;
-            audioSource.volume = volume;
             audioSource.reverbZoneMix = reverb;
         }
         StartCoroutine(ResetAudio());
@@ -57,7 +54,6 @@ public class AudioManager : MonoBehaviour
         foreach (AudioSource audioSource in audioSources)
         {
             audioSource.pitch = basePitch;
-            audioSource.volume = baseVolume;
             audioSource.reverbZoneMix = baseReverb;
         }
     }

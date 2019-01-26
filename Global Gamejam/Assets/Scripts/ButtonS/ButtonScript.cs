@@ -16,6 +16,9 @@ public class ButtonScript : MonoBehaviour
     private bool breaking = false;
 
     public string English, Spanish, German, Chinese;
+    public TMP_FontAsset FontAssetA;
+    public TMP_FontAsset FontAssetB;
+
     protected void Start()
     {
         topOfScreen = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 15.75f)).y;
@@ -34,7 +37,6 @@ public class ButtonScript : MonoBehaviour
         if (this.transform.position.y > topOfScreen)
         {
             //Destroy(this.gameObject);
-
         }
     }
 
@@ -45,6 +47,7 @@ public class ButtonScript : MonoBehaviour
             rb.isKinematic = false;
             //this.transform.position = this.transform.position + new Vector3(0, risingSpeed, 0);
             rb.velocity = Vector3.up * risingSpeed;
+            SetText();
         }
     }
 
@@ -96,10 +99,10 @@ public class ButtonScript : MonoBehaviour
     {
         switch (GameManagerScript.instance.language)
         {
-            case GameManagerScript.Languages.Chinese: textElement.text = Chinese; break;
-            case GameManagerScript.Languages.English: textElement.text = English; break;
-            case GameManagerScript.Languages.German: textElement.text = German; break;
-            case GameManagerScript.Languages.Spanish: textElement.text = Spanish; break;
+            case GameManagerScript.Languages.Chinese: textElement.text = Chinese; textElement.font = FontAssetA; break;
+            case GameManagerScript.Languages.English: textElement.text = English; textElement.font = FontAssetB; break;
+            case GameManagerScript.Languages.German: textElement.text = German; textElement.font = FontAssetB; break;
+            case GameManagerScript.Languages.Spanish: textElement.text = Spanish; textElement.font = FontAssetB; break;
         }
     }
 }
