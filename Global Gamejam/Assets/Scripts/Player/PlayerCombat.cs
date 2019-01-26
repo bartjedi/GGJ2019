@@ -14,6 +14,9 @@ public class PlayerCombat : MonoBehaviour
     private float shovedTime = float.NegativeInfinity, shoveTime = float.NegativeInfinity;
     private bool isPounding = false, targetPounded = false;
 
+    [SerializeField]
+    GroundPoundAttack groundPound;
+
     private PlayerController shoveTarget
     {
         get
@@ -57,7 +60,7 @@ public class PlayerCombat : MonoBehaviour
         controller = GetComponent<PlayerController>();
         playerMovement = GetComponent<PlayerMovement>();
         shoveRayStart = GetComponent<Collider>().bounds.extents.x;
-        shoveRayStart = GetComponent<Collider>().bounds.extents.y;
+        poundRayStart = GetComponent<Collider>().bounds.extents.y;
     }
 
     private void Update()
@@ -68,16 +71,9 @@ public class PlayerCombat : MonoBehaviour
         }
         if (!isPounding)
         {
-            if (controller.input.groundPound && !controller.movement.grounded && (Time.time - playerMovement.jumpStartTime) > groundPoundCooldown )
+            if (controller.input.groundPound && !controller.movement.grounded && (Time.time - playerMovement.jumpStartTime) > groundPoundCooldown)
             {
                 GroundPound();
-            }
-        }
-        else
-        {
-            if (!targetPounded)
-            {
-                CheckPoundHit();
             }
         }
         controller.input.allowMovement = shovedTime + shovedRecoveryTime < Time.time;
@@ -85,11 +81,28 @@ public class PlayerCombat : MonoBehaviour
         if (isPounding)
         {
             isPounding = !controller.movement.grounded;
+            if (isPounding == false)
+            {
+                groundPound.gameObject.SetActive(false);
+            }
         }
         if (targetPounded)
         {
             targetPounded = !controller.movement.grounded;
         }
+    }
+
+    public void PoundEnemy(PlayerController enemy)
+    {
+        if (enemy != controller)
+        {
+            enemy.combat.GetPounded();
+        }
+    }
+
+    public void PoundButton()
+    {
+
     }
 
     private void CheckPoundHit()
@@ -109,6 +122,7 @@ public class PlayerCombat : MonoBehaviour
 
     private void GroundPound()
     {
+        groundPound.gameObject.SetActive(true);
         isPounding = true;
         controller.movement.ResetVelocity();
         controller.movement.ApplyForce(Vector3.down * groundPoundForce);

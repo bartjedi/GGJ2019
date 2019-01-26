@@ -20,7 +20,6 @@ public class PlayerAnimations : MonoBehaviour
 
     public void Jump()
     {
-        Debug.Log("jump");
         animator.ResetTrigger("Land");
         animator.SetTrigger("Jump");
     }

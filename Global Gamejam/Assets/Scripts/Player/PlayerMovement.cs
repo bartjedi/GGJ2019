@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float distToGround;
 
+    [System.NonSerialized]
     public float jumpStartTime = float.MinValue;
 
     private bool canDoubleJump = true, jumping = false;
