@@ -14,13 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottomOfScreen: -10
   fallingSpeed: 0.02
-  gameManager: {fileID: 0}
-  gms: {fileID: 0}
   materials:
   - {fileID: 2100000, guid: 43f35ecbde3f5b844a197f09ba69ce6c, type: 2}
   - {fileID: 2100000, guid: 1976182bc7c217e498c09f34f75833a9, type: 2}
   - {fileID: 2100000, guid: 7bb0729bc378722429bed67639f848f9, type: 2}
   - {fileID: 2100000, guid: e90ad3088ad4bf441ae882b6685cf32a, type: 2}
+  English: Options
+  Spanish: Opciones
+  German: Optionen
+  Chinese: "\u9009\u9879"
 --- !u!1001 &270768565532674402
 PrefabInstance:
   m_ObjectHideFlags: 0

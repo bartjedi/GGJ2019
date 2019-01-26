@@ -67,15 +67,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6562712449307683322, guid: f13d891ae5bae5f4093c0510ee87f0be,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.878
-      objectReference: {fileID: 0}
     - target: {fileID: 7393123777124193579, guid: f13d891ae5bae5f4093c0510ee87f0be,
         type: 3}
       propertyPath: m_Text
       value: Save
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656421695318340947, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: Spanish
+      value: Salvar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656421695318340947, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: English
+      value: Save
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656421695318340947, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: German
+      value: Sparen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656421695318340947, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: Chinese
+      value: "\u4FDD\u5B58"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562712449307683322, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.878
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f13d891ae5bae5f4093c0510ee87f0be, type: 3}

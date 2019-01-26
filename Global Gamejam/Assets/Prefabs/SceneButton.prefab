@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &5335360550234052286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807316200993919219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea57aebfe2694646a5d0c246e2b7fb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &694196974908172997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67,15 +79,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6562712449307683322, guid: f13d891ae5bae5f4093c0510ee87f0be,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.006
-      objectReference: {fileID: 0}
     - target: {fileID: 7393123777124193579, guid: f13d891ae5bae5f4093c0510ee87f0be,
         type: 3}
       propertyPath: m_Text
       value: Scene
       objectReference: {fileID: 0}
+    - target: {fileID: 8656421695318340947, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: English
+      value: Scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656421695318340947, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: Chinese
+      value: "\u73B0\u573A"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656421695318340947, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: German
+      value: Szene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656421695318340947, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: Spanish
+      value: Escena
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562712449307683322, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.006
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f13d891ae5bae5f4093c0510ee87f0be, type: 3}
+--- !u!1 &7807316200993919219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7348573595622734390, guid: f13d891ae5bae5f4093c0510ee87f0be,
+    type: 3}
+  m_PrefabInstance: {fileID: 694196974908172997}
+  m_PrefabAsset: {fileID: 0}

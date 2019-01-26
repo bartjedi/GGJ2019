@@ -1,19 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &6013781269574359521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036262441801370158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0a43f49aee96964d82525e21cf46cbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bottomOfScreen: -10
-  fallingSpeed: 0.02
 --- !u!54 &1996723233875651360
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30,6 +16,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6013781269574359521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036262441801370158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a43f49aee96964d82525e21cf46cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bottomOfScreen: -10
+  fallingSpeed: 0.02
+  materials: []
+  English: Exit
+  Spanish: Salida
+  German: Ausgang
+  Chinese: "\u51FA\u53E3"
 --- !u!1001 &8771078199827378200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -97,6 +102,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7393123777124193579, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_Text
+      value: Exit
+      objectReference: {fileID: 0}
     - target: {fileID: 1345664657452045599, guid: f13d891ae5bae5f4093c0510ee87f0be,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -106,11 +116,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 7393123777124193579, guid: f13d891ae5bae5f4093c0510ee87f0be,
-        type: 3}
-      propertyPath: m_Text
-      value: Exit
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8656421695318340947, guid: f13d891ae5bae5f4093c0510ee87f0be, type: 3}
