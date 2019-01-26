@@ -12,7 +12,9 @@ public class GameManagerScript : MonoBehaviour
     private Sprite[] backgrounds;
     private AudioSource audioSource;
     private List<PlayerDetails> players;
-    private List<Transform> playerLocations;
+    private List<Vector3> playerLocations;
+
+    private int changeControlTimer;
 
     public enum States { Menu, CharacterSelection, Playing, Paused, Finished };
 	public enum Languages { English, Spanish, German, Chinese };
@@ -35,14 +37,17 @@ public class GameManagerScript : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        players = new List<PlayerDetails>();
+        playerLocations = new List<Vector3>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         players = new List<PlayerDetails>();
-        playerLocations = new List<Transform>();
+        playerLocations = new List<Vector3>();
 		gameState = States.Menu;
+		//gameState = States.Playing;
 		language = Languages.English;
         maxLanguages = System.Enum.GetValues(typeof(Languages)).Length;
         maxBackgrounds = backgrounds.Length;
@@ -83,6 +88,14 @@ public class GameManagerScript : MonoBehaviour
         background.sprite = backgrounds[randomBackground];
     }
 
+    public void ChangeControls()
+    {
+        foreach(PlayerDetails player in players)
+        {
+            player.GetComponent<PlayerInput>().ChangeControls(changeControlTimer);
+        }
+    }
+
     private void AddPlayer(PlayerDetails player)
     {
         players.Add(player.GetComponent<PlayerDetails>());
@@ -90,20 +103,23 @@ public class GameManagerScript : MonoBehaviour
 
     public void SavePositions()
     {
+        playerLocations.Clear();
         foreach(PlayerDetails player in players)
         {
-            playerLocations.Add(player.transform);
+            playerLocations.Add(player.transform.position);
         }
     }
 
     public void LoadPositions()
     {
-        int i = 0;
-        foreach(PlayerDetails player in players)
+        if (playerLocations.Count > 0)
         {
-            player.transform.position = playerLocations[i].position;
-            player.transform.rotation = playerLocations[i].rotation;
-            i++;
+            int i = 0;
+            foreach (PlayerDetails player in players)
+            {
+                player.gameObject.transform.position = playerLocations[i];
+                i++;
+            }
         }
     }
 

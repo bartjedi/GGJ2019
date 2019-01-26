@@ -17,13 +17,17 @@ public class PlayerMovement : MonoBehaviour
 
     private float distToGround;
 
-    private bool canDoubleJump = true;
-    private bool grounded
+    [System.NonSerialized]
+    public float jumpStartTime = float.MinValue;
+
+    private bool canDoubleJump = true, jumping = false;
+
+    public bool grounded
     {
         get
         {
             int layerMask = 1 << 9;
-            return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f, layerMask);
+            return Physics.Raycast(transform.position, Vector3.down, distToGround + 0.1f, layerMask);
         }
     }
 
@@ -53,6 +57,10 @@ public class PlayerMovement : MonoBehaviour
             }
             myBody.velocity = velocity;
         }
+        if (jumping && grounded && jumpStartTime + 0.2f < Time.time) {
+            jumping = false;
+            controller.animations.Land();
+        }
     }
 
     private void Update()
@@ -64,6 +72,12 @@ public class PlayerMovement : MonoBehaviour
         }
         //read horizontal axis for horizontal movement
         velocity.x = controller.input.horizontal * moveSpeed;
+
+        if (transform.position.y < -20f) {
+            velocity.y = 0;
+            myBody.velocity = velocity;
+            transform.position = new Vector3(transform.position.x, 20f, transform.position.z);
+        }
     }
 
     private void Jump()
@@ -74,18 +88,27 @@ public class PlayerMovement : MonoBehaviour
             velocity = myBody.velocity;
             velocity.y = jumpSpeed;
             myBody.velocity = velocity;
+            controller.animations.Jump();
+            jumping = true;
+            jumpStartTime = Time.time;
         }
         else if (canDoubleJump)
         {
             //set second, mid-air jump with a minimum added velocity
             velocity = myBody.velocity;
-            velocity.y = Mathf.Max(jumpSpeed, velocity.y + jumpSpeed);
+            velocity.y = jumpSpeed;
             myBody.velocity = velocity;
             canDoubleJump = false;
+            controller.animations.Jump();
         }
     }
 
     public void ApplyForce(Vector3 force) {
         myBody.AddForce(force);
+    }
+
+    public void ResetVelocity() {
+        velocity = Vector3.zero;
+        myBody.velocity = velocity;
     }
 }
