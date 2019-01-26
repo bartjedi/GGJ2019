@@ -17,5 +17,20 @@ public class PlayerController : MonoBehaviour
         combat = GetComponent<PlayerCombat>();
         details = GetComponent<PlayerDetails>();
         animations = GetComponent<PlayerAnimations>();
+
+		movement.enabled = false;
+		input.enabled = false;
+		combat.enabled = false;
+		details.enabled = false;
+		animations.enabled = false;
+	}
+
+	public void Entry()
+	{
+		movement.enabled = true;
+		input.enabled = true;
+		combat.enabled = true;
+		details.enabled = true;
+		animations.enabled = true;
 	}
 }

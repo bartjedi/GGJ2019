@@ -8,7 +8,7 @@ public class CharacterSelectionController : MonoBehaviour
     XboxController xboxController;
     [SerializeField]
     private int playerNumber = -1;
-    private List<GameObject> characters;
+    private List<PlayerController> characters;
     private int activeChar = 0;
     private bool canSwap = true;
     private bool canConfirm = false;
@@ -21,12 +21,12 @@ public class CharacterSelectionController : MonoBehaviour
 
     private void Start()
     {
-        characters = new List<GameObject>();
+        characters = new List<PlayerController>();
         int i = 0;
-        foreach (GameObject character in CharacterSelection.instance.characters)
+        foreach (PlayerController character in CharacterSelection.instance.characters)
         {
             characters.Add(Instantiate(character, transform));
-            characters[i].SetActive(false);
+            characters[i].gameObject.SetActive(false);
             i++;
         }
     }
@@ -49,20 +49,21 @@ public class CharacterSelectionController : MonoBehaviour
                     Right();
                 }
             }
-            if (XCI.GetButtonUp(XboxButton.A))
+            if (XCI.GetButtonUp(XboxButton.A, xboxController))
             {
                 if (canConfirm)
                 {
                     CharacterSelection.instance.Confirm(playerNumber, activeChar, transform.position, xboxController);
                 }
             }
-            if (XCI.GetButtonUp(XboxButton.B))
+            if (XCI.GetButtonUp(XboxButton.B, xboxController))
             {
-                characters[activeChar].SetActive(false);
-                playerNumber = 0;
+				canConfirm = false;
+				characters[activeChar].gameObject.SetActive(false);
                 //activeChar = 0; Commented out so that the previous choice of the player is remembered
                 CharacterSelection.instance.Leave(playerNumber);
-            }
+				playerNumber = 0;
+			}
         }
     }
 
@@ -77,7 +78,7 @@ public class CharacterSelectionController : MonoBehaviour
             case 2: xboxController = XboxController.Third; break;
             case 3: xboxController = XboxController.Fourth; break;
         }
-        characters[activeChar].SetActive(true);
+        characters[activeChar].gameObject.SetActive(true);
         StartCoroutine(WaitForConfirm());
     }
 
@@ -108,9 +109,9 @@ public class CharacterSelectionController : MonoBehaviour
         for(int i=0;i< characters.Count; i++)
         {
             if (i != activeChar)
-                characters[i].SetActive(false);
+                characters[i].gameObject.SetActive(false);
             else
-                characters[i].SetActive(true);
+                characters[i].gameObject.SetActive(true);
         }
     }
 

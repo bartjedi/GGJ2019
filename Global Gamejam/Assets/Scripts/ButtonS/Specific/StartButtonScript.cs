@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class StartButtonScript : ButtonScript
 {
+	public static List<Action> onStart = new List<Action>();
+
 	override public void Trigger()
     {
         base.Break();
@@ -15,6 +18,10 @@ public class StartButtonScript : ButtonScript
 		else if(GameManagerScript.instance.gameState == GameManagerScript.States.Menu)
 		{
 			StartGame();
+			foreach (Action a in onStart)
+			{
+				a();
+			}
 		}
 	}
 
@@ -27,5 +34,10 @@ public class StartButtonScript : ButtonScript
 	{
         GameManagerScript.instance.gameState = GameManagerScript.States.Playing;
 		this.GetComponent<Rigidbody>().useGravity = true;
+	}
+
+	private void OnDestroy()
+	{
+		onStart.Clear();
 	}
 }
