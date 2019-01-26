@@ -99,7 +99,7 @@ public class ButtonScript : MonoBehaviour
     {
         switch (GameManagerScript.instance.language)
         {
-            case GameManagerScript.Languages.Chinese: textElement.text = Chinese; textElement.font = FontAssetA; break;
+            case GameManagerScript.Languages.Chinese: textElement.text = Chinese; textElement.font = FontAssetB; break;
             case GameManagerScript.Languages.English: textElement.text = English; textElement.font = FontAssetB; break;
             case GameManagerScript.Languages.German: textElement.text = German; textElement.font = FontAssetB; break;
             case GameManagerScript.Languages.Spanish: textElement.text = Spanish; textElement.font = FontAssetB; break;
