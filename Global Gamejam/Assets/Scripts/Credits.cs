@@ -2,24 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Credits : MonoBehaviour
+public class Credits : ButtonScript
 {
 	[SerializeField]
 	private string[] names;
 	[SerializeField]
 	CreditsButton creditsButton;
 
-	void Update()
+	override public void Trigger()
 	{
-		Trigger();
+        StartCoroutine(SpawnCredits());
 	}
 
-	public void Trigger()
-	{
-		for(int i=0; i< names.Length; i++)
-		{
-			CreditsButton cb=Instantiate(creditsButton, new Vector3(Camera.main.ViewportToWorldPoint(new Vector2(Random.value,0)).x,Camera.main.ViewportToWorldPoint(new Vector2(0,1)).y,0), creditsButton.transform.rotation);
-			cb.SetText(names[i]);
-		}
-	}
+    IEnumerator SpawnCredits()
+    {
+        for (int i = 0; i < names.Length; i++)
+        {
+            CreditsButton cb = Instantiate(creditsButton, new Vector3(Camera.main.ViewportToWorldPoint(new Vector2(Random.value, 0)).x, Camera.main.ViewportToWorldPoint(new Vector2(0, 1)).y, 0), creditsButton.transform.rotation);
+            cb.SetText(names[i]);
+            yield return new WaitForSeconds(1); 
+        }
+    }
 }
