@@ -8,19 +8,7 @@ public class BlankButtonScript : ButtonScript
 	[SerializeField]
 	private int amountOfJumpsAllowed = 3;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        base.Start();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-		base.Update();
-	}
-
-	void Function()
+	override public void Jumped()
 	{
 		jumpedOn++;
 		if(jumpedOn >= amountOfJumpsAllowed)
@@ -28,4 +16,9 @@ public class BlankButtonScript : ButtonScript
 			Destroy(this.gameObject);
 		}
 	}
+
+    public override void Trigger()
+    {
+        Destroy(this.gameObject);
+    }
 }

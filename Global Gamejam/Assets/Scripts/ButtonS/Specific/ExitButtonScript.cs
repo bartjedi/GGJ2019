@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class ExitButtonScript : ButtonScript
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Trigger()
     {
-        base.Start();
+        //PlayerDetails.Kill();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-		base.Update();
-	}
 }

@@ -10,7 +10,7 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     private Sprite[] backgrounds;
 
-    public enum States { MENU, PLAYING, PAUSED };
+    public enum States { Menu, Playing, Paused, Finished };
 	public enum Languages { English, Spanish, German, Chinese };
 	public States gameState;
 	public Languages language;
@@ -37,7 +37,7 @@ public class GameManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		gameState = States.MENU;
+		gameState = States.Playing;
 		language = Languages.English;
         maxLanguages = System.Enum.GetValues(typeof(Languages)).Length;
         maxBackgrounds = backgrounds.Length;

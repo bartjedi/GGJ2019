@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class OptionsButtonScript : ButtonScript
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        base.Start();
-    }
+    [SerializeField]
+    private int reverseControlsTimer;
 
-    // Update is called once per frame
-    void Update()
+    public override void Trigger()
     {
-		base.Update();
-	}
+        //PlayerInput.ReverseControls(reverseControlsTimer);
+    }
 }

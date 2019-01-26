@@ -10,13 +10,10 @@ public class ButtonScript : MonoBehaviour
 	private float fallingSpeed = 0.02f;
 	[SerializeField]
 	private Material[] materials;
-    [SerializeField]
     private TextMesh textElement;
 
     public string English, Spanish, German, Chinese;
     
-
-	// Start is called before the first frame update
 	protected void Start()
     {
         materials = GameManagerScript.instance.materials;
@@ -25,7 +22,6 @@ public class ButtonScript : MonoBehaviour
         SetText();
     }
 
-    // Update is called once per frame
     public virtual void Update()
     {
 		// Button is removed when not visible anymore
@@ -40,10 +36,15 @@ public class ButtonScript : MonoBehaviour
 
     }
 
-	public void SetColor()
+    public virtual void Jumped()
+    {
+
+    }
+
+
+    public void SetColor()
 	{
         int random = Random.Range(0, 4);
-        Debug.Log(random);
         this.GetComponentInChildren<MeshFilter>().gameObject.GetComponent<Renderer>().material = materials[random];
 	}
 

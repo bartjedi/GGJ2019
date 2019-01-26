@@ -4,38 +4,26 @@ using UnityEngine;
 
 public class StartButtonScript : ButtonScript
 {
-	// Start is called before the first frame update
-	void Start()
-    {
-        base.Start();
-	}
-
-	// Update is called once per frame
-	void Update()
-    {
-		base.Update();
-    }
-
-	void Function()
+	override public void Trigger()
 	{
 		// Start game
-		if(GameManagerScript.instance.gameState == GameManagerScript.States.PAUSED)
+		if(GameManagerScript.instance.gameState == GameManagerScript.States.Paused)
 		{
 			ResumeGame();
 		}
-		else if(GameManagerScript.instance.gameState == GameManagerScript.States.MENU)
+		else if(GameManagerScript.instance.gameState == GameManagerScript.States.Menu)
 		{
 			StartGame();
 		}
 	}
 
-	void ResumeGame()
+	public void ResumeGame()
 	{
-        GameManagerScript.instance.gameState = GameManagerScript.States.PLAYING;
+        GameManagerScript.instance.gameState = GameManagerScript.States.Playing;
 	}
 
-	void StartGame()
+	public void StartGame()
 	{
-        GameManagerScript.instance.gameState = GameManagerScript.States.PLAYING;
+        GameManagerScript.instance.gameState = GameManagerScript.States.Playing;
 	}
 }
