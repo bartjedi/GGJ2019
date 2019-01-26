@@ -95,6 +95,6 @@ public class PlayerStatsScript : MonoBehaviour
 
 	public void UpdateStats(int lives, int total)
 	{
-		this.GetComponentInChildren<TextMesh>().text = lives.ToString() + "/" + total;
+		this.GetComponentInChildren<TextMeshProUGUI>().text = lives.ToString() + "/" + total;
 	}
 }

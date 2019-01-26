@@ -156,13 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNr: 0
-  startHealth: 0
+  startHealth: 3
   playerHealth: 3
-  huds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &6130363175317043828
 GameObject:
   m_ObjectHideFlags: 0

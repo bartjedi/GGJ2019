@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerDetails : MonoBehaviour
 {
 	public int playerNr;
-	public int startHealth;
-    public int playerHealth;
+	public int startHealth = 3;
+    public int playerHealth = 3;
 
     private void Start()
     {
@@ -16,8 +16,16 @@ public class PlayerDetails : MonoBehaviour
 
 	public void Died()
 	{
-		playerHealth--;
-		UpdateStats();
+		if(playerHealth > 0)
+		{
+			playerHealth--;
+			UpdateStats();
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
+		
 	}
 
 	private void UpdateStats()
