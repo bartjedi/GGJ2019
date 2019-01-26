@@ -44,7 +44,6 @@ public class GameManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        players = new List<PlayerDetails>();
         playerLocations = new List<Vector3>();
 		gameState = States.Menu;
 		//gameState = States.Playing;
@@ -96,7 +95,7 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
-    private void AddPlayer(PlayerDetails player)
+    public void AddPlayer(PlayerDetails player)
     {
         players.Add(player.GetComponent<PlayerDetails>());
     }
@@ -104,6 +103,7 @@ public class GameManagerScript : MonoBehaviour
     public void SavePositions()
     {
         playerLocations.Clear();
+        Debug.Log(players.Count);
         foreach(PlayerDetails player in players)
         {
             playerLocations.Add(player.transform.position);
