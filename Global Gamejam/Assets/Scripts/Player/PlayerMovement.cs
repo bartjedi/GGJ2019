@@ -15,9 +15,9 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 velocity = new Vector3();
 
-    private float distToGround;
+    private float distToGround, jumpStartTime = float.MinValue;
 
-    private bool canDoubleJump = true;
+    private bool canDoubleJump = true, jumping = false;
     public bool grounded
     {
         get
@@ -53,6 +53,10 @@ public class PlayerMovement : MonoBehaviour
             }
             myBody.velocity = velocity;
         }
+        if (jumping && grounded && jumpStartTime + 0.2f < Time.time) {
+            jumping = false;
+            controller.animations.Land();
+        }
     }
 
     private void Update()
@@ -74,6 +78,9 @@ public class PlayerMovement : MonoBehaviour
             velocity = myBody.velocity;
             velocity.y = jumpSpeed;
             myBody.velocity = velocity;
+            controller.animations.Jump();
+            jumping = true;
+            jumpStartTime = Time.time;
         }
         else if (canDoubleJump)
         {
@@ -82,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = jumpSpeed;
             myBody.velocity = velocity;
             canDoubleJump = false;
+            controller.animations.Jump();
         }
     }
 
