@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,20 +9,30 @@ public class PlayerStatsScript : MonoBehaviour
 	[SerializeField]
 	private int playerNr;
 
-	private Color blue_bg = new Color(0x45, 0xaf, 0xe4);
-	private Color blue_tex = new Color(0x00, 0x55, 0x93);
+	[SerializeField]
+	private Color blue_bg;
+	[SerializeField]
+	private Color blue_tex;
 
-	private Color yellow_bg = new Color(0xfe, 0xd9, 0x40);
-	private Color yellow_tex = new Color(0xa0, 0x51, 0x01);
+	[SerializeField]
+	private Color yellow_bg;
+	[SerializeField]
+	private Color yellow_tex;
 
-	private Color green_bg = new Color(0x29, 0xc7, 0x6a);
-	private Color green_tex = new Color(0x00, 0x5c, 0x27);
+	[SerializeField]
+	private Color green_bg;
+	[SerializeField]
+	private Color green_tex;
 
-	private Color red_bg = new Color(0xff, 0x5d, 0x5a);
-	private Color red_tex = new Color(0x97, 0x07, 0x03);
+	[SerializeField]
+	private Color red_bg;
+	[SerializeField]
+	private Color red_tex;
 
-	private Color purple_bg = new Color(0xac, 0x8a, 0xd6);
-	private Color purple_tex = new Color(0x5d, 0x34, 0x83);
+	[SerializeField]
+	private Color purple_bg;
+	[SerializeField]
+	private Color purple_tex;
 
 	[SerializeField]
 	private Sprite blueMan;
@@ -37,15 +48,7 @@ public class PlayerStatsScript : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-        if(GameManagerScript.instance.players.Count > playerNr)
-		{
-			this.gameObject.SetActive(true);
-			Setup();
-		} 
-		else
-		{
-			this.gameObject.SetActive(false);
-		}
+
     }
 
     // Update is called once per frame
@@ -54,34 +57,35 @@ public class PlayerStatsScript : MonoBehaviour
         
     }
 
-	void Setup()
+	public void Setup(int c)
 	{
-		switch (3)
+		this.gameObject.SetActive(true);
+		switch (c)
 		{
 			case 0:
-				this.gameObject.GetComponent<Image>().color = blue_bg;
-				this.GetComponentInChildren<TextMesh>().color = blue_tex;
-				this.GetComponentInChildren<Image>().sprite = blueMan;
+				this.gameObject.GetComponent<Image>().color = green_bg;
+				this.GetComponentInChildren<TextMeshProUGUI>().color = green_tex;
+				this.transform.Find("character").GetComponent<Image>().sprite = greenMan;
 				break;
 			case 1:
-				this.gameObject.GetComponent<Image>().color = yellow_bg;
-				this.GetComponentInChildren<TextMesh>().color = yellow_tex;
-				this.GetComponentInChildren<Image>().sprite = yellowMan;
+				this.gameObject.GetComponent<Image>().color = purple_bg;
+				this.GetComponentInChildren<TextMeshProUGUI>().faceColor = purple_tex;
+				this.transform.Find("character").GetComponent<Image>().sprite = purpleMan;
 				break;
 			case 2:
-				this.gameObject.GetComponent<Image>().color = green_bg;
-				this.GetComponentInChildren<TextMesh>().color = green_tex;
-				this.GetComponentInChildren<Image>().sprite = greenMan;
+				this.gameObject.GetComponent<Image>().color = yellow_bg;
+				this.GetComponentInChildren<TextMeshProUGUI>().color = yellow_tex;
+				this.transform.Find("character").GetComponent<Image>().sprite = yellowMan;
 				break;
 			case 3:
 				this.gameObject.GetComponent<Image>().color = red_bg;
-				this.GetComponentInChildren<TextMesh>().color = red_tex;
-				this.GetComponentInChildren<Image>().sprite = redMan;
+				this.GetComponentInChildren<TextMeshProUGUI>().color = red_tex;
+				this.transform.Find("character").GetComponent<Image>().sprite = redMan;
 				break;
 			case 4:
-				this.gameObject.GetComponent<Image>().color = purple_bg;
-				this.GetComponentInChildren<TextMesh>().color = purple_tex;
-				this.GetComponentInChildren<Image>().sprite = purpleMan;
+				this.gameObject.GetComponent<Image>().color = blue_bg;
+				this.GetComponentInChildren<TextMeshProUGUI>().color = blue_tex;
+				this.transform.Find("character").GetComponent<Image>().sprite = blueMan;
 				break;
 			default:
 				break;

@@ -151,6 +151,30 @@ PrefabInstance:
       propertyPath: m_RootBone
       value: 
       objectReference: {fileID: 3467147125075833161}
+    - target: {fileID: 35466839, guid: 402acfef3f5061f41bbcdc01f94e2b9d, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2676826e671b7c04e838777c83b4e634, type: 2}
+    - target: {fileID: 35466839, guid: 402acfef3f5061f41bbcdc01f94e2b9d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bcb11be0d84206c48a018624e8f10b4c, type: 2}
+    - target: {fileID: 35466839, guid: 402acfef3f5061f41bbcdc01f94e2b9d, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 128609426f874e64a8212e9b8ea9d333, type: 2}
+    - target: {fileID: 35466839, guid: 402acfef3f5061f41bbcdc01f94e2b9d, type: 3}
+      propertyPath: m_Materials.Array.data[6]
+      value: 
+      objectReference: {fileID: 2100000, guid: eeeea058db0a2fc4a973960d578945bf, type: 2}
+    - target: {fileID: 35466839, guid: 402acfef3f5061f41bbcdc01f94e2b9d, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a5f33cce9e8d9649b5e1324fcabb5b5, type: 2}
+    - target: {fileID: 1548307681, guid: 402acfef3f5061f41bbcdc01f94e2b9d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2676826e671b7c04e838777c83b4e634, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 402acfef3f5061f41bbcdc01f94e2b9d, type: 3}
 --- !u!4 &3467147124310906182 stripped
@@ -303,6 +327,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hazmat Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2962025849730043334, guid: a911a10af1c5a4e328947f7e52b987ef,
+        type: 3}
+      propertyPath: groundPound
+      value: 
+      objectReference: {fileID: 3113891409177622805}
     - target: {fileID: 5651867211187341501, guid: a911a10af1c5a4e328947f7e52b987ef,
         type: 3}
       propertyPath: m_RootOrder
@@ -333,26 +362,21 @@ PrefabInstance:
       propertyPath: xboxController
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 2962025849730043334, guid: a911a10af1c5a4e328947f7e52b987ef,
-        type: 3}
-      propertyPath: groundPound
-      value: 
-      objectReference: {fileID: 3113891409177622805}
     - target: {fileID: 6802826943249690858, guid: a911a10af1c5a4e328947f7e52b987ef,
         type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 3467147123936125952}
-    - target: {fileID: 1162183344932572734, guid: a911a10af1c5a4e328947f7e52b987ef,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1957663195208393273, guid: a911a10af1c5a4e328947f7e52b987ef,
         type: 3}
       propertyPath: combat
       value: 
       objectReference: {fileID: 1803407022235031274}
+    - target: {fileID: 1162183344932572734, guid: a911a10af1c5a4e328947f7e52b987ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1162183344927294282, guid: a911a10af1c5a4e328947f7e52b987ef,
         type: 3}
       propertyPath: m_Bones.Array.data[0]
