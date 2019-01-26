@@ -31,11 +31,17 @@ public class ButtonScript : MonoBehaviour
 		}
     }
 
+    /// <summary>
+    ///  occurs on ground pound
+    /// </summary>
     public virtual void Trigger()
     {
 
     }
 
+    /// <summary>
+    /// occurs on any random jump
+    /// </summary>
     public virtual void Jumped()
     {
 

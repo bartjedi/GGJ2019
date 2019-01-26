@@ -49,7 +49,6 @@ public class ButtonSpawnerScript : MonoBehaviour
     {
         GameObject newButton = GetRandomButton();
         Vector3 newPosition = GetRandomButRealisticPosition();
-
         highestButton = Instantiate(newButton, newPosition, Quaternion.identity);
     }
 }
