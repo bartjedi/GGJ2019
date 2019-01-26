@@ -17,6 +17,11 @@ public class CharacterSelection : MonoBehaviour
     private CharacterSelectionController[] characterSelectionControllers;
     [SerializeField]
     private CharacterSelectionController characterSelectionController;
+    [SerializeField]
+    private TextMesh toJoin;
+    [SerializeField]
+    private TextMesh selectChar;
+
 
     public static CharacterSelection instance = null;
 
@@ -50,7 +55,7 @@ public class CharacterSelection : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(XCI.GetButtonUp(XboxButton.A, XboxController.First) && !playerActive[0])
+        if (XCI.GetButtonUp(XboxButton.A, XboxController.First) && !playerActive[0])
         {
             playerActive[0] = true;
             characterSelectionControllers[0].Activate(0);
@@ -70,11 +75,23 @@ public class CharacterSelection : MonoBehaviour
             playerActive[3] = true;
             characterSelectionControllers[3].Activate(3);
         }
+        if (playerActive[0] && playerActive[1] && playerActive[2] && playerActive[3])
+        {
+            toJoin.gameObject.SetActive(true);
+        }
+        if(playerActive[0] || playerActive[1] || playerActive[2] || playerActive[3])
+        {
+            selectChar.gameObject.SetActive(true);
+        }
+        else
+        {
+            selectChar.gameObject.SetActive(false);
+        }
     }
 
     public void Confirm(int playerNumber, int charNumber, Vector3 position, XboxController xboxController)
     {
-        //characterSelectionControllers[playerNumber].gameObject.SetActive(false);
+        characterSelectionControllers[playerNumber].gameObject.SetActive(false);
         GameManagerScript.instance.Spawn(selectedCharacters[charNumber], playerNumber, position, xboxController);
     }
 
