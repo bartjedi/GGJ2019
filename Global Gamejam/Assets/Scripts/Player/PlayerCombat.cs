@@ -62,7 +62,7 @@ public class PlayerCombat : MonoBehaviour
         delayedPounder = PoundDisabler();
         controller = GetComponent<PlayerController>();
         playerMovement = GetComponent<PlayerMovement>();
-        shoveRayStart = GetComponent<Collider>().bounds.extents.x;
+        shoveRayStart = -GetComponent<Collider>().bounds.extents.x;
         poundRayStart = GetComponent<Collider>().bounds.extents.y;
     }
 
