@@ -11,6 +11,7 @@ public class GameManagerScript : MonoBehaviour
     private Sprite[] backgrounds;
     private AudioSource audioSource;
     private List<PlayerDetails> players;
+    private List<Transform> playerLocations;
 
     public enum States { Menu, Playing, Paused, Finished };
 	public enum Languages { English, Spanish, German, Chinese };
@@ -39,6 +40,7 @@ public class GameManagerScript : MonoBehaviour
     void Start()
     {
         players = new List<PlayerDetails>();
+        playerLocations = new List<Transform>();
 		gameState = States.Playing;
 		language = Languages.English;
         maxLanguages = System.Enum.GetValues(typeof(Languages)).Length;
@@ -83,5 +85,24 @@ public class GameManagerScript : MonoBehaviour
     public void AddPlayer(PlayerDetails player)
     {
         players.Add(player.GetComponent<PlayerDetails>());
+    }
+
+    public void SavePositions()
+    {
+        foreach(PlayerDetails player in players)
+        {
+            playerLocations.Add(player.transform);
+        }
+    }
+
+    public void LoadPositions()
+    {
+        int i = 0;
+        foreach(PlayerDetails player in players)
+        {
+            player.transform.position = playerLocations[i].position;
+            player.transform.rotation = playerLocations[i].rotation;
+            i++;
+        }
     }
 }

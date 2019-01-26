@@ -9,10 +9,4 @@ public class PlayerDetails : MonoBehaviour
     {
         GameManagerScript.instance.AddPlayer(this);   
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
