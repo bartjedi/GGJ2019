@@ -43,7 +43,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //apply velocity updates in the FixedUpdate method for better physics
-        myBody.velocity = velocity;
+        if (controller.input.allowMovement && controller.input.allowInput) {
+            myBody.velocity = velocity;
+        }
     }
 
     private void Update()
@@ -62,16 +64,21 @@ public class PlayerMovement : MonoBehaviour
         if (grounded)
         {
             //set normal jump
+            velocity = myBody.velocity;
             velocity.y = jumpSpeed;
             myBody.velocity = velocity;
         }
         else if (canDoubleJump)
         {
             //set second, mid-air jump with a minimum added velocity
+            velocity = myBody.velocity;
             velocity.y = Mathf.Max(jumpSpeed, velocity.y + jumpSpeed);
             myBody.velocity = velocity;
             canDoubleJump = false;
         }
+    }
 
+    public void ApplyForce(Vector3 force) {
+        myBody.AddForce(force);
     }
 }
