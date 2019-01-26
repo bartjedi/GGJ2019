@@ -151,6 +151,26 @@ PrefabInstance:
       propertyPath: m_RootBone
       value: 
       objectReference: {fileID: 1648368328598003959}
+    - target: {fileID: 452449752, guid: eb1e1372832fcb54887b7c82262f9ee3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bcb11be0d84206c48a018624e8f10b4c, type: 2}
+    - target: {fileID: 452449752, guid: eb1e1372832fcb54887b7c82262f9ee3, type: 3}
+      propertyPath: m_Materials.Array.data[6]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d879792aee6b6042bb6eba20c6de953, type: 2}
+    - target: {fileID: 452449752, guid: eb1e1372832fcb54887b7c82262f9ee3, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 43f8981038df3ec4fa9ddf03cfff545f, type: 2}
+    - target: {fileID: 452449752, guid: eb1e1372832fcb54887b7c82262f9ee3, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 838253ee6a1f89c4fa120f66fb78e59c, type: 2}
+    - target: {fileID: 452449752, guid: eb1e1372832fcb54887b7c82262f9ee3, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a5f33cce9e8d9649b5e1324fcabb5b5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb1e1372832fcb54887b7c82262f9ee3, type: 3}
 --- !u!4 &1648368327088174281 stripped
@@ -303,6 +323,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Punk Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2962025849730043334, guid: a911a10af1c5a4e328947f7e52b987ef,
+        type: 3}
+      propertyPath: groundPound
+      value: 
+      objectReference: {fileID: 4874123258519385911}
     - target: {fileID: 5651867211187341501, guid: a911a10af1c5a4e328947f7e52b987ef,
         type: 3}
       propertyPath: m_RootOrder
@@ -333,11 +358,6 @@ PrefabInstance:
       propertyPath: xboxController
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2962025849730043334, guid: a911a10af1c5a4e328947f7e52b987ef,
-        type: 3}
-      propertyPath: groundPound
-      value: 
-      objectReference: {fileID: 4874123258519385911}
     - target: {fileID: 6802826943249690858, guid: a911a10af1c5a4e328947f7e52b987ef,
         type: 3}
       propertyPath: animator

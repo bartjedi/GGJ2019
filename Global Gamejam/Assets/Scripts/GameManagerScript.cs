@@ -7,12 +7,13 @@ public class GameManagerScript : MonoBehaviour
 {
     private int maxLanguages, maxBackgrounds;
     [SerializeField]
-    private SpriteRenderer background;
+    private GameObject background;
     [SerializeField]
-    private Sprite[] backgrounds;
+    private Material[] backgrounds;
     private AudioSource audioSource;
     public List<PlayerDetails> players;
     private List<Vector3> playerLocations;
+    private int previousBackground;
 
     private int changeControlTimer;
 
@@ -44,7 +45,6 @@ public class GameManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        players = new List<PlayerDetails>();
         playerLocations = new List<Vector3>();
 		gameState = States.Menu;
 		//gameState = States.Playing;
@@ -77,7 +77,7 @@ public class GameManagerScript : MonoBehaviour
     public void ChangeBackground()
     {
         int randomBackground = Random.Range(0, maxBackgrounds-1);
-        if (randomBackground == (int)language)
+        if (randomBackground == previousBackground)
         {
             randomBackground++;
             if (randomBackground > maxLanguages)
@@ -85,7 +85,8 @@ public class GameManagerScript : MonoBehaviour
                 randomBackground = 0;
             }
         }
-        background.sprite = backgrounds[randomBackground];
+        background.GetComponent<MeshRenderer>().material = backgrounds[randomBackground];
+        previousBackground = randomBackground;
     }
 
     public void ChangeControls()
@@ -96,7 +97,7 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
-    private void AddPlayer(PlayerController player)
+    public void AddPlayer(PlayerController player)
     {
         players.Add(player.GetComponent<PlayerDetails>());
     }
@@ -104,6 +105,7 @@ public class GameManagerScript : MonoBehaviour
     public void SavePositions()
     {
         playerLocations.Clear();
+        Debug.Log(players.Count);
         foreach(PlayerDetails player in players)
         {
             playerLocations.Add(player.transform.position);
@@ -126,21 +128,6 @@ public class GameManagerScript : MonoBehaviour
     public void Spawn(PlayerController playerCharacter, int playerNumber, Vector3 position, XboxController xboxController)
     {
 		PlayerController player = Instantiate(playerCharacter, position, new Quaternion(0, 0, 0, 0));
-		switch (playerNumber)
-		{
-			case 0:
-				player.input.xboxController = XboxController.First;
-				break;
-			case 1:
-				player.input.xboxController = XboxController.Second;
-				break;
-			case 2:
-				player.input.xboxController = XboxController.Third;
-				break;
-			case 3:
-				player.input.xboxController = XboxController.Fourth;
-				break;
-		}
 		player.Entry();
         AddPlayer(player);
         player.GetComponent<PlayerInput>().xboxController = xboxController;
