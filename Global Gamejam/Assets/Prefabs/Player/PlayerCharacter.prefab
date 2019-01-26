@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe9551250de5049178cd84ebf03c1eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xboxController: 0
 --- !u!114 &2962025849730043334
 MonoBehaviour:
   m_ObjectHideFlags: 0

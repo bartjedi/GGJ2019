@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XboxCtrlrInput;
 
 public class PlayerInput : MonoBehaviour
 {
+
+    public XboxController xboxController;
     public bool allowInput { get; set; }
     public bool allowMovement { get; set; }
     public bool allowJump { get; set; }
@@ -21,15 +24,7 @@ public class PlayerInput : MonoBehaviour
     {
         get
         {
-            return Input.GetKeyDown(KeyCode.Space) && allowJump && allowInput;
-        }
-    }
-
-    public float horizontal
-    {
-        get
-        {
-            return Input.GetAxisRaw("Horizontal");
+            return XCI.GetButtonDown(XboxButton.A) && allowJump && allowInput;
         }
     }
 
@@ -37,7 +32,19 @@ public class PlayerInput : MonoBehaviour
     {
         get
         {
-            return Input.GetKeyDown(KeyCode.Q) && allowAttack && allowInput;
+            return XCI.GetButtonDown(XboxButton.B) && allowAttack && allowInput;
         }
     }
+
+    public float horizontal {
+        get {
+            return XCI.GetAxis(XboxAxis.LeftStickX, xboxController);
+        }
+    }
+
+	public float vertical {
+		get {
+            return XCI.GetAxis(XboxAxis.LeftStickY, xboxController);
+		}
+	}
 }
