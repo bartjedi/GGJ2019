@@ -21,11 +21,16 @@ public class PlayerAnimations : MonoBehaviour
     public void Jump()
     {
         Debug.Log("jump");
-        animator.SetBool("Jump", true);
+        animator.ResetTrigger("Land");
+        animator.SetTrigger("Jump");
     }
 
     public void Land()
     {
-        animator.SetBool("Jump", false);
+        animator.SetTrigger("Land");
+    }
+
+    public void Shove() {
+        animator.SetTrigger("Shove");
     }
 }

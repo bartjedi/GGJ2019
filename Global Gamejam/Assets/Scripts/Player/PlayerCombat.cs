@@ -121,6 +121,7 @@ public class PlayerCombat : MonoBehaviour
     private void Shove()
     {
         PlayerController target = shoveTarget;
+        controller.animations.Shove();
         if (target != null)
         {
             target.combat.GetShoved(transform.right, shoveForce);
