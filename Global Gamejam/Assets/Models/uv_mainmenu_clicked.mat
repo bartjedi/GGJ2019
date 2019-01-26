@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: uv_mainmenu
-  m_Shader: {fileID: 4800000, guid: f8ec4e82a38a30d46a0822f9863a2925, type: 3}
+  m_Name: uv_mainmenu_clicked
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a8d065ef2f9f21541b3261c54debcdb2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 14c806bfa857aa647beefc87b1d76ef3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -66,7 +66,6 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Outline: 0.0001
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -75,5 +74,4 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.24528301, g: 0.1335002, b: 0.08908863, a: 1}
-    - _OutlineColor: {r: 0.627451, g: 0.3137255, b: 0.003921569, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
