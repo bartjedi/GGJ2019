@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour
     public PlayerMovement movement { get; private set; }
     public PlayerInput input { get; private set; }
     public PlayerCombat combat { get; private set; }
-    public PlayerDetails details{ get; private set; }
+    public PlayerDetails details { get; private set; }
+    public PlayerAnimations animations { get; private set; }
 
 	private void Awake()
 	{
@@ -15,5 +16,6 @@ public class PlayerController : MonoBehaviour
         input = GetComponent<PlayerInput>();
         combat = GetComponent<PlayerCombat>();
         details = GetComponent<PlayerDetails>();
+        animations = GetComponent<PlayerAnimations>();
 	}
 }

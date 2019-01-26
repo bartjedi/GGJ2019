@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ea57aebfe2694646a5d0c246e2b7fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  topOfScreen: 0
+  risingSpeed: 5
+  materials: []
+  English: Scene
+  Spanish: Escena
+  German: Szene
+  Chinese: "\u73B0\u573A"
 --- !u!1001 &694196974908172997
 PrefabInstance:
   m_ObjectHideFlags: 0

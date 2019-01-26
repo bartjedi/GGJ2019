@@ -5,8 +5,5 @@ using UnityEngine;
 public class PlayerDetails : MonoBehaviour
 {
     public int playerHealth;
-    void Start()
-    {
-        GameManagerScript.instance.AddPlayer(this);   
-    }
+	public Material character;
 }

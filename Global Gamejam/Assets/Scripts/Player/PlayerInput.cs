@@ -5,12 +5,13 @@ using XboxCtrlrInput;
 
 public class PlayerInput : MonoBehaviour
 {
-    public bool isMac = false;
+    public bool isNotMac = false;
     public XboxController xboxController;
     public bool allowInput { get; set; }
     public bool allowMovement { get; set; }
     public bool allowJump { get; set; }
     public bool allowAttack { get; set; }
+    private bool changedControls = false;
 
     private void Awake()
     {
@@ -20,23 +21,62 @@ public class PlayerInput : MonoBehaviour
         allowMovement = true;
     }
 
+    public void ChangeControls(int changedControlTimer)
+    {
+        changedControls = true;
+        StartCoroutine(ChangedControls(changedControlTimer));
+    }
+
+    IEnumerator ChangedControls(int changedControlsTimer)
+    {
+        yield return new WaitForSeconds(10);
+        changedControls = false;
+    }
+
     public bool jump
     {
         get
         {
-            if (isMac)
-                return XCI.GetButtonDown(XboxButton.A) && allowJump && allowInput;
+            if (isNotMac)
+            {
+                if (!changedControls)
+                {
+                    return XCI.GetButtonDown(XboxButton.A, xboxController) && allowJump && allowInput;
+                }
+                else
+                {
+                    Debug.Log("false");
+                    return XCI.GetButtonDown(XboxButton.B, xboxController) && allowJump && allowInput;
+                }
+            }
             return Input.GetKeyDown(KeyCode.Space) && allowJump && allowInput;
         }
     }
 
-    public bool attack
+    public bool shove
     {
         get
         {
-            if (isMac)
-                return XCI.GetButtonDown(XboxButton.B) && allowAttack && allowInput;
+            if (isNotMac)
+                if (!changedControls)
+                {
+                    return XCI.GetButtonDown(XboxButton.B, xboxController) && allowAttack && allowInput;
+                }
+                else
+                {
+                    return XCI.GetButtonDown(XboxButton.A, xboxController) && allowAttack && allowInput;
+                }
             return Input.GetKeyDown(KeyCode.Q) && allowAttack && allowInput;
+        }
+    }
+
+    public bool groundPound
+    {
+        get
+        {
+            if (isNotMac)
+                return XCI.GetAxis(XboxAxis.LeftStickY, xboxController) < -0.4f && allowAttack && allowInput;
+            return Input.GetAxisRaw("Vertical") < 0.0f && allowAttack && allowInput;
         }
     }
 
@@ -44,7 +84,7 @@ public class PlayerInput : MonoBehaviour
     {
         get
         {
-            if (isMac)
+            if (isNotMac)
                 return XCI.GetAxis(XboxAxis.LeftStickX, xboxController);
             return Input.GetAxisRaw("Horizontal");
         }
@@ -54,7 +94,7 @@ public class PlayerInput : MonoBehaviour
     {
         get
         {
-            if (isMac)
+            if (isNotMac)
                 return XCI.GetAxis(XboxAxis.LeftStickY, xboxController);
             return Input.GetAxisRaw("Vertical");
         }

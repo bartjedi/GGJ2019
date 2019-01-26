@@ -511,6 +511,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1664621010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1664621012}
+  - component: {fileID: 1664621011}
+  m_Layer: 0
+  m_Name: CharacterSelection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1664621011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664621010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a56d581502616f4ebc9945f70abdd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xboxController: 0
+  maxPlayers: 4
+  characters:
+  - {fileID: 819707273, guid: 8c2f1a2cbf1c2dd4f9d71562ac4a57cd, type: 3}
+  - {fileID: 1066294285, guid: eb1e1372832fcb54887b7c82262f9ee3, type: 3}
+  - {fileID: 1374602609, guid: 402acfef3f5061f41bbcdc01f94e2b9d, type: 3}
+  - {fileID: 1934052572, guid: f53d3508f4cd5344b9f920ca882218d7, type: 3}
+  - {fileID: 551589781, guid: 4331cef96a850d341b8d231edd55c54e, type: 3}
+  selectedCharacters: []
+  characterSelectionController: {fileID: 2511606990179384963, guid: e5b4914371f792b48b0ad1e4efdc24a5,
+    type: 3}
+--- !u!4 &1664621012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664621010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1940512157
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1940512158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,7 +595,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newButtonNeededPosition: 5
-  highestButton: {fileID: 7348573595622734390}
+  lowest: {fileID: 0}
+  bottomOfScreen: 0
   jumpHeight: 5
   leftSideScreen: -10
   rightSideScreen: 10
@@ -635,6 +690,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4412214993732670911, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.1658
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412214993732670911, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1022.4907
+      objectReference: {fileID: 0}
     - target: {fileID: 8656421695318340947, guid: f13d891ae5bae5f4093c0510ee87f0be,
         type: 3}
       propertyPath: materials.Array.size
@@ -660,6 +725,11 @@ PrefabInstance:
       propertyPath: materials.Array.data[3]
       value: 
       objectReference: {fileID: 2100000, guid: e90ad3088ad4bf441ae882b6685cf32a, type: 2}
+    - target: {fileID: 4079517570940418535, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5369846144962859570, guid: f13d891ae5bae5f4093c0510ee87f0be, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f13d891ae5bae5f4093c0510ee87f0be, type: 3}
@@ -680,8 +750,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
