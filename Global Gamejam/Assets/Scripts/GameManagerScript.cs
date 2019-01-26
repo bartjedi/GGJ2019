@@ -23,9 +23,12 @@ public class GameManagerScript : MonoBehaviour
 	public Languages language;
     public Material[] materials;
 
-    public static GameManagerScript instance = null;             
+	public GameObject[] huds;
 
-    void Awake()
+	public static GameManagerScript instance = null;
+
+
+	void Awake()
     {
         if (instance == null)
         {
@@ -128,6 +131,7 @@ public class GameManagerScript : MonoBehaviour
     public void Spawn(PlayerController playerCharacter, int playerNumber, Vector3 position, XboxController xboxController)
     {
 		PlayerController player = Instantiate(playerCharacter, position, new Quaternion(0, 0, 0, 0));
+		player.GetComponent<PlayerDetails>().playerNr = playerNumber;
 		player.Entry();
         AddPlayer(player);
         player.GetComponent<PlayerInput>().xboxController = xboxController;

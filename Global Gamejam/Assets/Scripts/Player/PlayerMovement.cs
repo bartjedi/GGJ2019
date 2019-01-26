@@ -87,9 +87,7 @@ public class PlayerMovement : MonoBehaviour
         velocity.x = controller.input.horizontal * moveSpeed;
 
         if (transform.position.y < -20f) {
-            velocity.y = 0;
-            myBody.velocity = velocity;
-            transform.position = new Vector3(transform.position.x, 20f, transform.position.z);
+			PlayerDies();
         }
 
         if (transform.position.x< outsideLeft - 2f) {
@@ -100,6 +98,24 @@ public class PlayerMovement : MonoBehaviour
             transform.position = new Vector3(outsideLeft - 1.5f, transform.position.y, transform.position.z);
         }
     }
+
+	private void PlayerDies()
+	{
+		var pd = this.gameObject.GetComponent<PlayerDetails>();
+		pd.Died();
+		if(pd.playerHealth < 1)
+		{
+			// Game over
+		}
+		else
+		{
+			// To do: improve re-spawn
+			velocity.y = 0;
+			myBody.velocity = velocity;
+			transform.position = new Vector3(transform.position.x, 20f, transform.position.z);
+		}
+	}
+
 
     private void Jump()
     {

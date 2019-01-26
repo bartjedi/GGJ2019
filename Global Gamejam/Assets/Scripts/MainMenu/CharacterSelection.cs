@@ -94,7 +94,6 @@ public class CharacterSelection : MonoBehaviour
 
     public void Confirm(int playerNumber, int charNumber, Vector3 position, XboxController xboxController)
     {
-		Debug.Log(" player nr" + playerNumber);
 		huds[playerNumber].GetComponent<PlayerStatsScript>().Setup(charNumber);
         characterSelectionControllers[playerNumber].gameObject.SetActive(false);
         GameManagerScript.instance.Spawn(characters[charNumber], playerNumber, position, xboxController);
