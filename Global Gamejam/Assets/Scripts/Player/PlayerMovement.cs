@@ -15,9 +15,12 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 velocity = new Vector3();
 
-    private float distToGround, jumpStartTime = float.MinValue;
+    private float distToGround;
+
+    public float jumpStartTime = float.MinValue;
 
     private bool canDoubleJump = true, jumping = false;
+
     public bool grounded
     {
         get

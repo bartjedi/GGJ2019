@@ -25,7 +25,7 @@ public class PlayerInput : MonoBehaviour
         get
         {
             if (isNotMac)
-                return XCI.GetButtonDown(XboxButton.A) && allowJump && allowInput;
+                return XCI.GetButtonDown(XboxButton.A, xboxController) && allowJump && allowInput;
             return Input.GetKeyDown(KeyCode.Space) && allowJump && allowInput;
         }
     }
@@ -35,7 +35,7 @@ public class PlayerInput : MonoBehaviour
         get
         {
             if (isNotMac)
-                return XCI.GetButtonDown(XboxButton.B) && allowAttack && allowInput;
+                return XCI.GetButtonDown(XboxButton.B, xboxController) && allowAttack && allowInput;
             return Input.GetKeyDown(KeyCode.Q) && allowAttack && allowInput;
         }
     }
@@ -45,7 +45,7 @@ public class PlayerInput : MonoBehaviour
         get
         {
             if (isNotMac)
-                return XCI.GetAxis(XboxAxis.LeftStickY, xboxController) < 0.0f && allowAttack && allowInput;
+                return XCI.GetAxis(XboxAxis.LeftStickY, xboxController) < -0.4f && allowAttack && allowInput;
             return Input.GetAxisRaw("Vertical") < 0.0f && allowAttack && allowInput;
         }
     }

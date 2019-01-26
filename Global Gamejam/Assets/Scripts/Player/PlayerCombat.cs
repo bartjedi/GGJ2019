@@ -6,8 +6,9 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     private PlayerController controller;
+    private PlayerMovement playerMovement;
     [SerializeField]
-    private float shoveForce = 1.0f, shovedRecoveryTime = 1.0f, attackReach = 1.5f, shoveCooldown = 0.5f, groundPoundForce = 300f, poundReach = 0.1f;
+    private float shoveForce = 1.0f, shovedRecoveryTime = 1.0f, attackReach = 1.5f, shoveCooldown = 0.5f, groundPoundForce = 300f, poundReach = 0.1f, groundPoundCooldown = 0.4f;
     private float shoveRayStart, poundRayStart;
 
     private float shovedTime = float.NegativeInfinity, shoveTime = float.NegativeInfinity;
@@ -54,6 +55,7 @@ public class PlayerCombat : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<PlayerController>();
+        playerMovement = GetComponent<PlayerMovement>();
         shoveRayStart = GetComponent<Collider>().bounds.extents.x;
         shoveRayStart = GetComponent<Collider>().bounds.extents.y;
     }
@@ -66,7 +68,7 @@ public class PlayerCombat : MonoBehaviour
         }
         if (!isPounding)
         {
-            if (controller.input.groundPound && !controller.movement.grounded)
+            if (controller.input.groundPound && !controller.movement.grounded && (Time.time - playerMovement.jumpStartTime) > groundPoundCooldown )
             {
                 GroundPound();
             }
