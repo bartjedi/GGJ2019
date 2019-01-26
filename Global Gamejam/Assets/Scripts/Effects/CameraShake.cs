@@ -14,10 +14,10 @@ public class CameraShake : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time < shakeStart + 0.5f)
+        if (Time.time < shakeStart + shakeDuration)
         {
             Vector3 euler = transform.eulerAngles;
-            euler.x = Mathf.Sin((Time.time / (shakeStart + 0.5f)) * 90f);
+            euler.z = Mathf.Sin((Time.time / (shakeStart + shakeDuration)) * shakeAmount);
             transform.eulerAngles = euler;
         }
         else {

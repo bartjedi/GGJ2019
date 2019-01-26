@@ -12,6 +12,7 @@ public class Credits : ButtonScript
 	override public void Trigger()
 	{
         StartCoroutine(SpawnCredits());
+        Camera.main.GetComponent<CameraShake>().Shake();
 	}
 
     IEnumerator SpawnCredits()

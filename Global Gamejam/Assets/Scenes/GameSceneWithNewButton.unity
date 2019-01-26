@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5ffc37b9fd24f83888b07b4d311c5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeAmount: 90
+  shakeAmount: 500
   shakeDuration: 0.5
 --- !u!1001 &1666029091
 PrefabInstance:
