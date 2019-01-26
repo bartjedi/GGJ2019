@@ -32,6 +32,7 @@ public class StartButtonScript : ButtonScript
 
 	public void StartGame()
 	{
+        Debug.Log("started");
         GameManagerScript.instance.gameState = GameManagerScript.States.Playing;
 		this.GetComponent<Rigidbody>().useGravity = true;
 	}
