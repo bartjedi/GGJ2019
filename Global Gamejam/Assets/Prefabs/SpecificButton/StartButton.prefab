@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4008291559811453487}
   - component: {fileID: 4008291559814877711}
   - component: {fileID: 4008291559813877967}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ButtonObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 5875062212960202346}
   - component: {fileID: 6645897085783832168}
   - component: {fileID: 7782993252880208571}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,8 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2632290001866144320}
-  - component: {fileID: 3074119587128484991}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,19 +200,6 @@ Transform:
   m_Father: {fileID: 143354697447037767}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &3074119587128484991
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6458746946788528220}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.9597318, y: 1.1114383, z: 1}
-  m_Center: {x: 0.006624818, y: 0.055719137, z: 0}
 --- !u!1 &8025547607084170662
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +210,8 @@ GameObject:
   m_Component:
   - component: {fileID: 143354697447037767}
   - component: {fileID: 4432307324304080088}
-  m_Layer: 0
+  - component: {fileID: 6819733142535058759}
+  m_Layer: 9
   m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,3 +252,16 @@ MonoBehaviour:
   Spanish: comienzo
   German: Start
   Chinese: "\u5F00\u59CB"
+--- !u!65 &6819733142535058759
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8025547607084170662}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.87, y: 1.1114383, z: 1}
+  m_Center: {x: 0.006624818, y: 0.055719137, z: 0}

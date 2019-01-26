@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 821438064489553111}
-  m_Layer: 0
-  m_Name: StartButton
+  - component: {fileID: 6190201470498526294}
+  m_Layer: 9
+  m_Name: BaseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,6 +32,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6190201470498526294
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7348573595622734390}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.68, y: 1.1114383, z: 1}
+  m_Center: {x: 0.006624818, y: 0.055719137, z: 0}
 --- !u!1001 &6968150221824526881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83,6 +97,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button
       objectReference: {fileID: 0}
+    - target: {fileID: 3714020892012289517, guid: 2d3c06efe4064b240991b7696f51850e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4296618240784573403, guid: 2d3c06efe4064b240991b7696f51850e,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -113,11 +132,22 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 110.15
       objectReference: {fileID: 0}
+    - target: {fileID: 6241673523151437699, guid: 2d3c06efe4064b240991b7696f51850e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739779357284762558, guid: 2d3c06efe4064b240991b7696f51850e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3041707845481011219, guid: 2d3c06efe4064b240991b7696f51850e, type: 3}
     - {fileID: 8530274211115073300, guid: 2d3c06efe4064b240991b7696f51850e, type: 3}
     - {fileID: 5245668286917506234, guid: 2d3c06efe4064b240991b7696f51850e, type: 3}
     - {fileID: 603956987704342028, guid: 2d3c06efe4064b240991b7696f51850e, type: 3}
+    - {fileID: 4648199735077808590, guid: 2d3c06efe4064b240991b7696f51850e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2d3c06efe4064b240991b7696f51850e, type: 3}
 --- !u!4 &3322772553484713424 stripped
 Transform:

@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8557810664034220348}
   - component: {fileID: 8336205978420488887}
-  m_Layer: 0
+  - component: {fileID: 8597326364870231647}
+  m_Layer: 9
   m_Name: CreditsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,6 +60,19 @@ MonoBehaviour:
   - Wasili Prattis
   creditsButton: {fileID: 9150708745536255996, guid: e30abf3a6ba536347a2f09be917b2b88,
     type: 3}
+--- !u!65 &8597326364870231647
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755918026743816157}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.88, y: 1, z: 0.72}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3358606716269883943
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,7 +82,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6033129068398041147}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +116,7 @@ GameObject:
   - component: {fileID: 4656283088441831508}
   - component: {fileID: 4656283088438931572}
   - component: {fileID: 4656283088439931572}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ButtonObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +193,7 @@ GameObject:
   - component: {fileID: 2789512504280730641}
   - component: {fileID: 3099821329919710227}
   - component: {fileID: 1962584291386208448}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
