@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 3990240147804004833}
   - component: {fileID: 5155671524741899222}
   - component: {fileID: 2356998413981788995}
+  - component: {fileID: 5510415233275845486}
   m_Layer: 9
   m_Name: OptionsButton
   m_TagString: Untagged
@@ -214,7 +215,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topOfScreen: 0
-  risingSpeed: 5
   materials: []
   English: Options
   Spanish: Opciones
@@ -233,6 +233,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.9, y: 1, z: 1.3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5510415233275845486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6484368813349799680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198a9f44141a5e24aab27faf27b81c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToLive: 10
 --- !u!1 &8016255824652593914
 GameObject:
   m_ObjectHideFlags: 0

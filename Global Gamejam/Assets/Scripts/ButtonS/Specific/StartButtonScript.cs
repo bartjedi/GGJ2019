@@ -5,7 +5,8 @@ using UnityEngine;
 public class StartButtonScript : ButtonScript
 {
 	override public void Trigger()
-	{
+    {
+        base.Break();
 		// Start game
 		if(GameManagerScript.instance.gameState == GameManagerScript.States.Paused)
 		{

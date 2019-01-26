@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 143354697447037767}
   - component: {fileID: 4432307324304080088}
   - component: {fileID: 6819733142535058759}
+  - component: {fileID: 5673688419281704846}
   m_Layer: 9
   m_Name: StartButton
   m_TagString: Untagged
@@ -246,7 +247,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topOfScreen: 10
-  risingSpeed: 5
   materials: []
   English: Start
   Spanish: comienzo
@@ -265,3 +265,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.87, y: 1.1114383, z: 1}
   m_Center: {x: 0.006624818, y: 0.055719137, z: 0}
+--- !u!114 &5673688419281704846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8025547607084170662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198a9f44141a5e24aab27faf27b81c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToLive: 10

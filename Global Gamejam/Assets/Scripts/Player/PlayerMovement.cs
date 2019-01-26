@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpStartTime = float.MinValue;
 
     private bool canDoubleJump = true, jumping = false;
+    private float outsideRight, outsideLeft;
 
     public bool grounded
     {
@@ -37,6 +38,11 @@ public class PlayerMovement : MonoBehaviour
         myBody = GetComponent<Rigidbody>();
         //calculate distance to glound based on collider
         distToGround = GetComponent<Collider>().bounds.extents.y;
+
+        outsideLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, -Camera.main.transform.position.z)).x;
+        Debug.Log(outsideLeft);
+        outsideRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, -Camera.main.transform.position.z)).x;
+        Debug.Log(outsideRight);
     }
 
     private void FixedUpdate()
@@ -76,6 +82,14 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = 0;
             myBody.velocity = velocity;
             transform.position = new Vector3(transform.position.x, 20f, transform.position.z);
+        }
+
+        if (transform.position.x< outsideLeft - 2f) {
+            transform.position = new Vector3(outsideRight + 1.5f, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x > outsideRight + 2f)
+        {
+            transform.position = new Vector3(outsideLeft - 1.5f, transform.position.y, transform.position.z);
         }
     }
 
