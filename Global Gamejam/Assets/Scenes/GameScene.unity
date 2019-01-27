@@ -112,6 +112,30 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &133991424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7636775473118330254, guid: 787f1f67d89199446aea2476b486290c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1666029091}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &171162146 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7636775471868125411, guid: 787f1f67d89199446aea2476b486290c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1666029091}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258516130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7636775472040634435, guid: 787f1f67d89199446aea2476b486290c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1666029091}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &264791491 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7636775471756604277, guid: 787f1f67d89199446aea2476b486290c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1666029091}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &522048506
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +312,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4068869802933610390, guid: ae571d5aba259554ea56344019d04ff0,
         type: 3}
+      propertyPath: huds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068869802933610390, guid: ae571d5aba259554ea56344019d04ff0,
+        type: 3}
       propertyPath: characters.Array.data[0]
       value: 
       objectReference: {fileID: 5731862967756528751, guid: 05e0a016fc2354df7a2e79f53bc39009,
@@ -316,6 +345,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6405561933616311680, guid: d171f854b46334863b0de2bfdc1cc2e3,
         type: 3}
+    - target: {fileID: 4068869802933610390, guid: ae571d5aba259554ea56344019d04ff0,
+        type: 3}
+      propertyPath: huds.Array.data[0]
+      value: 
+      objectReference: {fileID: 264791491}
+    - target: {fileID: 4068869802933610390, guid: ae571d5aba259554ea56344019d04ff0,
+        type: 3}
+      propertyPath: huds.Array.data[1]
+      value: 
+      objectReference: {fileID: 133991424}
+    - target: {fileID: 4068869802933610390, guid: ae571d5aba259554ea56344019d04ff0,
+        type: 3}
+      propertyPath: huds.Array.data[2]
+      value: 
+      objectReference: {fileID: 171162146}
+    - target: {fileID: 4068869802933610390, guid: ae571d5aba259554ea56344019d04ff0,
+        type: 3}
+      propertyPath: huds.Array.data[3]
+      value: 
+      objectReference: {fileID: 258516130}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae571d5aba259554ea56344019d04ff0, type: 3}
 --- !u!1 &590367657
@@ -1280,7 +1329,7 @@ PrefabInstance:
     - target: {fileID: 7636775472225974465, guid: 787f1f67d89199446aea2476b486290c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7636775472239720880, guid: 787f1f67d89199446aea2476b486290c,
         type: 3}
@@ -1290,12 +1339,12 @@ PrefabInstance:
     - target: {fileID: 7636775472239720880, guid: 787f1f67d89199446aea2476b486290c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7636775472313441917, guid: 787f1f67d89199446aea2476b486290c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7636775472606377771, guid: 787f1f67d89199446aea2476b486290c,
         type: 3}
@@ -1305,7 +1354,7 @@ PrefabInstance:
     - target: {fileID: 7636775472672690363, guid: 787f1f67d89199446aea2476b486290c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7636775472898397081, guid: 787f1f67d89199446aea2476b486290c,
         type: 3}
@@ -1315,7 +1364,7 @@ PrefabInstance:
     - target: {fileID: 7636775472898397081, guid: 787f1f67d89199446aea2476b486290c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7636775473118330242, guid: 787f1f67d89199446aea2476b486290c,
         type: 3}
@@ -1515,7 +1564,7 @@ PrefabInstance:
     - target: {fileID: 7636775473266421601, guid: 787f1f67d89199446aea2476b486290c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 787f1f67d89199446aea2476b486290c, type: 3}
@@ -1789,7 +1838,11 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 1976182bc7c217e498c09f34f75833a9, type: 2}
   - {fileID: 2100000, guid: 7bb0729bc378722429bed67639f848f9, type: 2}
   - {fileID: 2100000, guid: e90ad3088ad4bf441ae882b6685cf32a, type: 2}
-  huds: []
+  huds:
+  - {fileID: 264791491}
+  - {fileID: 133991424}
+  - {fileID: 171162146}
+  - {fileID: 258516130}
 --- !u!4 &8070147477477721945
 Transform:
   m_ObjectHideFlags: 0
