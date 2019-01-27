@@ -5038,9 +5038,9 @@ MonoBehaviour:
   amountOfJumpsAllowed: 3
   textureImage: {fileID: 904551040294713912}
   breakTextures:
-  - {fileID: 21300000, guid: 07bcbfb6300023548957aa0cbda0b9c3, type: 3}
-  - {fileID: 21300000, guid: 586d125c73c60e04ea21163eb7aa2526, type: 3}
-  - {fileID: 21300000, guid: 8d57cba06d471594d856edd4b061e7d3, type: 3}
+  - {fileID: 21300000, guid: a293d272db9054f0bae9bf5f603214d9, type: 3}
+  - {fileID: 21300000, guid: eea69829957294a60b304f0deca691c6, type: 3}
+  - {fileID: 21300000, guid: 9ccc8ca0e620d43c48d457936234208a, type: 3}
 --- !u!1 &5890628932303972833
 GameObject:
   m_ObjectHideFlags: 0
