@@ -112,6 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &48251017 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8073509078909225999, guid: ae571d5aba259554ea56344019d04ff0,
+    type: 3}
+  m_PrefabInstance: {fileID: 550883676}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &133991424 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7636775473118330254, guid: 787f1f67d89199446aea2476b486290c,
@@ -135,6 +141,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7636775471756604277, guid: 787f1f67d89199446aea2476b486290c,
     type: 3}
   m_PrefabInstance: {fileID: 1666029091}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &346865846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4476712728914460511, guid: ae571d5aba259554ea56344019d04ff0,
+    type: 3}
+  m_PrefabInstance: {fileID: 550883676}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &522048506
 GameObject:
@@ -522,6 +534,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae571d5aba259554ea56344019d04ff0, type: 3}
+--- !u!114 &569771913 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 813527140421880509, guid: ae571d5aba259554ea56344019d04ff0,
+    type: 3}
+  m_PrefabInstance: {fileID: 550883676}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &590367657
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,6 +773,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1272731973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1207412645898030833, guid: ae571d5aba259554ea56344019d04ff0,
+    type: 3}
+  m_PrefabInstance: {fileID: 550883676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1307482680 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3646205345639659157, guid: ae571d5aba259554ea56344019d04ff0,
+    type: 3}
+  m_PrefabInstance: {fileID: 550883676}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1403912650 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1978509368953480876, guid: ae571d5aba259554ea56344019d04ff0,
+    type: 3}
+  m_PrefabInstance: {fileID: 550883676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1442252339 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7441921444862951360, guid: ae571d5aba259554ea56344019d04ff0,
+    type: 3}
+  m_PrefabInstance: {fileID: 550883676}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1566683245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1683356541904492734, guid: ae571d5aba259554ea56344019d04ff0,
+    type: 3}
+  m_PrefabInstance: {fileID: 550883676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1570421227 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 955588193736245905, guid: ae571d5aba259554ea56344019d04ff0,
+    type: 3}
+  m_PrefabInstance: {fileID: 550883676}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1666029091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1822,6 +1900,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1731758014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4150225451017931334, guid: ae571d5aba259554ea56344019d04ff0,
+    type: 3}
+  m_PrefabInstance: {fileID: 550883676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1995635092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6547038293588415178, guid: ae571d5aba259554ea56344019d04ff0,
+    type: 3}
+  m_PrefabInstance: {fileID: 550883676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2032072822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7336366859715864516, guid: ae571d5aba259554ea56344019d04ff0,
+    type: 3}
+  m_PrefabInstance: {fileID: 550883676}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &756888478159814223 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 756888478159814223, guid: ae571d5aba259554ea56344019d04ff0,
@@ -1846,6 +1942,9 @@ MonoBehaviour:
   purple: {r: 0.6745098, g: 0.5411765, b: 0.8392157, a: 0.81960785}
   blue: {r: 0.27058825, g: 0.6862745, b: 0.89411765, a: 0.85490197}
   green: {r: 0.16078432, g: 0.78039217, b: 0.41568628, a: 0.85490197}
+  textMesh: {fileID: 1442252339}
+  joined: {fileID: 1403912650}
+  notjoined: {fileID: 1272731973}
 --- !u!4 &1280119138260726354
 Transform:
   m_ObjectHideFlags: 0
@@ -1884,6 +1983,9 @@ MonoBehaviour:
   purple: {r: 0.6745098, g: 0.5411765, b: 0.8392157, a: 0.81960785}
   blue: {r: 0.27058825, g: 0.6862745, b: 0.89411765, a: 0.85490197}
   green: {r: 0.16078432, g: 0.78039217, b: 0.41568628, a: 0.85490197}
+  textMesh: {fileID: 1570421227}
+  joined: {fileID: 1995635092}
+  notjoined: {fileID: 1566683245}
 --- !u!1 &1831928295103385511 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1831928295103385511, guid: ae571d5aba259554ea56344019d04ff0,
@@ -1908,6 +2010,9 @@ MonoBehaviour:
   purple: {r: 0.6745098, g: 0.5411765, b: 0.8392157, a: 0.81960785}
   blue: {r: 0.27058825, g: 0.6862745, b: 0.89411765, a: 0.85490197}
   green: {r: 0.16078432, g: 0.78039217, b: 0.41568628, a: 0.85490197}
+  textMesh: {fileID: 569771913}
+  joined: {fileID: 1731758014}
+  notjoined: {fileID: 48251017}
 --- !u!1 &2008842397240230727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2045,6 +2150,9 @@ MonoBehaviour:
   purple: {r: 0.6745098, g: 0.5411765, b: 0.8392157, a: 0.81960785}
   blue: {r: 0.27058825, g: 0.6862745, b: 0.89411765, a: 0.85490197}
   green: {r: 0.16078432, g: 0.78039217, b: 0.41568628, a: 0.85490197}
+  textMesh: {fileID: 1307482680}
+  joined: {fileID: 346865846}
+  notjoined: {fileID: 2032072822}
 --- !u!4 &5091529425967847957
 Transform:
   m_ObjectHideFlags: 0

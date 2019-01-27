@@ -17,17 +17,17 @@ public class CharacterSelectionViewScript : MonoBehaviour
 	private Color blue;
 	[SerializeField]
 	private Color green;
+	[SerializeField]
+	private TextMeshPro textMesh;
 
-	private GameObject joined;
-	private GameObject notjoined;
+	public GameObject joined;
+	public GameObject notjoined;
 
 
 	// Start is called before the first frame update
 	void Start()
     {
 		this.GetComponent<SpriteRenderer>().color = notYetJoinedColor;
-		notjoined = GameObject.Find("WaitForJoin");
-		joined = GameObject.Find("ChoseCharacter");
 		notjoined.SetActive(true);
 		joined.SetActive(false);
     }
@@ -40,12 +40,14 @@ public class CharacterSelectionViewScript : MonoBehaviour
 
 	public void Join()
 	{
+		SetCharacter(0);
 		joined.SetActive(true);
 		notjoined.SetActive(false);
 	}
 
 	public void Leave()
 	{
+		this.GetComponent<SpriteRenderer>().color = notYetJoinedColor;
 		joined.SetActive(false);
 		notjoined.SetActive(true);
 	}
@@ -56,23 +58,23 @@ public class CharacterSelectionViewScript : MonoBehaviour
 		{
 			case 0:
 				this.GetComponent<SpriteRenderer>().color = green;
-				this.transform.Find("Name").GetComponent<TextMeshPro>().text = "Wade";
+				textMesh.text = "Wade";
 				break;
 			case 1:
 				this.GetComponent<SpriteRenderer>().color = purple;
-				this.transform.Find("Name").GetComponent<TextMeshPro>().text = "Tobias";
+				textMesh.text = "Tobias";
 				break;
 			case 2:
 				this.GetComponent<SpriteRenderer>().color = yellow;
-				this.transform.Find("Name").GetComponent<TextMeshPro>().text = "Miles";
+				textMesh.text = "Miles";
 				break;
 			case 3:
 				this.GetComponent<SpriteRenderer>().color = red;
-				this.transform.Find("Name").GetComponent<TextMeshPro>().text = "Winston";
+				textMesh.text = "Winston";
 				break;
 			case 4:
 				this.GetComponent<SpriteRenderer>().color = blue;
-				this.transform.Find("Name").GetComponent<TextMeshPro>().text = "Bjorn";
+				textMesh.text = "Bjorn";
 				break;
 			default:
 				break;

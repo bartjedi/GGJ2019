@@ -38,14 +38,14 @@ public class CharacterSelectionController : MonoBehaviour
     {
         if (playerNumber != -1)
         {
-            if (XCI.GetAxis(XboxAxis.LeftStickX, xboxController) < -0.2f)
+            if (XCI.GetAxis(XboxAxis.LeftStickX, xboxController) < -0.5f)
             {
                 if (canSwap)
                 {
                     Left();
                 }
             }
-            else if (XCI.GetAxis(XboxAxis.LeftStickX, xboxController) > 0.2f)
+            else if (XCI.GetAxis(XboxAxis.LeftStickX, xboxController) > 0.5f)
             {
                 if (canSwap)
                 {
@@ -65,7 +65,7 @@ public class CharacterSelectionController : MonoBehaviour
 				characters[activeChar].gameObject.SetActive(false);
                 //activeChar = 0; Commented out so that the previous choice of the player is remembered
                 CharacterSelection.instance.Leave(playerNumber);
-				playerNumber = 0;
+				playerNumber = -1;
 			}
         }
     }
