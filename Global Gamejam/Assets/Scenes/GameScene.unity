@@ -154,6 +154,61 @@ GameObject:
 =======
 >>>>>>> origin/wasili2
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &443377166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 443377168}
+  - component: {fileID: 443377167}
+  m_Layer: 0
+  m_Name: DeathManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &443377167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443377166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d98d522d9666b149b4121433d095515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players: 0
+  playerList: []
+  first: 0
+  second: 0
+  third: 0
+  fourth: 0
+  playerModels:
+  - {fileID: 819707273, guid: 8c2f1a2cbf1c2dd4f9d71562ac4a57cd, type: 3}
+  - {fileID: 1066294285, guid: eb1e1372832fcb54887b7c82262f9ee3, type: 3}
+  - {fileID: 1374602609, guid: 402acfef3f5061f41bbcdc01f94e2b9d, type: 3}
+  - {fileID: 1934052572, guid: f53d3508f4cd5344b9f920ca882218d7, type: 3}
+  - {fileID: 551589781, guid: 4331cef96a850d341b8d231edd55c54e, type: 3}
+--- !u!4 &443377168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443377166}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.3052235, y: -3.5357075, z: 8.569073}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &522048506
 GameObject:
   m_ObjectHideFlags: 0
@@ -2343,6 +2398,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 20ef486c53ce762458613f5b175dd93a, type: 2}
   - {fileID: 2100000, guid: 071f68da131257247908f091e54d3ed2, type: 2}
   players: []
+  died: 0
+  activePlayers: 0
   gameState: 0
   language: 0
   materials:
