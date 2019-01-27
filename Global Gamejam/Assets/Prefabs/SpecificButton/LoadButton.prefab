@@ -17,7 +17,9 @@ MonoBehaviour:
   English: Load
   Spanish: Carga
   German: Geladen
-  Chinese: " \u52A0\u8F7D"
+  Chinese: '#^$&!$%'
+  FontAssetA: {fileID: 11400000, guid: ba3e0d1a59ae946489936fd27fa84245, type: 2}
+  FontAssetB: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
 --- !u!1001 &2720836255647170984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25,31 +27,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
-        type: 3}
-      propertyPath: m_textInfo.textComponent
-      value: 
-      objectReference: {fileID: 6366625035801725319}
-    - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
-        type: 3}
-      propertyPath: m_text
-      value: Load
-      objectReference: {fileID: 0}
-    - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: English
       value: Load
@@ -135,6 +112,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 2.4727404
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_textInfo.textComponent
+      value: 
+      objectReference: {fileID: 6366625035801725319}
+    - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_text
+      value: Load
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050143517397518383, guid: f13d891ae5bae5f4093c0510ee87f0be,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f13d891ae5bae5f4093c0510ee87f0be, type: 3}
