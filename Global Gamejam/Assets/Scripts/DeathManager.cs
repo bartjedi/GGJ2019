@@ -8,7 +8,7 @@ public class DeathManager : MonoBehaviour
     public int players;
     public List<PlayerDetails> playerList = new List<PlayerDetails>();
     public PlayerDetails.modelType first, second, third, fourth;
-    private int died = 0;
+    public int died = 0;
     AsyncOperation async;
     
     public static DeathManager instance = null;
@@ -34,14 +34,14 @@ public class DeathManager : MonoBehaviour
     public void Died(PlayerDetails player)
     {
         players = GameManagerScript.instance.activePlayers;
-        foreach(PlayerDetails play in playerList)
+        died++;
+        foreach (PlayerDetails play in playerList)
         {
             if(play.playerNr == player.playerNr)
             {
                 SetPosition(play);
             }
         }
-        died++;
     }
 
     private void SetPosition(PlayerDetails player)
@@ -55,12 +55,12 @@ public class DeathManager : MonoBehaviour
         {
             if (died == 1)
             {
-
                 player.finished = PlayerDetails.finishedAs.Third;
             }
             if (died ==2 )
             {
                 player.finished = PlayerDetails.finishedAs.Second;
+                Debug.Log("test");
                 SetModels();
             }
         }
