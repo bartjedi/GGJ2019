@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerStatsScript : MonoBehaviour
 {
-	[SerializeField]
-	private int playerNr;
+	public int playerNr;
 
 	[SerializeField]
 	private Color blue_bg;
@@ -57,9 +56,10 @@ public class PlayerStatsScript : MonoBehaviour
         
     }
 
-	public void Setup(int c)
+	public void Setup(int p, int c)
 	{
 		this.gameObject.SetActive(true);
+		playerNr = p;
 		switch (c)
 		{
 			case 0:
@@ -93,8 +93,11 @@ public class PlayerStatsScript : MonoBehaviour
 
 	}
 
-	public void UpdateStats(int lives, int total)
+	public void UpdateStats(int pn, int lives, int total)
 	{
-		this.GetComponentInChildren<TextMeshProUGUI>().text = lives.ToString() + "/" + total;
+		if(playerNr == pn)
+		{
+			this.GetComponentInChildren<TextMeshProUGUI>().text = lives.ToString() + "/" + total;
+		}
 	}
 }
