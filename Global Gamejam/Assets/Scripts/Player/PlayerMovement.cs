@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     private bool canDoubleJump = true, jumping = false;
     private float outsideRight, outsideLeft;
 
+	private Vector3 respawnLocation;
+
     public bool grounded
     {
         get
@@ -38,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         myBody = GetComponent<Rigidbody>();
         //calculate distance to glound based on collider
         distToGround = GetComponent<Collider>().bounds.extents.y;
-
+		respawnLocation = GameObject.Find("RespawnLocation").transform.position;
         outsideLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, -Camera.main.transform.position.z)).x;
         outsideRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, -Camera.main.transform.position.z)).x;
     }
@@ -98,22 +100,38 @@ public class PlayerMovement : MonoBehaviour
             transform.position = new Vector3(outsideLeft - 1.5f, transform.position.y, transform.position.z);
         }
     }
+	
+    public void Stun() {
+        velocity.x = 0;
+        myBody.velocity = velocity;
+    }
 
-	private void PlayerDies()
+	public void PlayerDies()
 	{
-		var pd = this.gameObject.GetComponent<PlayerDetails>();
-		pd.Died();
-		if(pd.playerHealth < 1)
+		if(GameManagerScript.instance.gameState == GameManagerScript.States.Playing)
 		{
-			// Game over
+			var pd = this.gameObject.GetComponent<PlayerDetails>();
+			pd.Died();
+			if (pd.playerHealth > 0) // Re-spawn
+			{
+				StartCoroutine(PlayerRespawn());
+			
+			}
 		}
-		else
+		else // not playing so always respawn
 		{
-			// To do: improve re-spawn
-			velocity.y = 0;
-			myBody.velocity = velocity;
-			transform.position = new Vector3(transform.position.x, 20f, transform.position.z);
+			StartCoroutine(PlayerRespawn());
 		}
+	}
+
+	private IEnumerator PlayerRespawn()
+	{
+		velocity.y = 0;
+		myBody.velocity = velocity;
+		this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+		transform.position = new Vector3(respawnLocation.x, respawnLocation.y, transform.position.z);
+		yield return new WaitForSeconds(2);
+		this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
 	}
 
 
@@ -146,5 +164,9 @@ public class PlayerMovement : MonoBehaviour
     public void ResetVelocity() {
         velocity = Vector3.zero;
         myBody.velocity = velocity;
+    }
+
+    public Vector3 GetVelocity() {
+        return myBody.velocity;
     }
 }

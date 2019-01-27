@@ -17,7 +17,8 @@ public class ButtonSpawnerScript : MonoBehaviour
 	private float leftSideScreen = -50.0f;
 	[SerializeField]
 	private float rightSideScreen = 100.0f;
-
+    [SerializeField]
+    private float spawnRate = 3.0f;
     [SerializeField]
     private GameObject[] buttons;
 
@@ -38,7 +39,7 @@ public class ButtonSpawnerScript : MonoBehaviour
             //{
             //    CreateNewButton();
             //}
-            if (lastSpawn + 3f < Time.time) {
+            if (lastSpawn + spawnRate < Time.time) {
                 CreateNewButton();
                 lastSpawn = Time.time;
             }

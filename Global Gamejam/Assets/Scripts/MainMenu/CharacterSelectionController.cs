@@ -19,8 +19,13 @@ public class CharacterSelectionController : MonoBehaviour
     [SerializeField]
     private float offset = 2;
 
-    private void Start()
+	private GameObject[] characterSelectViews;
+
+	float startX;
+
+	private void Start()
     {
+		startX = transform.position.x;
         characters = new List<PlayerController>();
         int i = 0;
         foreach (PlayerController character in CharacterSelection.instance.characters)
@@ -29,20 +34,21 @@ public class CharacterSelectionController : MonoBehaviour
             characters[i].gameObject.SetActive(false);
             i++;
         }
+		characterSelectViews = GameObject.Find("CharacterSelection").GetComponent<CharacterSelection>().characterSelectViews;
     }
 
     private void Update()
     {
         if (playerNumber != -1)
         {
-            if (XCI.GetAxis(XboxAxis.LeftStickX, xboxController) < -0.2f)
+            if (XCI.GetAxis(XboxAxis.LeftStickX, xboxController) < -0.5f)
             {
                 if (canSwap)
                 {
                     Left();
                 }
             }
-            else if (XCI.GetAxis(XboxAxis.LeftStickX, xboxController) > 0.2f)
+            else if (XCI.GetAxis(XboxAxis.LeftStickX, xboxController) > 0.5f)
             {
                 if (canSwap)
                 {
@@ -62,14 +68,14 @@ public class CharacterSelectionController : MonoBehaviour
 				characters[activeChar].gameObject.SetActive(false);
                 //activeChar = 0; Commented out so that the previous choice of the player is remembered
                 CharacterSelection.instance.Leave(playerNumber);
-				playerNumber = 0;
+				playerNumber = -1;
 			}
         }
     }
 
     public void Activate(int playerN)
     {
-        transform.position = new Vector3(transform.position.x + (offset * playerN), transform.position.y, transform.position.z);
+        transform.position = new Vector3(startX + (offset * playerN), transform.position.y, transform.position.z);
         this.playerNumber = playerN;
         switch (playerNumber)
         {
@@ -113,6 +119,7 @@ public class CharacterSelectionController : MonoBehaviour
             else
                 characters[i].gameObject.SetActive(true);
         }
+		characterSelectViews[playerNumber].GetComponent<CharacterSelectionViewScript>().SetCharacter(activeChar);
     }
 
     IEnumerator WaitForSwap()

@@ -51,7 +51,6 @@ public class GameManagerScript : MonoBehaviour
     {
         playerLocations = new List<Vector3>();
 		gameState = States.Menu;
-		//gameState = States.Playing;
 		language = Languages.English;
         maxLanguages = System.Enum.GetValues(typeof(Languages)).Length;
         maxBackgrounds = backgrounds.Length;
@@ -131,6 +130,7 @@ public class GameManagerScript : MonoBehaviour
     public void Spawn(PlayerController playerCharacter, int playerNumber, Vector3 position, XboxController xboxController)
     {
 		PlayerController player = Instantiate(playerCharacter, position, new Quaternion(0, 0, 0, 0));
+		player.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 		player.GetComponent<PlayerDetails>().playerNr = playerNumber;
         player.Entry();
         AddPlayer(player);

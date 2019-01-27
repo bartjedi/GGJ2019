@@ -10,6 +10,7 @@ public class CharacterSelection : MonoBehaviour
     [SerializeField]
     private int maxPlayers;
     public PlayerController[] characters;
+	public string[] characterNames;
     [SerializeField]
     private PlayerDetails[] selectedCharacters;
     private int[] playersSelected;
@@ -17,13 +18,14 @@ public class CharacterSelection : MonoBehaviour
     private CharacterSelectionController[] characterSelectionControllers;
     [SerializeField]
     private CharacterSelectionController characterSelectionController;
-    [SerializeField]
-    private TextMesh toJoin;
-    [SerializeField]
-    private TextMesh selectChar;
+
+	private int playerCounter = 0;
+
+	private List<int> hasBeenChosen = new List<int>();
 
 	[SerializeField]
 	private GameObject[] huds;
+	public GameObject[] characterSelectViews;
 
     public static CharacterSelection instance = null;
 
@@ -48,11 +50,12 @@ public class CharacterSelection : MonoBehaviour
     {
         playerActive = new bool[maxPlayers];
         characterSelectionControllers = new CharacterSelectionController[maxPlayers];
+		GameObject[] spawnPoints= GameObject.FindGameObjectsWithTag("Spawntag");
         for (int i = 0; i < maxPlayers; i++)
         {
             playerActive[i] = false;
-            characterSelectionControllers[i] = Instantiate(characterSelectionController, transform);
-        }
+            characterSelectionControllers[i] = Instantiate(characterSelectionController, spawnPoints[i].transform);
+		}
     }
 
     // Update is called once per frame
@@ -61,47 +64,50 @@ public class CharacterSelection : MonoBehaviour
         if (XCI.GetButtonUp(XboxButton.A, XboxController.First) && !playerActive[0])
         {
             playerActive[0] = true;
-            characterSelectionControllers[0].Activate(0);
+			characterSelectViews[0].GetComponent<CharacterSelectionViewScript>().Join();
+			characterSelectionControllers[0].Activate(0);
         }
         if (XCI.GetButtonUp(XboxButton.A, XboxController.Second) && !playerActive[1])
         {
             playerActive[1] = true;
-            characterSelectionControllers[1].Activate(1);
+			characterSelectViews[1].GetComponent<CharacterSelectionViewScript>().Join();
+			characterSelectionControllers[1].Activate(1);
         }
         if (XCI.GetButtonUp(XboxButton.A, XboxController.Third) && !playerActive[2])
         {
             playerActive[2] = true;
-            characterSelectionControllers[2].Activate(2);
+			characterSelectViews[2].GetComponent<CharacterSelectionViewScript>().Join();
+			characterSelectionControllers[2].Activate(2);
         }
         if (XCI.GetButtonUp(XboxButton.A, XboxController.Fourth) && !playerActive[3])
         {
             playerActive[3] = true;
-            characterSelectionControllers[3].Activate(3);
-        }
-        if (playerActive[0] && playerActive[1] && playerActive[2] && playerActive[3])
-        {
-            toJoin.gameObject.SetActive(true);
-        }
-        if(playerActive[0] || playerActive[1] || playerActive[2] || playerActive[3])
-        {
-            selectChar.gameObject.SetActive(true);
-        }
-        else
-        {
-            selectChar.gameObject.SetActive(false);
+			characterSelectViews[3].GetComponent<CharacterSelectionViewScript>().Join();
+			characterSelectionControllers[3].Activate(3);
         }
     }
 
     public void Confirm(int playerNumber, int charNumber, Vector3 position, XboxController xboxController)
     {
-		huds[playerNumber].GetComponent<PlayerStatsScript>().Setup(charNumber);
-        characterSelectionControllers[playerNumber].gameObject.SetActive(false);
-        GameManagerScript.instance.Spawn(characters[charNumber], playerNumber, position, xboxController);
+	    if(hasBeenChosen.Contains(charNumber))
+		{
+			// too bad
+		}
+		else
+		{
+			hasBeenChosen.Add(charNumber);
+			huds[playerCounter].GetComponent<PlayerStatsScript>().Setup(charNumber);
+			playerCounter++;
+			characterSelectionControllers[playerNumber].gameObject.SetActive(false);
+			GameManagerScript.instance.Spawn(characters[charNumber], playerNumber, position, xboxController);
+		}
+	
     }
 
     public void Leave(int playerNumber)
     {
         playerActive[playerNumber] = false;
+		characterSelectViews[playerNumber].GetComponent<CharacterSelectionViewScript>().Leave();
     }
 
 	private void KillMe()

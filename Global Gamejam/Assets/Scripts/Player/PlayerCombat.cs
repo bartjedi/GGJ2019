@@ -15,7 +15,7 @@ public class PlayerCombat : MonoBehaviour
     private Transform pushRayStart;
 
     private float shovedTime = float.NegativeInfinity, shoveTime = float.NegativeInfinity, poundedTime = float.NegativeInfinity;
-    private bool isPounding = false, targetPounded = false, isPounded = false;
+    private bool isPounding = false, targetPounded = false, isPounded = false, canPound = false;
 
     [SerializeField]
     private GameObject poundedEffect;
@@ -82,7 +82,8 @@ public class PlayerCombat : MonoBehaviour
         }
         if (!isPounding)
         {
-            if (controller.input.groundPound && !controller.movement.grounded && (Time.time - playerMovement.jumpStartTime) > groundPoundCooldown)
+            if (controller.input.groundPound && !controller.movement.grounded && (Time.time - playerMovement.jumpStartTime) > groundPoundCooldown 
+                && canPound && Mathf.Abs(controller.movement.GetVelocity().y) > 0.01f)
             {
                 GroundPound();
             }
@@ -98,6 +99,10 @@ public class PlayerCombat : MonoBehaviour
                 delayedPounder = PoundDisabler();
                 StartCoroutine(delayedPounder);
             }
+            else if (controller.movement.GetVelocity().y > 0.1f) {
+                isPounding = false;
+                groundPound.gameObject.SetActive(false);
+            }
         }
         if (targetPounded)
         {
@@ -107,6 +112,9 @@ public class PlayerCombat : MonoBehaviour
             isPounded = poundedTime + poundStunDuration > Time.time;
             controller.input.allowInput = !isPounded;
             poundedEffect.SetActive(isPounded);
+        }
+        if (!isPounding && !canPound) {
+            canPound = controller.movement.grounded;
         }
     }
 
@@ -120,7 +128,7 @@ public class PlayerCombat : MonoBehaviour
 
     public void PoundButton(ButtonScript button)
     {
-        button.Trigger();
+        button.Trigger(this.gameObject);
     }
 
     private void CheckPoundHit()
@@ -136,6 +144,7 @@ public class PlayerCombat : MonoBehaviour
     public void GetPounded()
     {
         poundedTime = Time.time;
+        controller.movement.Stun();
         isPounded = true;
     }
 
@@ -143,6 +152,7 @@ public class PlayerCombat : MonoBehaviour
     {
         groundPound.gameObject.SetActive(true);
         isPounding = true;
+        canPound = false;
         controller.movement.ResetVelocity();
         controller.movement.ApplyForce(Vector3.down * groundPoundForce);
     }
@@ -169,7 +179,14 @@ public class PlayerCombat : MonoBehaviour
 
     private IEnumerator PoundDisabler()
     {
-        yield return new WaitForSecondsRealtime(0.1f);
+        float poundEndTime = Time.time;
+        Vector3 originalScale = groundPound.transform.localScale;
+        while(Time.time < poundEndTime + 0.1f) {
+            groundPound.transform.localScale += Vector3.one * 2.5f * (Time.deltaTime / 0.1f);
+            yield return new WaitForEndOfFrame();
+        }
+        groundPound.transform.localScale = originalScale;
         groundPound.gameObject.SetActive(false);
+        canPound = true;
     }
 }

@@ -7,6 +7,7 @@ public class ButtonScript : MonoBehaviour
 {
     [SerializeField]
     private float topOfScreen;
+
     private float risingSpeed = 2.0f;
     [SerializeField]
     private Material[] materials;
@@ -56,7 +57,7 @@ public class ButtonScript : MonoBehaviour
     /// <summary>
     ///  occurs on ground pound
     /// </summary>
-    public virtual void Trigger()
+    public virtual void Trigger(GameObject player)
     {
         Break();
     }
