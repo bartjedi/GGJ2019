@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using XboxCtrlrInput;
+using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class GameManagerScript : MonoBehaviour
     public List<PlayerDetails> players;
     private List<Vector3> playerLocations;
     private int previousBackground;
-
+    private int died = 0, activePlayers = 0;
     private int changeControlTimer;
 
     public enum States { Menu, CharacterSelection, Playing, Paused, Finished };
@@ -24,6 +25,7 @@ public class GameManagerScript : MonoBehaviour
     public Material[] materials;
 
 	public GameObject[] huds;
+   
 
 	public static GameManagerScript instance = null;
 
@@ -43,6 +45,7 @@ public class GameManagerScript : MonoBehaviour
         }
         players = new List<PlayerDetails>();
         playerLocations = new List<Vector3>();
+        DontDestroyOnLoad(this);
     }
 
     // Start is called before the first frame update
@@ -108,7 +111,6 @@ public class GameManagerScript : MonoBehaviour
     public void SavePositions()
     {
         playerLocations.Clear();
-        Debug.Log(players.Count);
         foreach(PlayerDetails player in players)
         {
             playerLocations.Add(player.transform.position);
@@ -134,7 +136,16 @@ public class GameManagerScript : MonoBehaviour
 		player.GetComponent<PlayerDetails>().playerNr = playerNumber;
 		player.Entry();
         AddPlayer(player);
+        activePlayers++;
         player.GetComponent<PlayerInput>().xboxController = xboxController;
-        //TODO: add jumping out animation
+    }
+
+    public void Died()
+    {
+        died++;
+        if (died == players.Count -1)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        }
     }
 }
