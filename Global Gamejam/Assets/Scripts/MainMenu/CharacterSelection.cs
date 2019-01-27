@@ -22,6 +22,8 @@ public class CharacterSelection : MonoBehaviour
     [SerializeField]
     private TextMesh selectChar;
 
+	[SerializeField]
+	private GameObject[] huds;
 
     public static CharacterSelection instance = null;
 
@@ -92,6 +94,7 @@ public class CharacterSelection : MonoBehaviour
 
     public void Confirm(int playerNumber, int charNumber, Vector3 position, XboxController xboxController)
     {
+		huds[playerNumber].GetComponent<PlayerStatsScript>().Setup(charNumber);
         characterSelectionControllers[playerNumber].gameObject.SetActive(false);
         GameManagerScript.instance.Spawn(characters[charNumber], playerNumber, position, xboxController);
     }
