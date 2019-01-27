@@ -78,7 +78,6 @@ public class PlayerCombat : MonoBehaviour
     {
         if (controller.input.shove && shoveTime + shoveCooldown < Time.time)
         {
-            Debug.Log("shoving");
             Shove();
         }
         if (!isPounding)
@@ -138,7 +137,6 @@ public class PlayerCombat : MonoBehaviour
     {
         poundedTime = Time.time;
         isPounded = true;
-        Debug.Log(gameObject.name + " just got pounded");
     }
 
     private void GroundPound()

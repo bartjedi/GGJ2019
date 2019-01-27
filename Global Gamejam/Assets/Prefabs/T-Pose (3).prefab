@@ -48,13 +48,13 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 77f2b098ff277c0469d751ac84945337, type: 3}
-  - {fileID: 2100002, guid: 77f2b098ff277c0469d751ac84945337, type: 3}
-  - {fileID: 2100004, guid: 77f2b098ff277c0469d751ac84945337, type: 3}
+  - {fileID: 2100000, guid: bcb11be0d84206c48a018624e8f10b4c, type: 2}
+  - {fileID: 2100000, guid: 0a5f33cce9e8d9649b5e1324fcabb5b5, type: 2}
+  - {fileID: 2100000, guid: 2676826e671b7c04e838777c83b4e634, type: 2}
   - {fileID: 2100006, guid: 77f2b098ff277c0469d751ac84945337, type: 3}
-  - {fileID: 2100008, guid: 77f2b098ff277c0469d751ac84945337, type: 3}
+  - {fileID: 2100000, guid: 1d879792aee6b6042bb6eba20c6de953, type: 2}
   - {fileID: 2100010, guid: 77f2b098ff277c0469d751ac84945337, type: 3}
-  - {fileID: 2100012, guid: 77f2b098ff277c0469d751ac84945337, type: 3}
+  - {fileID: 2100000, guid: eeeea058db0a2fc4a973960d578945bf, type: 2}
   - {fileID: 2100014, guid: 77f2b098ff277c0469d751ac84945337, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -992,6 +992,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: c181e4f72ea0c344b9b713772ac76838, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2676826e671b7c04e838777c83b4e634, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c181e4f72ea0c344b9b713772ac76838, type: 3}
 --- !u!4 &1550601729 stripped

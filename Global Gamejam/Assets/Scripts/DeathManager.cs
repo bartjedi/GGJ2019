@@ -10,6 +10,7 @@ public class DeathManager : MonoBehaviour
     public PlayerDetails.modelType first, second, third, fourth;
     private int died = 0;
     AsyncOperation async;
+    bool canLeave = false;
     
     public static DeathManager instance = null;
     // Start is called before the first frame update
@@ -29,6 +30,7 @@ public class DeathManager : MonoBehaviour
         DontDestroyOnLoad(this);
         async = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
         async.allowSceneActivation = false;
+        StartCoroutine(CanLeaveTimer());
     }
 
     public void Died(PlayerDetails player)
@@ -96,5 +98,22 @@ public class DeathManager : MonoBehaviour
             }
         }
         async.allowSceneActivation = true;
+    }
+
+    private void Update()
+    {
+    if (canLeave)
+        {
+            if (Input.anyKey)
+            {
+                SceneManager.LoadScene(0);
+            }
+        }
+    }
+
+    IEnumerator CanLeaveTimer()
+    {
+        yield return new WaitForSeconds(3);
+        canLeave = true;
     }
 }
