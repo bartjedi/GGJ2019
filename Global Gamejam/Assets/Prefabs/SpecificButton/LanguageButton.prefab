@@ -1,30 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &3787343130768100158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4143898955609018679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba956f4109c35e542ae4cec94f7be48a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  topOfScreen: 0
-  materials:
-  - {fileID: 2100000, guid: 43f35ecbde3f5b844a197f09ba69ce6c, type: 2}
-  - {fileID: 2100000, guid: 1976182bc7c217e498c09f34f75833a9, type: 2}
-  - {fileID: 2100000, guid: 7bb0729bc378722429bed67639f848f9, type: 2}
-  - {fileID: 2100000, guid: e90ad3088ad4bf441ae882b6685cf32a, type: 2}
-  English: Languages
-  Spanish: Idiomas
-  German: Sprachen
-  Chinese: '#^%@!%$'
-  FontAssetA: {fileID: 11400000, guid: ba3e0d1a59ae946489936fd27fa84245, type: 2}
-  FontAssetB: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  ps: {fileID: 7268073554329805828}
 --- !u!199 &5041721889223080381
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -103,7 +78,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -5039,6 +5014,31 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &3787343130768100158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4143898955609018679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba956f4109c35e542ae4cec94f7be48a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topOfScreen: 0
+  materials:
+  - {fileID: 2100000, guid: 43f35ecbde3f5b844a197f09ba69ce6c, type: 2}
+  - {fileID: 2100000, guid: 1976182bc7c217e498c09f34f75833a9, type: 2}
+  - {fileID: 2100000, guid: 7bb0729bc378722429bed67639f848f9, type: 2}
+  - {fileID: 2100000, guid: e90ad3088ad4bf441ae882b6685cf32a, type: 2}
+  English: Languages
+  Spanish: Idiomas
+  German: Sprachen
+  Chinese: '#^%@!%$'
+  FontAssetA: {fileID: 11400000, guid: ba3e0d1a59ae946489936fd27fa84245, type: 2}
+  FontAssetB: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  ps: {fileID: 7268073554329805828}
 --- !u!1001 &6663487850242665217
 PrefabInstance:
   m_ObjectHideFlags: 0

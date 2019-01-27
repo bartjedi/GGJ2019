@@ -53,6 +53,7 @@ public class GameManagerScript : MonoBehaviour
 		language = Languages.English;
         maxLanguages = System.Enum.GetValues(typeof(Languages)).Length;
         maxBackgrounds = backgrounds.Length;
+        ChangeBackground();
     }
 
     public void ChangeLanguage()
@@ -129,7 +130,7 @@ public class GameManagerScript : MonoBehaviour
     public void Spawn(PlayerController playerCharacter, int playerNumber, Vector3 position, XboxController xboxController)
     {
 		PlayerController player = Instantiate(playerCharacter, position, new Quaternion(0, 0, 0, 0));
-		player.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+		player.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
 		player.GetComponent<PlayerDetails>().playerNr = playerNumber;
         player.Entry();
         AddPlayer(player);

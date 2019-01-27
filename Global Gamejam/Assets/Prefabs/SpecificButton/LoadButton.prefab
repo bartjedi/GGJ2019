@@ -1,26 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &309881379338373465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4627794862776974238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18128786d20587f4eac642eabe21e1a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  topOfScreen: 0
-  materials: []
-  English: Load
-  Spanish: Carga
-  German: Geladen
-  Chinese: '#^$&!$%'
-  FontAssetA: {fileID: 11400000, guid: ba3e0d1a59ae946489936fd27fa84245, type: 2}
-  FontAssetB: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  ps: {fileID: 8466400054009859375}
 --- !u!199 &6207964225449976031
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -99,7 +78,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -5035,6 +5014,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &309881379338373465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4627794862776974238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18128786d20587f4eac642eabe21e1a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topOfScreen: 0
+  materials: []
+  English: Load
+  Spanish: Carga
+  German: Geladen
+  Chinese: '#^$&!$%'
+  FontAssetA: {fileID: 11400000, guid: ba3e0d1a59ae946489936fd27fa84245, type: 2}
+  FontAssetB: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  ps: {fileID: 8466400054009859375}
 --- !u!1001 &2720836255647170984
 PrefabInstance:
   m_ObjectHideFlags: 0
