@@ -14,7 +14,6 @@ public class EndScreenButtonEffects : MonoBehaviour
         if (materials.Length > 0)
         {
             int random = Random.Range(0, materials.Length);
-            Debug.Log(random);
             GetComponent<MeshRenderer>().material = materials[random];
         }
     }
