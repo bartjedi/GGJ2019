@@ -7,10 +7,15 @@ public class PlayerAnimations : MonoBehaviour
     [SerializeField]
     private Animator animator;
     private PlayerController controller;
+    private AudioSource audioSource;
+
+    [SerializeField]
+    private AudioClip[] clips;
 
     private void Awake()
     {
         controller = GetComponent<PlayerController>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -31,5 +36,7 @@ public class PlayerAnimations : MonoBehaviour
 
     public void Shove() {
         animator.SetTrigger("Shove");
+        int random = Random.Range(0, clips.Length);
+        audioSource.PlayOneShot(clips[random]);
     }
 }
