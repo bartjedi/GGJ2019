@@ -1,16 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using XboxCtrlrInput;
 
 public class VictoryManager : MonoBehaviour
 {
     public Animator animComponent;
     public GameObject[] playerModels;
     public Transform[] locations;
+    bool canLeave = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(CanLeaveTimer());
         List<PlayerDetails.modelType> models = new List<PlayerDetails.modelType>();
         models.Add(DeathManager.instance.first);
         models.Add(DeathManager.instance.second);
@@ -56,5 +60,22 @@ public class VictoryManager : MonoBehaviour
             }
             i++;
         }
+    }
+
+    private void Update()
+    {
+        if (canLeave)
+        {
+            if (Input.anyKey)
+            {
+                SceneManager.LoadScene(0);
+            }
+        }
+    }
+
+    IEnumerator CanLeaveTimer()
+    {
+        yield return new WaitForSeconds(10);
+        canLeave = true;
     }
 }

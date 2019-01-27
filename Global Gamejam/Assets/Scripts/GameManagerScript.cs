@@ -43,7 +43,6 @@ public class GameManagerScript : MonoBehaviour
         }
         players = new List<PlayerDetails>();
         playerLocations = new List<Vector3>();
-        DontDestroyOnLoad(this);
     }
 
     // Start is called before the first frame update

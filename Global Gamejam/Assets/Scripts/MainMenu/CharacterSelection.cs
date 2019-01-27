@@ -21,6 +21,8 @@ public class CharacterSelection : MonoBehaviour
 
 	private int playerCounter = 0;
 
+	private List<int> hasBeenChosen = new List<int>();
+
 	[SerializeField]
 	private GameObject[] huds;
 	public GameObject[] characterSelectViews;
@@ -87,11 +89,19 @@ public class CharacterSelection : MonoBehaviour
 
     public void Confirm(int playerNumber, int charNumber, Vector3 position, XboxController xboxController)
     {
+	    if(hasBeenChosen.Contains(charNumber))
+		{
+			// too bad
+		}
+		else
+		{
+			hasBeenChosen.Add(charNumber);
+			huds[playerCounter].GetComponent<PlayerStatsScript>().Setup(charNumber);
+			playerCounter++;
+			characterSelectionControllers[playerNumber].gameObject.SetActive(false);
+			GameManagerScript.instance.Spawn(characters[charNumber], playerNumber, position, xboxController);
+		}
 	
-		huds[playerCounter].GetComponent<PlayerStatsScript>().Setup(charNumber);
-		playerCounter++;
-		characterSelectionControllers[playerNumber].gameObject.SetActive(false);
-        GameManagerScript.instance.Spawn(characters[charNumber], playerNumber, position, xboxController);
     }
 
     public void Leave(int playerNumber)

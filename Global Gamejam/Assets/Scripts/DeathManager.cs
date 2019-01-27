@@ -8,9 +8,8 @@ public class DeathManager : MonoBehaviour
     public int players;
     public List<PlayerDetails> playerList = new List<PlayerDetails>();
     public PlayerDetails.modelType first, second, third, fourth;
-    private int died = 0;
+    public int died = 0;
     AsyncOperation async;
-    bool canLeave = false;
     
     public static DeathManager instance = null;
     // Start is called before the first frame update
@@ -30,20 +29,19 @@ public class DeathManager : MonoBehaviour
         DontDestroyOnLoad(this);
         async = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
         async.allowSceneActivation = false;
-        StartCoroutine(CanLeaveTimer());
     }
 
     public void Died(PlayerDetails player)
     {
         players = GameManagerScript.instance.activePlayers;
-        foreach(PlayerDetails play in playerList)
+        died++;
+        foreach (PlayerDetails play in playerList)
         {
             if(play.playerNr == player.playerNr)
             {
                 SetPosition(play);
             }
         }
-        died++;
     }
 
     private void SetPosition(PlayerDetails player)
@@ -57,12 +55,12 @@ public class DeathManager : MonoBehaviour
         {
             if (died == 1)
             {
-
                 player.finished = PlayerDetails.finishedAs.Third;
             }
             if (died ==2 )
             {
                 player.finished = PlayerDetails.finishedAs.Second;
+                Debug.Log("test");
                 SetModels();
             }
         }
@@ -98,22 +96,5 @@ public class DeathManager : MonoBehaviour
             }
         }
         async.allowSceneActivation = true;
-    }
-
-    private void Update()
-    {
-    if (canLeave)
-        {
-            if (Input.anyKey)
-            {
-                SceneManager.LoadScene(0);
-            }
-        }
-    }
-
-    IEnumerator CanLeaveTimer()
-    {
-        yield return new WaitForSeconds(3);
-        canLeave = true;
     }
 }
