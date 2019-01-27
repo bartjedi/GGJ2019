@@ -15,7 +15,7 @@ public class PlayerCombat : MonoBehaviour
     private Transform pushRayStart;
 
     private float shovedTime = float.NegativeInfinity, shoveTime = float.NegativeInfinity, poundedTime = float.NegativeInfinity;
-    private bool isPounding = false, targetPounded = false, isPounded = false;
+    private bool isPounding = false, targetPounded = false, isPounded = false, canPound = false;
 
     [SerializeField]
     private GameObject poundedEffect;
@@ -83,7 +83,8 @@ public class PlayerCombat : MonoBehaviour
         }
         if (!isPounding)
         {
-            if (controller.input.groundPound && !controller.movement.grounded && (Time.time - playerMovement.jumpStartTime) > groundPoundCooldown)
+            if (controller.input.groundPound && !controller.movement.grounded && (Time.time - playerMovement.jumpStartTime) > groundPoundCooldown 
+                && canPound && Mathf.Abs(controller.movement.GetVelocity().y) > 0.01f)
             {
                 GroundPound();
             }
@@ -99,6 +100,10 @@ public class PlayerCombat : MonoBehaviour
                 delayedPounder = PoundDisabler();
                 StartCoroutine(delayedPounder);
             }
+            else if (controller.movement.GetVelocity().y > 0.1f) {
+                isPounding = false;
+                groundPound.gameObject.SetActive(false);
+            }
         }
         if (targetPounded)
         {
@@ -108,6 +113,9 @@ public class PlayerCombat : MonoBehaviour
             isPounded = poundedTime + poundStunDuration > Time.time;
             controller.input.allowInput = !isPounded;
             poundedEffect.SetActive(isPounded);
+        }
+        if (!isPounding && !canPound) {
+            canPound = controller.movement.grounded;
         }
     }
 
@@ -145,6 +153,7 @@ public class PlayerCombat : MonoBehaviour
     {
         groundPound.gameObject.SetActive(true);
         isPounding = true;
+        canPound = false;
         controller.movement.ResetVelocity();
         controller.movement.ApplyForce(Vector3.down * groundPoundForce);
     }
@@ -179,5 +188,6 @@ public class PlayerCombat : MonoBehaviour
         }
         groundPound.transform.localScale = originalScale;
         groundPound.gameObject.SetActive(false);
+        canPound = true;
     }
 }

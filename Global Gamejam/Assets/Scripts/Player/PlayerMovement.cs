@@ -152,4 +152,8 @@ public class PlayerMovement : MonoBehaviour
         velocity = Vector3.zero;
         myBody.velocity = velocity;
     }
+
+    public Vector3 GetVelocity() {
+        return myBody.velocity;
+    }
 }
