@@ -19,7 +19,9 @@ public class CharacterSelectionController : MonoBehaviour
     [SerializeField]
     private float offset = 2;
 
-    private void Start()
+	private GameObject[] characterSelectViews;
+
+	private void Start()
     {
         characters = new List<PlayerController>();
         int i = 0;
@@ -29,6 +31,7 @@ public class CharacterSelectionController : MonoBehaviour
             characters[i].gameObject.SetActive(false);
             i++;
         }
+		characterSelectViews = GameObject.Find("CharacterSelection").GetComponent<CharacterSelection>().characterSelectViews;
     }
 
     private void Update()
@@ -113,6 +116,7 @@ public class CharacterSelectionController : MonoBehaviour
             else
                 characters[i].gameObject.SetActive(true);
         }
+		characterSelectViews[playerNumber].GetComponent<CharacterSelectionViewScript>().SetCharacter(activeChar);
     }
 
     IEnumerator WaitForSwap()
