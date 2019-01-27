@@ -171,7 +171,13 @@ public class PlayerCombat : MonoBehaviour
 
     private IEnumerator PoundDisabler()
     {
-        yield return new WaitForSecondsRealtime(0.1f);
+        float poundEndTime = Time.time;
+        Vector3 originalScale = groundPound.transform.localScale;
+        while(Time.time < poundEndTime + 0.1f) {
+            groundPound.transform.localScale += Vector3.one * 2.5f * (Time.deltaTime / 0.1f);
+            yield return new WaitForEndOfFrame();
+        }
+        groundPound.transform.localScale = originalScale;
         groundPound.gameObject.SetActive(false);
     }
 }
