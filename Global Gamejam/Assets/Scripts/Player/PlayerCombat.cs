@@ -138,7 +138,6 @@ public class PlayerCombat : MonoBehaviour
     {
         poundedTime = Time.time;
         isPounded = true;
-        Debug.Log(gameObject.name + " just got pounded");
     }
 
     private void GroundPound()

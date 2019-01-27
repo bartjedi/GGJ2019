@@ -26,9 +26,7 @@ public class GameManagerScript : MonoBehaviour
 
 	public GameObject[] huds;
    
-
 	public static GameManagerScript instance = null;
-
 
 	void Awake()
     {
@@ -134,7 +132,7 @@ public class GameManagerScript : MonoBehaviour
     {
 		PlayerController player = Instantiate(playerCharacter, position, new Quaternion(0, 0, 0, 0));
 		player.GetComponent<PlayerDetails>().playerNr = playerNumber;
-		player.Entry();
+        player.Entry();
         AddPlayer(player);
         activePlayers++;
         player.GetComponent<PlayerInput>().xboxController = xboxController;
@@ -145,6 +143,7 @@ public class GameManagerScript : MonoBehaviour
         died++;
         if (died == players.Count -1)
         {
+            DeathManager.instance.players = players.Count;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
     }
