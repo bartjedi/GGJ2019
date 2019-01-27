@@ -48,12 +48,11 @@ public class CharacterSelection : MonoBehaviour
     {
         playerActive = new bool[maxPlayers];
         characterSelectionControllers = new CharacterSelectionController[maxPlayers];
+		GameObject[] spawnPoints= GameObject.FindGameObjectsWithTag("Spawntag");
         for (int i = 0; i < maxPlayers; i++)
         {
             playerActive[i] = false;
-            characterSelectionControllers[i] = Instantiate(characterSelectionController, transform);
-			//characterSelectionControllers[i].transform.position = this.gameObject.transform.Find("SpawnPos").transform.position;
-
+            characterSelectionControllers[i] = Instantiate(characterSelectionController, spawnPoints[i].transform);
 		}
     }
 
