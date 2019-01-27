@@ -15,7 +15,7 @@ public class GameManagerScript : MonoBehaviour
     public List<PlayerDetails> players;
     private List<Vector3> playerLocations;
     private int previousBackground;
-    private int died = 0, activePlayers = 0;
+    public int died = 0, activePlayers = 0;
     private int changeControlTimer;
 
     public enum States { Menu, CharacterSelection, Playing, Paused, Finished };
@@ -43,7 +43,6 @@ public class GameManagerScript : MonoBehaviour
         }
         players = new List<PlayerDetails>();
         playerLocations = new List<Vector3>();
-        DontDestroyOnLoad(this);
     }
 
     // Start is called before the first frame update
@@ -135,16 +134,7 @@ public class GameManagerScript : MonoBehaviour
         player.Entry();
         AddPlayer(player);
         activePlayers++;
+        DeathManager.instance.playerList.Add(player.GetComponent<PlayerDetails>());
         player.GetComponent<PlayerInput>().xboxController = xboxController;
-    }
-
-    public void Died()
-    {
-        died++;
-        if (died == players.Count -1)
-        {
-            DeathManager.instance.players = players.Count;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
-        }
     }
 }

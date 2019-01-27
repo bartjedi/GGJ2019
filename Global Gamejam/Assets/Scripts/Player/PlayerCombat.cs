@@ -78,7 +78,6 @@ public class PlayerCombat : MonoBehaviour
     {
         if (controller.input.shove && shoveTime + shoveCooldown < Time.time)
         {
-            Debug.Log("shoving");
             Shove();
         }
         if (!isPounding)

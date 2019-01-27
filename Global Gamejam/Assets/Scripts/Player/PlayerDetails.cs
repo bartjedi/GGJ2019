@@ -7,6 +7,10 @@ public class PlayerDetails : MonoBehaviour
 	public int playerNr;
 	public int startHealth = 3;
     public int playerHealth = 3;
+    public enum modelType { Red, Blue, Yellow, Green, Purple};
+    public modelType myModel;
+    public enum finishedAs { Fourth, Third, Second, First}
+    public finishedAs finished;
 
     private void Start()
     {
@@ -24,7 +28,7 @@ public class PlayerDetails : MonoBehaviour
 		else
 		{
 			Destroy(gameObject);
-            GameManagerScript.instance.Died();
+            DeathManager.instance.Died(this);
 		}
 		
 	}
