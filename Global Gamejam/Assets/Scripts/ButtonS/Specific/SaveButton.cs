@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SaveButton : ButtonScript
 {
-    override public void Trigger()
+    override public void Trigger(GameObject player)
     {
         base.Break();
         GameManagerScript.instance.SavePositions();

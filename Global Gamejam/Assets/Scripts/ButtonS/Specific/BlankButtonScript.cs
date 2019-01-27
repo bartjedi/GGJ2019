@@ -17,7 +17,7 @@ public class BlankButtonScript : ButtonScript
 		}
 	}
 
-    public override void Trigger()
+    public override void Trigger(GameObject player)
     {
         Destroy(this.gameObject);
     }

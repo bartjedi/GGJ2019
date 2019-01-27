@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OptionsButtonScript : ButtonScript
 {
-    public override void Trigger()
+    public override void Trigger(GameObject player)
     {
         base.Break();
         GameManagerScript.instance.ChangeControls();

@@ -54,7 +54,7 @@ public class ButtonScript : MonoBehaviour
     /// <summary>
     ///  occurs on ground pound
     /// </summary>
-    public virtual void Trigger()
+    public virtual void Trigger(GameObject player)
     {
         Break();
     }

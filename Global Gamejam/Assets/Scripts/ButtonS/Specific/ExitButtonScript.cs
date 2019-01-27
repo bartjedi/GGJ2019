@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ExitButtonScript : ButtonScript
 {
-    public override void Trigger()
+    public override void Trigger(GameObject player)
     {
         base.Break();
-        //PlayerDetails.Kill();
+		player.GetComponent<PlayerMovement>().PlayerDies();
     }
 }

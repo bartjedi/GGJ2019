@@ -7,7 +7,7 @@ public class StartButtonScript : ButtonScript
 {
 	public static List<Action> onStart = new List<Action>();
 
-	override public void Trigger()
+	override public void Trigger(GameObject player)
     {
         base.Break();
 		// Start game
@@ -32,7 +32,6 @@ public class StartButtonScript : ButtonScript
 
 	public void StartGame()
 	{
-        Debug.Log("started");
         GameManagerScript.instance.gameState = GameManagerScript.States.Playing;
 		this.GetComponent<Rigidbody>().useGravity = true;
 	}

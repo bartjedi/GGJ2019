@@ -241,7 +241,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
 --- !u!1001 &550883676
 PrefabInstance:
@@ -564,6 +564,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a63e4de56a2fd4e06821f27038ceb6b6, type: 3}
+--- !u!1 &1201267940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1201267941}
+  m_Layer: 0
+  m_Name: RespawnLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1201267941
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201267940}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: -1.1, y: 10.6, z: 6.75}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1666029091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1951,6 +1981,7 @@ MonoBehaviour:
   - {fileID: 6524759749633965067, guid: ee98ff73abd4f7a468d255c01531fb42, type: 3}
   - {fileID: 7807316200993919219, guid: d3ba327a3b45cea45a779871e7c83ff3, type: 3}
   - {fileID: 3544911436593437287, guid: b4242246ca73049448bc4a0861039123, type: 3}
+  - {fileID: 7530693462854966391, guid: 5304f80b1c00bfb4dbd3358f517ea4bd, type: 3}
 --- !u!4 &8070147479122360735
 Transform:
   m_ObjectHideFlags: 0

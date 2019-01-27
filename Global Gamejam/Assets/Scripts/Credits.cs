@@ -9,7 +9,7 @@ public class Credits : ButtonScript
 	[SerializeField]
 	CreditsButton creditsButton;
 
-	override public void Trigger()
+	override public void Trigger(GameObject player)
 	{
         StartCoroutine(SpawnCredits());
         Camera.main.GetComponent<CameraShake>().Shake();

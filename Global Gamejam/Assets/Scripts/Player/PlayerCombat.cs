@@ -109,7 +109,7 @@ public class PlayerCombat : MonoBehaviour
 
     public void PoundButton(ButtonScript button)
     {
-        button.Trigger();
+        button.Trigger(this.gameObject);
     }
 
     private void CheckPoundHit()

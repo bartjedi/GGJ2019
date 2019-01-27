@@ -50,7 +50,6 @@ public class GameManagerScript : MonoBehaviour
     {
         playerLocations = new List<Vector3>();
 		gameState = States.Menu;
-		//gameState = States.Playing;
 		language = Languages.English;
         maxLanguages = System.Enum.GetValues(typeof(Languages)).Length;
         maxBackgrounds = backgrounds.Length;
