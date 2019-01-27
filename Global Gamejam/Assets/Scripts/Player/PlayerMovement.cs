@@ -129,10 +129,15 @@ public class PlayerMovement : MonoBehaviour
 		velocity.y = 0;
 		myBody.velocity = velocity;
 		this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        this.gameObject.GetComponent<Collider>().enabled = false;
 		transform.position = new Vector3(respawnLocation.x, respawnLocation.y, transform.position.z);
+        controller.input.allowInput = false;
 		yield return new WaitForSeconds(2);
 		this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-	}
+        yield return new WaitForSeconds(0.1f);
+        controller.input.allowInput = true;
+        this.gameObject.GetComponent<Collider>().enabled = true;
+    }
 
 
     private void Jump()

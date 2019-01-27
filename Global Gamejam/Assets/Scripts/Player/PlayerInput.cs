@@ -39,14 +39,7 @@ public class PlayerInput : MonoBehaviour
         {
             if (isNotMac)
             {
-                if (!changedControls)
-                {
-                    return XCI.GetButtonDown(XboxButton.A, xboxController) && allowJump && allowInput;
-                }
-                else
-                {
-                    return XCI.GetButtonDown(XboxButton.B, xboxController) && allowJump && allowInput;
-                }
+                return XCI.GetButtonDown(XboxButton.A, xboxController) && allowJump && allowInput; 
             }
             return Input.GetKeyDown(KeyCode.Space) && allowJump && allowInput;
         }
@@ -58,14 +51,7 @@ public class PlayerInput : MonoBehaviour
         {
             if (isNotMac)
             {
-                if (!changedControls)
-                {
-                    return XCI.GetButtonDown(XboxButton.B, xboxController) && allowAttack && allowInput;
-                }
-                else
-                {
-                    return XCI.GetButtonDown(XboxButton.A, xboxController) && allowAttack && allowInput;
-                }
+                return XCI.GetButtonDown(XboxButton.A, xboxController) && allowAttack && allowInput;
             }
             return Input.GetKeyDown(KeyCode.Q) && allowAttack && allowInput;
         }
@@ -85,9 +71,19 @@ public class PlayerInput : MonoBehaviour
     {
         get
         {
-            if (isNotMac)
-                return XCI.GetAxis(XboxAxis.LeftStickX, xboxController);
-            return Input.GetAxisRaw("Horizontal");
+            float axis = 0.0f;
+            if (isNotMac) {
+                axis = XCI.GetAxis(XboxAxis.LeftStickX, xboxController);
+            }
+            else {
+                axis = Input.GetAxisRaw("Horizontal");
+            }
+
+            if (changedControls)
+            {
+                axis = -axis;
+            }
+            return axis;
         }
     }
 
