@@ -8,11 +8,17 @@ public class PlayerCombat : MonoBehaviour
     private PlayerController controller;
     private PlayerMovement playerMovement;
     [SerializeField]
-    private float shoveForce = 1.0f, shovedRecoveryTime = 1.0f, attackReach = 1.5f, shoveCooldown = 0.5f, groundPoundForce = 300f, poundReach = 0.1f, groundPoundCooldown = 0.4f;
+    private float shoveForce = 1.0f, shovedRecoveryTime = 1.0f, attackReach = 1.5f, shoveCooldown = 0.5f, 
+    groundPoundForce = 300f, poundReach = 0.1f, groundPoundCooldown = 0.4f, poundStunDuration = 1.5f;
     private float shoveRayStart, poundRayStart;
+    [SerializeField]
+    private Transform pushRayStart;
 
-    private float shovedTime = float.NegativeInfinity, shoveTime = float.NegativeInfinity;
-    private bool isPounding = false, targetPounded = false;
+    private float shovedTime = float.NegativeInfinity, shoveTime = float.NegativeInfinity, poundedTime = float.NegativeInfinity;
+    private bool isPounding = false, targetPounded = false, isPounded = false;
+
+    [SerializeField]
+    private GameObject poundedEffect;
 
     private IEnumerator delayedPounder;
 
@@ -26,7 +32,7 @@ public class PlayerCombat : MonoBehaviour
             List<PlayerController> controllers = new List<PlayerController>();
 
             RaycastHit[] hits;
-            hits = Physics.RaycastAll(transform.position - Vector3.right * shoveRayStart, transform.right, attackReach);
+            hits = Physics.RaycastAll(pushRayStart.position, transform.right, attackReach);
             for (int i = 0; i < hits.Length; i++)
             {
                 PlayerController c;
@@ -72,6 +78,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if (controller.input.shove && shoveTime + shoveCooldown < Time.time)
         {
+            Debug.Log("shoving");
             Shove();
         }
         if (!isPounding)
@@ -96,6 +103,11 @@ public class PlayerCombat : MonoBehaviour
         if (targetPounded)
         {
             targetPounded = !controller.movement.grounded;
+        }
+        if (isPounded) {
+            isPounded = poundedTime + poundStunDuration > Time.time;
+            controller.input.allowInput = !isPounded;
+            poundedEffect.SetActive(isPounded);
         }
     }
 
@@ -124,6 +136,8 @@ public class PlayerCombat : MonoBehaviour
 
     public void GetPounded()
     {
+        poundedTime = Time.time;
+        isPounded = true;
         Debug.Log(gameObject.name + " just got pounded");
     }
 
