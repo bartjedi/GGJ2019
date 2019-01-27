@@ -52,7 +52,9 @@ public class CharacterSelection : MonoBehaviour
         {
             playerActive[i] = false;
             characterSelectionControllers[i] = Instantiate(characterSelectionController, transform);
-        }
+			//characterSelectionControllers[i].transform.position = this.gameObject.transform.Find("SpawnPos").transform.position;
+
+		}
     }
 
     // Update is called once per frame

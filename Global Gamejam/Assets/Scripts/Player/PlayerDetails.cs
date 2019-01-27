@@ -24,6 +24,7 @@ public class PlayerDetails : MonoBehaviour
 		else
 		{
 			Destroy(gameObject);
+            GameManagerScript.instance.Died();
 		}
 		
 	}

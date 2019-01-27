@@ -8,11 +8,17 @@ public class PlayerCombat : MonoBehaviour
     private PlayerController controller;
     private PlayerMovement playerMovement;
     [SerializeField]
-    private float shoveForce = 1.0f, shovedRecoveryTime = 1.0f, attackReach = 1.5f, shoveCooldown = 0.5f, groundPoundForce = 300f, poundReach = 0.1f, groundPoundCooldown = 0.4f;
+    private float shoveForce = 1.0f, shovedRecoveryTime = 1.0f, attackReach = 1.5f, shoveCooldown = 0.5f, 
+    groundPoundForce = 300f, poundReach = 0.1f, groundPoundCooldown = 0.4f, poundStunDuration = 1.5f;
     private float shoveRayStart, poundRayStart;
+    [SerializeField]
+    private Transform pushRayStart;
 
-    private float shovedTime = float.NegativeInfinity, shoveTime = float.NegativeInfinity;
-    private bool isPounding = false, targetPounded = false;
+    private float shovedTime = float.NegativeInfinity, shoveTime = float.NegativeInfinity, poundedTime = float.NegativeInfinity;
+    private bool isPounding = false, targetPounded = false, isPounded = false, canPound = false;
+
+    [SerializeField]
+    private GameObject poundedEffect;
 
     private IEnumerator delayedPounder;
 
@@ -26,7 +32,7 @@ public class PlayerCombat : MonoBehaviour
             List<PlayerController> controllers = new List<PlayerController>();
 
             RaycastHit[] hits;
-            hits = Physics.RaycastAll(transform.position - Vector3.right * shoveRayStart, transform.right, attackReach);
+            hits = Physics.RaycastAll(pushRayStart.position, transform.right, attackReach);
             for (int i = 0; i < hits.Length; i++)
             {
                 PlayerController c;
@@ -72,11 +78,13 @@ public class PlayerCombat : MonoBehaviour
     {
         if (controller.input.shove && shoveTime + shoveCooldown < Time.time)
         {
+            Debug.Log("shoving");
             Shove();
         }
         if (!isPounding)
         {
-            if (controller.input.groundPound && !controller.movement.grounded && (Time.time - playerMovement.jumpStartTime) > groundPoundCooldown)
+            if (controller.input.groundPound && !controller.movement.grounded && (Time.time - playerMovement.jumpStartTime) > groundPoundCooldown 
+                && canPound && Mathf.Abs(controller.movement.GetVelocity().y) > 0.01f)
             {
                 GroundPound();
             }
@@ -92,10 +100,22 @@ public class PlayerCombat : MonoBehaviour
                 delayedPounder = PoundDisabler();
                 StartCoroutine(delayedPounder);
             }
+            else if (controller.movement.GetVelocity().y > 0.1f) {
+                isPounding = false;
+                groundPound.gameObject.SetActive(false);
+            }
         }
         if (targetPounded)
         {
             targetPounded = !controller.movement.grounded;
+        }
+        if (isPounded) {
+            isPounded = poundedTime + poundStunDuration > Time.time;
+            controller.input.allowInput = !isPounded;
+            poundedEffect.SetActive(isPounded);
+        }
+        if (!isPounding && !canPound) {
+            canPound = controller.movement.grounded;
         }
     }
 
@@ -124,13 +144,16 @@ public class PlayerCombat : MonoBehaviour
 
     public void GetPounded()
     {
-        Debug.Log(gameObject.name + " just got pounded");
+        poundedTime = Time.time;
+        controller.movement.Stun();
+        isPounded = true;
     }
 
     private void GroundPound()
     {
         groundPound.gameObject.SetActive(true);
         isPounding = true;
+        canPound = false;
         controller.movement.ResetVelocity();
         controller.movement.ApplyForce(Vector3.down * groundPoundForce);
     }
@@ -157,7 +180,14 @@ public class PlayerCombat : MonoBehaviour
 
     private IEnumerator PoundDisabler()
     {
-        yield return new WaitForSecondsRealtime(0.1f);
+        float poundEndTime = Time.time;
+        Vector3 originalScale = groundPound.transform.localScale;
+        while(Time.time < poundEndTime + 0.1f) {
+            groundPound.transform.localScale += Vector3.one * 2.5f * (Time.deltaTime / 0.1f);
+            yield return new WaitForEndOfFrame();
+        }
+        groundPound.transform.localScale = originalScale;
         groundPound.gameObject.SetActive(false);
+        canPound = true;
     }
 }

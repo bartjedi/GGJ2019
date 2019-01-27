@@ -21,8 +21,11 @@ public class CharacterSelectionController : MonoBehaviour
 
 	private GameObject[] characterSelectViews;
 
+	float startX;
+
 	private void Start()
     {
+		startX = transform.position.x;
         characters = new List<PlayerController>();
         int i = 0;
         foreach (PlayerController character in CharacterSelection.instance.characters)
@@ -72,7 +75,7 @@ public class CharacterSelectionController : MonoBehaviour
 
     public void Activate(int playerN)
     {
-        transform.position = new Vector3(transform.position.x + (offset * playerN), transform.position.y, transform.position.z);
+        transform.position = new Vector3(startX + (offset * playerN), transform.position.y, transform.position.z);
         this.playerNumber = playerN;
         switch (playerNumber)
         {

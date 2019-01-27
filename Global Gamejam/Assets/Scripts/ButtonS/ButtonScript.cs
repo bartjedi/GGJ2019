@@ -7,6 +7,7 @@ public class ButtonScript : MonoBehaviour
 {
     [SerializeField]
     private float topOfScreen;
+
     private float risingSpeed = 2.0f;
     [SerializeField]
     private Material[] materials;
@@ -18,6 +19,7 @@ public class ButtonScript : MonoBehaviour
     public string English, Spanish, German, Chinese;
     public TMP_FontAsset FontAssetA;
     public TMP_FontAsset FontAssetB;
+    public ParticleSystem ps;
 
     protected void Start()
     {
@@ -26,6 +28,7 @@ public class ButtonScript : MonoBehaviour
         textElement = this.GetComponentInChildren<TextMeshProUGUI>();
         SetColor();
         SetText();
+        ps = gameObject.GetComponent<ParticleSystem>();
         rb = gameObject.AddComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
         rb.isKinematic = true;
@@ -69,6 +72,7 @@ public class ButtonScript : MonoBehaviour
 
     public virtual void Break()
     {
+        ps.Play();
         if (breaking) return;
         StartCoroutine(BreakRoutine());
     }

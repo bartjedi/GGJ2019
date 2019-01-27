@@ -7,7 +7,6 @@ public class LoadButton : ButtonScript
     override public void Trigger(GameObject player)
     {
         base.Break();
-        Debug.Log("test");
         GameManagerScript.instance.LoadPositions();
     }
 }

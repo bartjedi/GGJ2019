@@ -100,6 +100,11 @@ public class PlayerMovement : MonoBehaviour
             transform.position = new Vector3(outsideLeft - 1.5f, transform.position.y, transform.position.z);
         }
     }
+	
+    public void Stun() {
+        velocity.x = 0;
+        myBody.velocity = velocity;
+    }
 
 	public void PlayerDies()
 	{
@@ -159,5 +164,9 @@ public class PlayerMovement : MonoBehaviour
     public void ResetVelocity() {
         velocity = Vector3.zero;
         myBody.velocity = velocity;
+    }
+
+    public Vector3 GetVelocity() {
+        return myBody.velocity;
     }
 }

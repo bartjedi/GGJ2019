@@ -112,12 +112,15 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &48251017 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8073509078909225999, guid: ae571d5aba259554ea56344019d04ff0,
     type: 3}
   m_PrefabInstance: {fileID: 550883676}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> origin/wasili2
 --- !u!1 &133991424 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7636775473118330254, guid: 787f1f67d89199446aea2476b486290c,
@@ -141,12 +144,15 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7636775471756604277, guid: 787f1f67d89199446aea2476b486290c,
     type: 3}
   m_PrefabInstance: {fileID: 1666029091}
+<<<<<<< HEAD
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &346865846 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4476712728914460511, guid: ae571d5aba259554ea56344019d04ff0,
     type: 3}
   m_PrefabInstance: {fileID: 550883676}
+=======
+>>>>>>> origin/wasili2
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &522048506
 GameObject:
@@ -162,7 +168,7 @@ GameObject:
   - component: {fileID: 522048508}
   - component: {fileID: 522048507}
   m_Layer: 0
-  m_Name: Background
+  m_Name: 'Background '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -401,6 +407,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+<<<<<<< HEAD
       objectReference: {fileID: 0}
     - target: {fileID: 4137422914345404492, guid: ae571d5aba259554ea56344019d04ff0,
         type: 3}
@@ -546,6 +553,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+      objectReference: {fileID: 258516130}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ae571d5aba259554ea56344019d04ff0, type: 3}
+>>>>>>> origin/wasili2
 --- !u!1 &590367657
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +656,7 @@ MonoBehaviour:
   shakeAmount: 90
   shakeDuration: 0.5
 --- !u!1 &990412362 stripped
+<<<<<<< HEAD
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3566921453780342262, guid: a63e4de56a2fd4e06821f27038ceb6b6,
     type: 3}
@@ -744,11 +757,14 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a63e4de56a2fd4e06821f27038ceb6b6, type: 3}
 --- !u!1 &1201267940
+=======
+>>>>>>> origin/wasili2
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3566921453780342262, guid: a63e4de56a2fd4e06821f27038ceb6b6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1031386241}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1201267941}
@@ -827,6 +843,107 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+--- !u!1001 &1031386241
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3566921453780342262, guid: a63e4de56a2fd4e06821f27038ceb6b6,
+        type: 3}
+      propertyPath: m_Name
+      value: StartButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853763368336372503, guid: a63e4de56a2fd4e06821f27038ceb6b6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853763368336372503, guid: a63e4de56a2fd4e06821f27038ceb6b6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853763368336372503, guid: a63e4de56a2fd4e06821f27038ceb6b6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853763368336372503, guid: a63e4de56a2fd4e06821f27038ceb6b6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853763368336372503, guid: a63e4de56a2fd4e06821f27038ceb6b6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853763368336372503, guid: a63e4de56a2fd4e06821f27038ceb6b6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853763368336372503, guid: a63e4de56a2fd4e06821f27038ceb6b6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853763368336372503, guid: a63e4de56a2fd4e06821f27038ceb6b6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853763368336372503, guid: a63e4de56a2fd4e06821f27038ceb6b6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853763368336372503, guid: a63e4de56a2fd4e06821f27038ceb6b6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853763368336372503, guid: a63e4de56a2fd4e06821f27038ceb6b6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853763368336372503, guid: a63e4de56a2fd4e06821f27038ceb6b6,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398031498, guid: a63e4de56a2fd4e06821f27038ceb6b6, type: 3}
+      propertyPath: FontAssetA
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+        type: 2}
+    - target: {fileID: 1398031498, guid: a63e4de56a2fd4e06821f27038ceb6b6, type: 3}
+      propertyPath: FontAssetB
+      value: 
+      objectReference: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6,
+        type: 2}
+    - target: {fileID: 3018451328221112303, guid: a63e4de56a2fd4e06821f27038ceb6b6,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018451328221112303, guid: a63e4de56a2fd4e06821f27038ceb6b6,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910622717229292254, guid: a63e4de56a2fd4e06821f27038ceb6b6,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a63e4de56a2fd4e06821f27038ceb6b6, type: 3}
+>>>>>>> origin/wasili2
 --- !u!1001 &1666029091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1900,6 +2017,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1731758014 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4150225451017931334, guid: ae571d5aba259554ea56344019d04ff0,
@@ -1945,6 +2063,8 @@ MonoBehaviour:
   textMesh: {fileID: 1442252339}
   joined: {fileID: 1403912650}
   notjoined: {fileID: 1272731973}
+=======
+>>>>>>> origin/wasili2
 --- !u!4 &1280119138260726354
 Transform:
   m_ObjectHideFlags: 0
@@ -1959,6 +2079,7 @@ Transform:
   m_Father: {fileID: 8070147477807943457}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1349123755313156739 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1349123755313156739, guid: ae571d5aba259554ea56344019d04ff0,
@@ -2013,6 +2134,8 @@ MonoBehaviour:
   textMesh: {fileID: 569771913}
   joined: {fileID: 1731758014}
   notjoined: {fileID: 48251017}
+=======
+>>>>>>> origin/wasili2
 --- !u!1 &2008842397240230727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,7 +2163,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3fd6bda8cfc6d29488ba0e72dc30dd0c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 750b773bfa1acc645a5822d49b73b02a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
