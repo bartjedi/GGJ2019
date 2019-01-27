@@ -92,7 +92,7 @@ public class PlayerCombat : MonoBehaviour
         controller.input.allowJump = (shovedTime + shovedRecoveryTime < Time.time) && !isPounding;
         if (isPounding)
         {
-            isPounding = !controller.movement.grounded;
+            isPounding = !controller.movement.grounded && controller.input.allowAttack && controller.input.allowInput;
             if (isPounding == false)
             {
                 StopCoroutine(delayedPounder);
