@@ -137,6 +137,7 @@ public class PlayerCombat : MonoBehaviour
     public void GetPounded()
     {
         poundedTime = Time.time;
+        controller.movement.Stun();
         isPounded = true;
     }
 

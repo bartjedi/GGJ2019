@@ -99,6 +99,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void Stun() {
+        velocity.x = 0;
+        myBody.velocity = velocity;
+    }
+
 	private void PlayerDies()
 	{
 		var pd = this.gameObject.GetComponent<PlayerDetails>();

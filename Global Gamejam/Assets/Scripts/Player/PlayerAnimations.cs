@@ -15,7 +15,7 @@ public class PlayerAnimations : MonoBehaviour
 
     private void Update()
     {
-        animator.SetFloat("Horizontal", !controller.movement.grounded && controller.input.allowMovement && controller.input.allowInput ? 0 : controller.input.horizontal);
+        animator.SetFloat("Horizontal", !controller.movement.grounded || !controller.input.allowMovement || !controller.input.allowInput ? 0 : controller.input.horizontal);
     }
 
     public void Jump()
