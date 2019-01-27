@@ -69,7 +69,7 @@ public class PlayerStatsScript : MonoBehaviour
 				break;
 			case 1:
 				this.gameObject.GetComponent<Image>().color = purple_bg;
-				this.GetComponentInChildren<TextMeshProUGUI>().faceColor = purple_tex;
+				this.GetComponentInChildren<TextMeshProUGUI>().color = purple_tex;
 				this.transform.Find("character").GetComponent<Image>().sprite = purpleMan;
 				break;
 			case 2:

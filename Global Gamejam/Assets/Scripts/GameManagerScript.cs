@@ -108,7 +108,6 @@ public class GameManagerScript : MonoBehaviour
     public void SavePositions()
     {
         playerLocations.Clear();
-        Debug.Log(players.Count);
         foreach(PlayerDetails player in players)
         {
             playerLocations.Add(player.transform.position);

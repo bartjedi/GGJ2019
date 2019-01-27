@@ -71,7 +71,7 @@ public class ButtonScript : MonoBehaviour
 
     public virtual void Break()
     {
-        
+        ps.Play();
         if (breaking) return;
         StartCoroutine(BreakRoutine());
     }
