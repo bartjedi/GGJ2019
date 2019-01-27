@@ -35,6 +35,10 @@ public class PlayerDetails : MonoBehaviour
 
 	private void UpdateStats()
 	{
-		GameManagerScript.instance.huds[playerNr].GetComponent<PlayerStatsScript>().UpdateStats(playerHealth, startHealth);
+		foreach(GameObject h in GameManagerScript.instance.huds)
+		{
+			h.GetComponent<PlayerStatsScript>().UpdateStats(playerNr, playerHealth, startHealth);
+		}
+
 	}
 }
