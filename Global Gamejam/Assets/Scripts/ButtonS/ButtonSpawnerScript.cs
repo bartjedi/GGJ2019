@@ -52,6 +52,7 @@ public class ButtonSpawnerScript : MonoBehaviour
 		return buttons[Random.Range(0, buttons.Length)];
 	}
 
+    // nani the fuck neuk pt2
 	private Vector3 GetRandomButRealisticPosition()
 	{
 		var newX = Random.Range(leftSideScreen, rightSideScreen);

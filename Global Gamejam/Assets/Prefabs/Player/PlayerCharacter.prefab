@@ -124,9 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae243ac93cda24ac694719ffc3d7ba0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
-  jumpSpeed: 7
-  doubleJumpSpeed: 4
+  moveSpeed: 5
+  jumpSpeed: 12
+  doubleJumpSpeed: 9
 --- !u!114 &2323429560774937099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,17 +153,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 632f6f28b5da1468a8c253b43bef32ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shoveForce: 250
   shovedRecoveryTime: 1
-  attackReach: 3
+  attackReach: 4
   shoveCooldown: 0.6
-  groundPoundForce: 900
+  groundPoundForce: 30
   poundReach: 0.05
   groundPoundCooldown: 0.3
   poundStunDuration: 1.1
   pushRayStart: {fileID: 8113822648981972627}
   poundedEffect: {fileID: 7162586361104736075}
   groundPound: {fileID: 1957663195208393273}
+  minSpeed: 15
+  maxSpeed: 40
+  maxSpeedAtTime: 500
 --- !u!114 &6802826943249690858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,6 +411,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6298948666837483670}
     m_Modifications:
+    - target: {fileID: 137394192220617636, guid: 3f3c24a0d6ad4fd4380abc6191883eb6,
+        type: 3}
+      propertyPath: m_Name
+      value: GroundSlamParticleEffect
+      objectReference: {fileID: 0}
     - target: {fileID: 137394192220617639, guid: 3f3c24a0d6ad4fd4380abc6191883eb6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -463,11 +470,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 137394192220617636, guid: 3f3c24a0d6ad4fd4380abc6191883eb6,
-        type: 3}
-      propertyPath: m_Name
-      value: GroundSlamParticleEffect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f3c24a0d6ad4fd4380abc6191883eb6, type: 3}
@@ -645,6 +647,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6298948666837483670}
     m_Modifications:
+    - target: {fileID: 4790155711251048179, guid: e993bd22b3ceb6b41b55ef3670c30577,
+        type: 3}
+      propertyPath: m_Name
+      value: trail
+      objectReference: {fileID: 0}
     - target: {fileID: 4790155711251048178, guid: e993bd22b3ceb6b41b55ef3670c30577,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -699,11 +706,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4790155711251048179, guid: e993bd22b3ceb6b41b55ef3670c30577,
-        type: 3}
-      propertyPath: m_Name
-      value: trail
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e993bd22b3ceb6b41b55ef3670c30577, type: 3}

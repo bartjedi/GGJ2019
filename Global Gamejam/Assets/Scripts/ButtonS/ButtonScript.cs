@@ -26,12 +26,12 @@ public class ButtonScript : MonoBehaviour
         topOfScreen = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 15.75f)).y;
         materials = GameManagerScript.instance.materials;
         textElement = this.GetComponentInChildren<TextMeshProUGUI>();
-        SetColor();
         SetText();
         ps = gameObject.GetComponent<ParticleSystem>();
         rb = gameObject.AddComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
         rb.isKinematic = true;
+        SetColor();
     }
 
     public virtual void Update()
@@ -97,6 +97,7 @@ public class ButtonScript : MonoBehaviour
     {
         int random = Random.Range(0, 4);
         this.GetComponentInChildren<MeshFilter>().gameObject.GetComponent<Renderer>().material = materials[random];
+        ps.GetComponent<ParticleSystemRenderer>().material = materials[random];
     }
 
     public void SetText()

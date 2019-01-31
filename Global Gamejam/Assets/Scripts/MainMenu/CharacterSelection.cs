@@ -26,7 +26,8 @@ public class CharacterSelection : MonoBehaviour
 	[SerializeField]
 	private GameObject[] huds;
 	public GameObject[] characterSelectViews;
-
+    [SerializeField]
+    GameObject[] spawnPoints;
     public static CharacterSelection instance = null;
 
     void Awake()
@@ -50,7 +51,6 @@ public class CharacterSelection : MonoBehaviour
     {
         playerActive = new bool[maxPlayers];
         characterSelectionControllers = new CharacterSelectionController[maxPlayers];
-		GameObject[] spawnPoints= GameObject.FindGameObjectsWithTag("Spawntag");
         for (int i = 0; i < maxPlayers; i++)
         {
             playerActive[i] = false;

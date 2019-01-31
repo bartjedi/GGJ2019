@@ -16,6 +16,7 @@ public class BlankButtonScript : ButtonScript
 
 	override public void Jumped()
 	{
+        // nani de fuck neuk
         return;
 		jumpedOn++;
 		if(jumpedOn >= amountOfJumpsAllowed)
@@ -28,6 +29,9 @@ public class BlankButtonScript : ButtonScript
     {
         textureImage.enabled = true;
         jumpedOn++;
+
+        ps.Play();
+
         if (curTexture < breakTextures.Length - 1) {
             curTexture++;
         }

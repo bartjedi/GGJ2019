@@ -68,6 +68,7 @@ public class VictoryManager : MonoBehaviour
         {
             if (Input.anyKey)
             {
+                DeathManager.instance.died = 0;
                 SceneManager.LoadScene(0);
             }
         }

@@ -71,11 +71,13 @@ public class PlayerMovement : MonoBehaviour
             else if (velocity.x < 0.0f) {
                 transform.eulerAngles = new Vector3(0, 180, 0);
             }
-            myBody.velocity = velocity;
+            //myBody.velocity = velocity;
+            transform.position = new Vector3(transform.position.x + velocity.x * Time.deltaTime, transform.position.y, transform.position.z);
         }
         if (grounded && jumpStartTime + 0.1f < Time.time) {
             controller.animations.Land();
         }
+        transform.position = new Vector3(transform.position.x + velocity.x * Time.deltaTime, transform.position.y, transform.position.z);
     }
 
     private void Update()
@@ -85,6 +87,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
+
+        if (!grounded && myBody.velocity.y < 3.75f)
+            myBody.velocity = new Vector3(myBody.velocity.x, myBody.velocity.y - 0.15f, myBody.velocity.z);
+
         //read horizontal axis for horizontal movement
         velocity.x = controller.input.horizontal * moveSpeed;
 
@@ -163,7 +169,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void ApplyForce(Vector3 force) {
-        myBody.AddForce(force);
+        ResetVelocity();
+        myBody.AddForce(force,ForceMode.Impulse);
     }
 
     public void ResetVelocity() {
